@@ -1,3 +1,14 @@
+#8888888888P  .d8888b.  888    888 8888888b.   .d8888b.  
+#      d88P  d88P  Y88b 888    888 888   Y88b d88P  Y88b 
+#     d88P   Y88b.      888    888 888    888 888    888 
+#    d88P     "Y888b.   8888888888 888   d88P 888        
+#   d88P         "Y88b. 888    888 8888888P"  888        
+#  d88P            "888 888    888 888 T88b   888    888 
+# d88P       Y88b  d88P 888    888 888  T88b  Y88b  d88P 
+#d8888888888  "Y8888P"  888    888 888   T88b  "Y8888P"  
+                                                        
+                                                        
+                                                        
 # Run on startup
 neofetch
 
@@ -6,6 +17,8 @@ neofetch
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sasindujayasinghe/.oh-my-zsh"
+
+# Path exports
 export PATH=~/flutter/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
@@ -102,6 +115,10 @@ export EDITOR=nano
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias ls="colorls --sd -A"
+alias clear="clear; neofetch"
+
+# PowerLevel9K Customisation
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
@@ -110,3 +127,6 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 source ~/powerlevel9k/powerlevel9k.zsh-theme
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Other Customisation
+source $(dirname $(gem which colorls))/tab_complete.sh
