@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR=nano
+export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -116,7 +116,7 @@ export EDITOR=nano
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias ls="colorls --sd -A"
-alias clear="clear; neofetch"
+# alias clear="clear; neofetch"
 
 # PowerLevel9K Customisation
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
@@ -129,4 +129,4 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Other Customisation
-source $(dirname $(gem which colorls))/tab_complete.sh
+eval "$(starship init zsh)"
