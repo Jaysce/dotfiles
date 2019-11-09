@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,4 +32,6 @@ filetype plugin indent on    " required
 
 syntax on
 colorscheme desert
-set number
+set number " Add line numbers
+set laststatus=2
+set noshowmode " Remove default status line
