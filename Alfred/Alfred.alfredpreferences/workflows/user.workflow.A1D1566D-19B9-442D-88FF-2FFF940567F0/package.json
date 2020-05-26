@@ -1,0 +1,41 @@
+{
+  "name": "alfred-currency-conversion",
+  "version": "0.2.0",
+  "description": "Alfred 4 Workflow - See foreign exchange rates and currency conversion",
+  "license": "MIT",
+  "repository": "jeppestaerk/alfred-currency-conversion",
+  "author": {
+    "name": "Jeppe Stærk",
+    "email": "dev@staerk.io",
+    "url": "https://github.com/jeppestaerk/alfred-currency-conversion"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist",
+    "settings.png",
+    "flags/*.png"
+  ],
+  "keywords": [
+    "alfred",
+    "alfred4",
+    "workflow",
+    "alfred-workflow",
+    "alfred4-workflow",
+    "alfy",
+    "currency-conversion",
+    "foreign-exchange-rates"
+  ],
+  "dependencies": {
+    "alfy": "^0.9.0",
+    "os-locale": "^4.0.0"
+  },
+  "devDependencies": {}
+}

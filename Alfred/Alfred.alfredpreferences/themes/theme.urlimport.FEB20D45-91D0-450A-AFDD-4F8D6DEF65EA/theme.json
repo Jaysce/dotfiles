@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 4,
+      "subtext" : {
+        "size" : 9,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System",
+        "color" : "#32363FFF"
+      },
+      "shortcut" : {
+        "size" : 8,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System",
+        "color" : "#31353FFF"
+      },
+      "backgroundSelected" : "#636C7AFF",
+      "text" : {
+        "size" : 17,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System",
+        "color" : "#32363FFF"
+      },
+      "iconPaddingHorizontal" : 8,
+      "paddingVertical" : 6,
+      "iconSize" : 33
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#EBECEF00",
+      "spacing" : 4,
+      "text" : {
+        "size" : 24,
+        "colorSelected" : "#000000FF",
+        "font" : "System",
+        "color" : "#31353FFF"
+      },
+      "backgroundSelected" : "#D0EAC7FF"
+    },
+    "window" : {
+      "color" : "#EBECEFFF",
+      "paddingHorizontal" : 0,
+      "width" : 440,
+      "borderPadding" : 6,
+      "borderColor" : "#636C7AFF",
+      "blur" : 40,
+      "roundness" : 5,
+      "paddingVertical" : 2
+    },
+    "credit" : "mayuzumi",
+    "separator" : {
+      "color" : "#636C7A00",
+      "thickness" : 1
+    },
+    "scrollbar" : {
+      "color" : "#31353FFF",
+      "thickness" : 2
+    },
+    "name" : "Light"
+  }
+}
