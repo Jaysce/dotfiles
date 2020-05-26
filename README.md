@@ -19,11 +19,19 @@ for a number of applications.
 
 **Desktop**
 
-<img src="images/../Images/Desktop%201.png">
+<img src="images/../Images/Desktop.png">
+
+**Alfred**
+
+<img src="images/../Images/Alfred.png">
 
 **iTerm2**
 
 <img src="images/../Images/iTerm2.png">
+
+**Spicetify**
+
+<img src="images/../Images/Spicetify.png">
 
 **Neovim**
 
