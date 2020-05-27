@@ -39,7 +39,7 @@ fi
 brew=(
   git
   neofetch
-  vim
+  neovim
   nano
   starship
   htop
@@ -86,6 +86,8 @@ brew cask install ${cask[@]} # Cask app installer
 # Install Oh My ZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# <--------------------------------- Install Vim-Plug / SymLink Dotfiles --------------------------------->
+
 # Link dotfiles
 cd ~
 git clone https://github.com/Jaysce/dotfiles.git
@@ -93,9 +95,19 @@ git clone https://github.com/Jaysce/dotfiles.git
 ln -sv ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/.zshrc ~/.zshrc
 ln -sv ~/dotfiles/.nanorc ~/.nanorc
-ln -sv ~/dotfiles/.vimrc ~/.vimrc
+# ln -sv ~/dotfiles/.vimrc ~/.vimrc
+
+# Make .config vim plug directory
+mkdir -p ~/.config/nvim/vim-plug
+
+# SymLink init.vim
+ln -sv ~/dotfiles/init.vim ~/.config/nvim
 
 # Install Vim-Plug
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# SymLink plugins.vim
+ln -sv ~/dotfiles/plugins.vim ~/.config/nvim/vim-plug
 
 # <--------------------------------- System / App Preferences --------------------------------->
 
