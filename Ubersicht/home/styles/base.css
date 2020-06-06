@@ -1,0 +1,149 @@
+/*
+  --
+  -- CSS variables
+  --
+*/
+
+:root {
+  --bg: #010609;
+  --fg: #8AB4F9;
+
+  --block: 80px;
+}
+
+.themeable.green {
+  --bg: #1e2b2a;
+  --fg: #af8726;
+}
+
+.themeable.red {
+  --bg: #1b1d13;
+  --fg: #C15952;
+}
+
+.themeable.pink {
+  --bg: #1e413b;
+  --fg: #ea999f;
+}
+
+* {
+  font-family: 'Scientifica', 'Fira Code', 'Consolas', monospace;
+}
+
+/*
+  --
+  -- Blocks
+  --
+*/
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: var(--block);
+
+  background-color: var(--bg);
+  color: var(--fg);
+
+  position: fixed;
+}
+
+.block p {
+  font-size: 14px;
+}
+
+.block-1x1 {
+  width: var(--block);
+}
+
+.block-1x2 {
+  width: calc(var(--block) * 2);
+}
+
+.block-1x3 {
+  width: calc(var(--block) * 3);
+}
+
+.block-1x4 {
+  width: calc(var(--block) * 4);
+}
+
+.block-1x5 {
+  width: calc(var(--block) * 5);
+}
+
+.block-1x6 {
+  width: calc(var(--block) * 6);
+}
+
+.focus {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+/*
+  --
+  -- Elements
+  --
+*/
+
+.power {
+  left: var(--block);
+  bottom: calc(var(--block) * 5);
+}
+
+.volume {
+  left: var(--block);
+  bottom: calc(var(--block) * 3);
+}
+
+.battery {
+  left: calc(var(--block) * 2);
+  bottom: calc(var(--block) * 3);
+}
+
+.wifi {
+  left: var(--block);
+  bottom: calc(var(--block) * 4);
+}
+
+.wifi p {
+  font-size: 20px !important;
+}
+
+.time {
+  left: var(--block);
+  bottom: calc(var(--block) * 2);
+}
+
+.theme {
+  right: var(--block);
+  top: var(--block);
+  color: var(--fg);
+}
+
+.music {
+  position: fixed;
+
+  left: var(--block);
+  bottom: var(--block);
+  height: var(--block);
+
+  background-color: var(--bg);
+  color: var(--fg);
+
+  display: flex;
+  align-items: center;
+}
+
+.music p {
+  font-size: 14px;
+  text-align: left;
+
+  padding-left: 10px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
