@@ -3,23 +3,23 @@
     "result" : {
       "textSpacing" : 4,
       "subtext" : {
-        "size" : 12,
-        "colorSelected" : "#89B3F8FF",
+        "size" : 9,
+        "colorSelected" : "#FEFFFFFF",
         "font" : "System",
-        "color" : "#57617BFF"
+        "color" : "#939497FF"
       },
       "shortcut" : {
-        "size" : 10,
-        "colorSelected" : "#89B3F8FF",
+        "size" : 8,
+        "colorSelected" : "#FEFFFFFF",
         "font" : "System",
-        "color" : "#57617BFF"
+        "color" : "#737476FF"
       },
-      "backgroundSelected" : "#182338FF",
+      "backgroundSelected" : "#494A4CFF",
       "text" : {
-        "size" : 20,
-        "colorSelected" : "#89B3F8FF",
+        "size" : 17,
+        "colorSelected" : "#FEFFFFFF",
         "font" : "System",
-        "color" : "#57617BFF"
+        "color" : "#909193FF"
       },
       "iconPaddingHorizontal" : 8,
       "paddingVertical" : 6,
@@ -27,22 +27,22 @@
     },
     "search" : {
       "paddingVertical" : 0,
-      "background" : "#00131CFF",
+      "background" : "#33343700",
       "spacing" : 4,
       "text" : {
-        "size" : 32,
+        "size" : 24,
         "colorSelected" : "#000000FF",
         "font" : "System",
-        "color" : "#89B3F8FF"
+        "color" : "#ECF1F2FF"
       },
       "backgroundSelected" : "#D0EAC7FF"
     },
     "window" : {
-      "color" : "#03131CFF",
+      "color" : "#333437FF",
       "paddingHorizontal" : 0,
-      "width" : 550,
+      "width" : 440,
       "borderPadding" : 6,
-      "borderColor" : "#182338FF",
+      "borderColor" : "#494A4CFF",
       "blur" : 40,
       "roundness" : 5,
       "paddingVertical" : 2
@@ -53,7 +53,7 @@
       "thickness" : 1
     },
     "scrollbar" : {
-      "color" : "#57617BFF",
+      "color" : "#909193FF",
       "thickness" : 2
     },
     "name" : "Night"
