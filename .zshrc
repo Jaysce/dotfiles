@@ -19,6 +19,7 @@ neofetch
 export ZSH="/Users/sasindujayasinghe/.oh-my-zsh"
 
 # Path exports
+export PATH="/usr/local/anaconda3/bin:$PATH"
 export PATH=~/flutter/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
