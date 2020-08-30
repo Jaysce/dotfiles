@@ -130,3 +130,5 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Other Customisation
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
