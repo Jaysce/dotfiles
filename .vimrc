@@ -48,7 +48,7 @@ let g:netrw_winsize = 25
 let g:ctrlp_use_caching = 0
 
 nmap <C-f> :NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 nnoremap <leader>h :wincmd h<CR>
