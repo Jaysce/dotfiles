@@ -23,6 +23,7 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set noshowmode
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -32,11 +33,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jremmen/vim-ripgrep'
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
