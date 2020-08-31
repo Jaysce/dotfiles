@@ -76,13 +76,31 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
-"--- Window Management Settings ------------------------------------------------
+"--- Window / Tab Management Settings ------------------------------------------
 
 let mapleader = " "
+
+" Move between split windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Move next / prev tab
+nnoremap <leader>. gt<CR>
+nnoremap <leader>, gT<CR>
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 
 "--- Fuzzy Finder Settings -----------------------------------------------------
 
