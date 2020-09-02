@@ -94,4 +94,9 @@ colors:
 
 # Key bindings
 key_bindings:
-  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: N,       mods: Control|Shift,    action: SpawnNewInstance }
+  - { key: Right,   mods: Alt,              chars: "\x1bf" }  
+  - { key: Left,    mods: Alt,              chars: "\x1bb" }  
+  - { key: Right,   mods: Command,          chars: "\x1bOF" }  
+  - { key: Left,    mods: Command,          chars: "\x1bOH" }  
+  - { key: Back,    mods: Command,          chars: "\x15" }  
