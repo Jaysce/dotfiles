@@ -26,6 +26,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jiangmiao/auto-pairs'
+Plug 'wadackel/vim-dogrun'
 
 call plug#end()
 
@@ -121,3 +122,9 @@ nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
+
+" Navigation code completion using Tab and Shift Tab
+" and complete line using Enter
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Return> pumvisible() ? "\<C-y>" : "\<Return>"
