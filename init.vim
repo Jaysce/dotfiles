@@ -16,8 +16,8 @@ Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
+Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -43,9 +43,10 @@ set nowrap
 set smartcase
 set incsearch
 set noshowmode
+set termguicolors
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-colorscheme gruvbox
+colorscheme dogrun
 set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
@@ -128,3 +129,9 @@ nmap <silent> <leader>gr <Plug>(coc-references)
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Return> pumvisible() ? "\<C-y>" : "\<Return>"
+
+"--- LightLine Settings---------------------------------------------------------
+
+let g:lightline = {
+  \ 'colorscheme': 'dogrun',
+  \ }
