@@ -1,8 +1,11 @@
 # Window Customisation
 window:
   dimensions:
-    columns: 120
-    lines: 40
+    columns: 95
+    lines: 30
+  position:
+    x: 310
+    y: 500
   padding:
     x: 30
     y: 30
@@ -12,24 +15,24 @@ scrolling:
   history: 10000
   multiplier: 3
 
-background_opacity: 0.95
+background_opacity: 1
 
 # Font configuration
 font:
   normal:
-    family: Hack Nerd Font Mono
+    family: Fira Code
     style: Regular
   bold:
-    family: Hack Nerd Font Mono
+    family: Fira Code
     style: Bold
   italic:
-    family: Hack Nerd Font Mono
+    family: Fira Code
     style: Italic
   size: 14.0
 
   offset:
     x: 0
-    y: 0
+    y: 2
 
   glyph_offset:
     x: 0

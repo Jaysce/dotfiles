@@ -44,6 +44,7 @@ set nowrap
 set smartcase
 set incsearch
 set noshowmode
+set clipboard+=unnamedplus
 set termguicolors
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -51,6 +52,7 @@ colorscheme dogrun
 set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+nnoremap <silent> <esc><esc> :noh<return>
 
 "--- NERDTree Settings ---------------------------------------------------------
 
@@ -84,11 +86,10 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 
 let mapleader = " "
 
-" Move between split windows
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Move next / prev tab
 nnoremap <leader>. gt<CR>
@@ -125,7 +126,7 @@ nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
 
-" Navigation code completion using Tab and Shift Tab
+" Navigate code completion using Tab and Shift Tab
 " and complete line using Enter
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
