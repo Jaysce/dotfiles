@@ -27,6 +27,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wadackel/vim-dogrun'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -134,4 +135,11 @@ inoremap <expr> <Return> pumvisible() ? "\<C-y>" : "\<Return>"
 
 let g:lightline = {
   \ 'colorscheme': 'dogrun',
+  \ 'active': {
+  \     'left': [ ['mode', 'paste'],
+  \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \     'gitbranch': 'FugitiveHead'
+  \ },
   \ }
