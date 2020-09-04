@@ -10,106 +10,118 @@
 #                                                             |_|    
 
 
-# <--------------------------------- Housekeeping and Install Homebrew --------------------------------->
+#--- Homebrew ------------------------------------------------------------------
 
 echo 'Are the Xcode command line tools installed?'
 echo 'If not exit with ⌃C, and install Xcode along with other MAS apps or use:'
 echo 'xcode-select -install'
 echo ' '
 echo 'MAS apps to install:'
-echo 'Xcode, Things3, Bear, Wipr, Unarchiver, Affinity, ColorSlurp, Twitter'
+echo 'Xcode, Things3, Wipr, Unarchiver, Affinity, ColorSlurp, Twitter, GoodNotes, Messenger'
 
 read response
 
-sudo -v # Give sudo access ahead of time
-cd ~ # Move to home directory
+sudo -v
+cd ~
 
 # Check if Homebrew is installed and install if not
 if test ! $(which brew)
 then
   echo "Installing Homebrew... "
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
   echo "Homebrew is already installed"
   exit 1
 fi
 
-# <--------------------------------- Install / Update Apps via Homebrew --------------------------------->
+#--- Install / Update Apps via Homebrew ----------------------------------------
 
 brew=(
   git
+  ccls
+  cmake
+  cmatrix
+  fortune
+  gcc
+  gh
+  gotop
+  gradle
+  htop
+  lazygit
   neofetch
   neovim
-  nano
-  starship
-  htop
   node
-  zsh-completions
+  openjdk
+  ranger
+  starship
+  tmux
+  umlet
   zsh-autosuggestions
+  zsh-completions
   zsh-syntax-highlighting
-  gradle
-  lazygit
 )
 
 cask=(
+  alacritty
   alfred
   appcleaner
   bartender
-  clion
   daisydisk
   discord
+  figma
   font-fira-code
   font-hack-nerd-font
   github
   google-chrome
   iina
   intellij-idea-ce
-  iterm2
-  java
-  microsoft-teams
   mos
-  pycharm-ce
+  notion
   rectangle
+  sf-symbols
   sketch
   spotify
-  tempo
   visual-studio-code
 )
 
-brew update # Update any existing homebrew recipes
-brew upgrade # Upgrade any already installed formulae
+# Update and upgrade existing homebrew recipes and formulae
+brew update
+brew upgrade
+
+# Tap into required repositories
+brew tap github/gh
 brew tap homebrew/cask-fonts
 
-brew install ${brew[@]} # Formulae app installer
-brew cask install ${cask[@]} # Cask app installer
+# Begin installing formulae and casks
+brew install ${brew[@]}
+brew cask install ${cask[@]}
 
 # Install Oh My ZSH
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# <--------------------------------- Install Vim-Plug / SymLink Dotfiles --------------------------------->
+#--- Install Vim-Plug / SymLink Dotfiles ---------------------------------------
 
 # Link dotfiles
 cd ~
 git clone https://github.com/Jaysce/dotfiles.git
 
-ln -sv ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sv ~/dotfiles/.zshrc ~/.zshrc
-ln -sv ~/dotfiles/.nanorc ~/.nanorc
-# ln -sv ~/dotfiles/.vimrc ~/.vimrc
+# Make .config directory if it doesn't already exist
+mkdir -p ~/.config
 
-# Make .config vim plug directory
-mkdir -p ~/.config/nvim/vim-plug
+# SymLink to ~
+ln -sv ~/dotfiles/Config/.alacritty.yml ~/.alacritty.yml
+ln -sv ~/dotfiles/Config/.gitconfig ~/.gitconfig
+ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
-# SymLink init.vim
-ln -sv ~/dotfiles/init.vim ~/.config/nvim
+# SymLink to .config
+ln -sv ~/dotfiles/Config/nvim ~/.config
+ln -sv ~/dotfiles/Config/starship.toml ~/.config
 
 # Install Vim-Plug
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# SymLink plugins.vim
-ln -sv ~/dotfiles/plugins.vim ~/.config/nvim/vim-plug
-
-# <--------------------------------- System / App Preferences --------------------------------->
+#--- System / App Preferences --------------------------------------------------
 
 defaults write com.knollsoft.Rectangle gapSize -float 10
 
