@@ -161,6 +161,12 @@ let g:lightline = {
   \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component_function': {
-  \     'gitbranch': 'FugitiveHead'
+  \     'gitbranch': 'FugitiveLine'
   \ },
+  \ 'subseparator': { 'left': '\u2771', 'right': '\u2770' }
   \ }
+
+function! FugitiveLine()
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+endfunction
