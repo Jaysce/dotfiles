@@ -1,6 +1,20 @@
 [aws]
-disabled = true
+symbol = "AWS "
+style = "bold white"
+
+[conda]
+symbol = "Conda "
 
 [java]
-symbol = "🍵 "
-style = "bold red"
+symbol = "Java "
+style = "bold 208"
+
+[nodejs]
+symbol = "Node "
+
+[python]
+symbol = "Python "
+
+[rust]
+symbol = "Rust "
+style = "bold 131"
