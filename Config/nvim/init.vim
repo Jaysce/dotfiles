@@ -28,6 +28,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wadackel/vim-dogrun'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -152,7 +155,7 @@ endfunction
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-"--- LightLine Settings---------------------------------------------------------
+"--- LightLine Settings --------------------------------------------------------
 
 let g:lightline = {
   \ 'colorscheme': 'dogrun',
@@ -170,3 +173,27 @@ function! FugitiveLine()
     let _ = fugitive#head()
     return strlen(_) ? ' '._ : ''
 endfunction
+
+"--- Goyo / LimeLight Settings -------------------------------------------------
+
+nnoremap <silent> <leader>l :Goyo<CR>
+
+" Use j and k to move between lines when in wrapped mode
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+" Enter / exit focused writing mode
+autocmd! User GoyoEnter nested call <SID>EnterWritingMode()
+autocmd! User GoyoLeave nested call <SID>ExitWritingMode()
+
+function s:EnterWritingMode()
+    Limelight
+    setlocal wrap linebreak spell
+endfunction
+
+function s:ExitWritingMode()
+    Limelight!
+    setlocal nowrap
+endfunction
+
+let g:limelight_conceal_guifg = '#373C57'
