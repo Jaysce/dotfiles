@@ -56,6 +56,7 @@ brew=(
   starship
   tmux
   umlet
+  yarn
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
