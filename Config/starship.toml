@@ -1,2 +1,6 @@
 [aws]
 disabled = true
+
+[java]
+symbol = "🍵 "
+style = "bold red"
