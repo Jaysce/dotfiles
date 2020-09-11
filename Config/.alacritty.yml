@@ -40,36 +40,63 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-# Colors (Gruvbox dark)
+## Colors (Dogrun)
+#colors:
+  ## Default colors
+  #primary:
+    #background: "#222433"
+    #foreground: "#9ea3c0"
+
+  ## Normal colors
+  #normal:
+    #black: "#111219"
+    #red: "#db5966"
+    #green: "#7cbe8c"
+    #yellow: "#9b956b"
+    #blue: "#2994c6"
+    #magenta: "#6c75cb"
+    #cyan: "#73c1a9"
+    #white: "#9ea3c0"
+
+  ## Bright colors
+  #bright:
+    #black: "#6A709C"
+    #red: "#FD6776"
+    #green: "#96E6A9"
+    #yellow: "#DFD69A"
+    #blue: "#35BFFF"
+    #magenta: "#8893FF"
+    #cyan: "#84DEC2"
+    #white: "#D0D7FD"
+
+# Colors (Aubergine)
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
-    background: "#222433"
-    # soft contrast: background = '#32302f'
-    foreground: "#9ea3c0"
+    background: "#1A222E"
+    foreground: "#CBC7C0"
 
   # Normal colors
   normal:
-    black: "#111219"
-    red: "#db5966"
-    green: "#7cbe8c"
-    yellow: "#9b956b"
-    blue: "#2994c6"
-    magenta: "#6c75cb"
-    cyan: "#73c1a9"
-    white: "#9ea3c0"
+    black: "#000000"
+    red: "#F67E7F"
+    green: "#7ECABB"
+    yellow: "#FFD376"
+    blue: "#56B5D1"
+    magenta: "#B67ED0"
+    cyan: "#59E0DF"
+    white: "#E5E5E5"
 
   # Bright colors
   bright:
-    black: "#6A709C"
-    red: "#FD6776"
-    green: "#96E6A9"
-    yellow: "#DFD69A"
-    blue: "#35BFFF"
-    magenta: "#8893FF"
-    cyan: "#84DEC2"
-    white: "#D0D7FD"
+    black: "#666666"
+    red: "#F67E7F"
+    green: "#7ECABB"
+    yellow: "#FFD376"
+    blue: "#56B5D1"
+    magenta: "#B67ED0"
+    cyan: "#59E0DF"
+    white: "#E5E5E5"
 
   cursor:
     style: Block
