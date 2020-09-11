@@ -52,7 +52,7 @@ set clipboard+=unnamedplus
 set termguicolors
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-colorscheme dogrun
+colorscheme aubergine
 set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
