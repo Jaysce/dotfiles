@@ -17,7 +17,7 @@ let g:colors_name="aubergine"
 highlight Normal guibg=#1A222E guifg=#CBC7C0
 highlight NonText guifg=#ffffff guibg=#ff0000
 highlight VertSplit guifg=#283447 guibg=NONE gui=NONE cterm=NONE
-highlight LineNr guifg=#2C3744 guibg=NONE gui=NONE cterm=NONE
+highlight LineNr guifg=#303F56 guibg=NONE gui=NONE cterm=NONE
 highlight EndOfBuffer guifg=#2C3744 guibg=NONE gui=NONE cterm=NONE
 
 " TODO
@@ -25,10 +25,10 @@ highlight Cursor guifg=#ff0000 guibg=#9ea3c0
 hi SignColumn guifg=#ff0000 ctermfg=60 guibg=NONE ctermbg=NONE
 "
 
-hi ColorColumn guibg=#283447 ctermbg=236 gui=NONE cterm=NONE
+hi ColorColumn guibg=#1F2837 ctermbg=236 gui=NONE cterm=NONE
 hi CursorColumn guibg=#283447
 hi CursorLine guibg=#222C3B
-hi CursorLineNr guifg=#7889A3 gui=NONE cterm=NONE
+hi CursorLineNr guifg=#6A7990 gui=NONE cterm=NONE
 hi NormalFloat guifg=#CBC7C0 guibg=#1C2738 gui=NONE cterm=NONE
 hi Directory guifg=#D3AB67 gui=bold cterm=bold
 
@@ -93,7 +93,7 @@ hi PmenuSel guifg=#CBC7C0 guibg=#1A222E
 hi PmenuSbar guibg=#1C2738
 hi PmenuThumb guibg=#353D54
 
-hi Visual guibg=#452424 gui=NONE cterm=NONE
+hi Visual guibg=#2C3744 gui=NONE cterm=NONE
 hi Search guifg=#283447 guibg=#4893AC gui=bold cterm=bold
 hi IncSearch guifg=#283447 guibg=#4893AC gui=bold cterm=bold
 

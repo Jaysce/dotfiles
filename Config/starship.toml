@@ -1,3 +1,6 @@
+[git_branch]
+symbol = " "
+
 [aws]
 symbol = "AWS "
 style = "bold white"

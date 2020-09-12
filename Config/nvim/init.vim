@@ -13,7 +13,8 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
@@ -66,6 +67,9 @@ let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <silent> <C-f> :NERDTreeToggle<CR>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "--- Integrated Terminal Settings ----------------------------------------------
 
@@ -159,7 +163,7 @@ nmap <leader>rn <Plug>(coc-rename)
 "--- LightLine Settings --------------------------------------------------------
 
 let g:lightline = {
-  \ 'colorscheme': 'dogrun',
+  \ 'colorscheme': 'aubergine',
   \ 'active': {
   \     'left': [ ['mode', 'paste'],
   \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -172,7 +176,7 @@ let g:lightline = {
 
 function! FugitiveLine()
     let _ = fugitive#head()
-    return strlen(_) ? ' '._ : ''
+    return strlen(_) ? ' '._ : ''
 endfunction
 
 "--- Goyo / LimeLight Settings -------------------------------------------------

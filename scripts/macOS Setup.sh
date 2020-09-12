@@ -72,6 +72,7 @@ cask=(
   figma
   font-fira-code
   font-hack-nerd-font
+  font-jetbrains-mono-nerd-font
   github
   google-chrome
   iina
