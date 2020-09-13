@@ -40,7 +40,7 @@ hi MatchParen guibg=#ff0000 ctermbg=236
 hi Title guifg=#67A49A gui=bold cterm=bold
 "
 
-highlight Comment guifg=#7889A3
+highlight Comment guifg=#7889A3 gui=italic cterm=italic
 
 highlight Constant guifg=#9169AA
 highlight String guifg=#95A8C8
@@ -75,7 +75,7 @@ highlight Special guifg=#F67E7F
 highlight SpecialChar guifg=#F67E7F
 highlight Tag guifg=#F67E7F
 highlight Delimeter guifg=#F67E7F
-highlight SpecialComment guifg=#F67E7F
+highlight SpecialComment guifg=#F67E7F gui=italic cterm=italic
 highlight Debug guifg=#F67E7F
 highlight SpecialKey guifg=#F67E7F
 
