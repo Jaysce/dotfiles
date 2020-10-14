@@ -27,6 +27,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
 Plug 'wadackel/vim-dogrun'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
@@ -58,6 +59,10 @@ set background=dark
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 nnoremap <silent> <esc><esc> :noh<return>
+
+"--- Closetag Settings ---------------------------------------------------------
+
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.js"
 
 "--- NERDTree Settings ---------------------------------------------------------
 
