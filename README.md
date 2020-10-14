@@ -7,36 +7,19 @@ for a number of applications.
 
 **Configuration Files:**
 - Zsh Runtime Configuration
-- Vim Runtime Configuration
-- Nano Runtime Configuration
+- Neovim Runtime Configuration
 - iTerm2 JSON Profile Configuration
 
-**Setup Files:**
+**Other Files:**
 - macOS Setup Script
-- Homebrew Update Script
 
 ## Images
 
-**Desktop**
-
-<img src="images/../Images/Desktop.png">
-
-**Alfred**
-
-<img src="images/../Images/Alfred.png">
-
-**iTerm2**
-
-<img src="images/../Images/iTerm2.png">
-
-**Spicetify**
-
-<img src="images/../Images/Spicetify.png">
-
-**Neovim**
-
-`TODO: Setup Neovim and insert image here`
+**Alacritty** | **Neovim**
+:-----------: | :--------:
+![Screenshot](https://raw.githubusercontent.com/jaysce/dotfiles/master/Images/Alacritty.png) | ![Screenshot](https://raw.githubusercontent.com/jaysce/dotfiles/master/Images/Neovim.png)
 
 ## Installation / Setup
 
 `TODO: Setup / Installation instructions`
+
