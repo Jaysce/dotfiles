@@ -127,6 +127,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 defaults write com.knollsoft.Rectangle gapSize -float 10
 defaults write com.apple.Dock showhidden -bool TRUE; killall Dock
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # Remove garbage
 brew cleanup
