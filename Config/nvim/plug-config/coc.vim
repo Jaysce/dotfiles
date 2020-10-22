@@ -160,3 +160,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " COC Explorer
 nnoremap <silent> <C-f> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+autocmd User CocNvimInit :CocCommand explorer
