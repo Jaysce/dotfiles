@@ -18,5 +18,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Easy comments
 Plug 'preservim/nerdcommenter'
+" Text jumping
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
