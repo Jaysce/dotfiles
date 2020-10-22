@@ -9,8 +9,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'wadackel/vim-dogrun'
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Git changes in ruler
-Plug 'airblade/vim-gitgutter'
 " Icons in NERDTree
 Plug 'ryanoasis/vim-devicons'
 " Status line
@@ -20,5 +18,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdcommenter'
 " Text jumping
 Plug 'justinmk/vim-sneak'
+" Git
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
 
 call plug#end()
