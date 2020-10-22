@@ -69,34 +69,63 @@ draw_bold_text_with_bright_colors: true
     #cyan: "#84DEC2"
     #white: "#D0D7FD"
 
-# Colors (Aubergine)
+# Colors (One Dark)
 colors:
   # Default colors
   primary:
-    background: "#1A222E"
-    foreground: "#CBC7C0"
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
 
   # Normal colors
   normal:
-    black: "#000000"
-    red: "#F67E7F"
-    green: "#7ECABB"
-    yellow: "#FFD376"
-    blue: "#56B5D1"
-    magenta: "#B67ED0"
-    cyan: "#59E0DF"
-    white: "#E5E5E5"
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
 
   # Bright colors
   bright:
-    black: "#666666"
-    red: "#F67E7F"
-    green: "#7ECABB"
-    yellow: "#FFD376"
-    blue: "#56B5D1"
-    magenta: "#B67ED0"
-    cyan: "#59E0DF"
-    white: "#E5E5E5"
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xffffff'
+
+# Colors (Aubergine)
+#colors:
+  ## Default colors
+  #primary:
+    #background: "#1A222E"
+    #foreground: "#CBC7C0"
+
+  ## Normal colors
+  #normal:
+    #black: "#000000"
+    #red: "#F67E7F"
+    #green: "#7ECABB"
+    #yellow: "#FFD376"
+    #blue: "#56B5D1"
+    #magenta: "#B67ED0"
+    #cyan: "#59E0DF"
+    #white: "#E5E5E5"
+
+  ## Bright colors
+  #bright:
+    #black: "#666666"
+    #red: "#F67E7F"
+    #green: "#7ECABB"
+    #yellow: "#FFD376"
+    #blue: "#56B5D1"
+    #magenta: "#B67ED0"
+    #cyan: "#59E0DF"
+    #white: "#E5E5E5"
 
   cursor:
     style: Block

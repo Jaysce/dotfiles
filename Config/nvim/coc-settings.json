@@ -1,12 +1,31 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "html",
     "javascript",
+    "python",
     "typescript",
     "typescriptreact",
     "json",
     "javascriptreact",
     "typescript.tsx"
   ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
+
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.buffer.showHiddenBuffers": true,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "s": "open:vsplit"
+  },
+
   "eslint.filetypes": [
     "javascript",
     "typescript",
