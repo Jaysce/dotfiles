@@ -4,6 +4,7 @@ Plug 'sheerun/vim-polyglot'                         " Better syntax support
 Plug 'jiangmiao/auto-pairs'                         " Auto close brackets
 Plug 'joshdick/onedark.vim'                         " Dark theme
 Plug 'wadackel/vim-dogrun'                          " Dark purple theme
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Intellisense
 Plug 'ryanoasis/vim-devicons'                       " Icons in NERDTree
 Plug 'vim-airline/vim-airline'                      " Status line
