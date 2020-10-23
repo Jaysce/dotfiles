@@ -4,7 +4,7 @@ Plug 'sheerun/vim-polyglot'                         " Better syntax support
 Plug 'jiangmiao/auto-pairs'                         " Auto close brackets
 Plug 'joshdick/onedark.vim'                         " Dark theme
 Plug 'wadackel/vim-dogrun'                          " Dark purple theme
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'ghifarit53/tokyonight-vim'                    " Dark sythmwave theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Intellisense
 Plug 'ryanoasis/vim-devicons'                       " Icons in NERDTree
 Plug 'vim-airline/vim-airline'                      " Status line
@@ -16,5 +16,6 @@ Plug 'tpope/vim-fugitive'                           " Git support
 Plug 'tpope/vim-rhubarb'                            " Github
 Plug 'junegunn/gv.vim'                              " Git commit browser
 Plug 'alvan/vim-closetag'                           " Auto close
+Plug 'norcalli/nvim-colorizer.lua'                  " Color hex values
 
 call plug#end()

@@ -6,18 +6,19 @@ for a number of applications.
 ## Contents:
 
 **Configuration Files:**
-- Zsh Runtime Configuration
-- Neovim Runtime Configuration
-- iTerm2 JSON Profile Configuration
+- zsh
+- Neovim
+- iTerm2
+- Yabai
+- skhd
+- coc
 
 **Other Files:**
 - macOS Setup Script
 
 ## Images
 
-**Alacritty** | **Neovim**
-:-----------: | :--------:
-![Screenshot](https://raw.githubusercontent.com/jaysce/dotfiles/master/Images/Alacritty.png) | ![Screenshot](https://raw.githubusercontent.com/jaysce/dotfiles/master/Images/Neovim.png)
+![Screenshot](https://raw.githubusercontent.com/jaysce/dotfiles/master/Images/Desktop.png)
 
 ## Installation / Setup
 

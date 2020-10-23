@@ -1,5 +1,5 @@
 # Application Open Keybinds
-cmd - return : env WAYLAND_DISPLAY= alacritty
+cmd - return : alacritty
 cmd + shift - return : code
 alt - return : open -a '/Applications/Safari.app'
 
