@@ -16,6 +16,5 @@ Plug 'tpope/vim-fugitive'                           " Git support
 Plug 'tpope/vim-rhubarb'                            " Github
 Plug 'junegunn/gv.vim'                              " Git commit browser
 Plug 'alvan/vim-closetag'                           " Auto close
-Plug 'norcalli/nvim-colorizer.lua'                  " Color hex values
 
 call plug#end()

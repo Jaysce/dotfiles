@@ -161,3 +161,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent> <C-f> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 autocmd User CocNvimInit :CocCommand explorer
+
+" coc-highlight
+autocmd CursorHold * silent call CocActionAsync('highlight')

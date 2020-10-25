@@ -36,6 +36,9 @@ yabai -m config normal_window_border_color   0xff505050
 # - Yabai Rules ----------------------------------------------------------------
 
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
 yabai -m rule --add app=Things manage=off
 yabai -m rule --add app=ColorSlurp manage=off
 yabai -m rule --add app=Übersicht manage=off
