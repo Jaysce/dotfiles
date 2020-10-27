@@ -2,7 +2,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'sheerun/vim-polyglot'                         " Better syntax support
 Plug 'jiangmiao/auto-pairs'                         " Auto close brackets
-Plug 'joshdick/onedark.vim'                         " Dark theme
+Plug 'joshdick/onedark.vim'                         " Atom Dark theme
 Plug 'wadackel/vim-dogrun'                          " Dark purple theme
 Plug 'ghifarit53/tokyonight-vim'                    " Dark sythmwave theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Intellisense
@@ -16,5 +16,7 @@ Plug 'tpope/vim-fugitive'                           " Git support
 Plug 'tpope/vim-rhubarb'                            " Github
 Plug 'junegunn/gv.vim'                              " Git commit browser
 Plug 'alvan/vim-closetag'                           " Auto close
+Plug 'liuchengxu/vim-which-key'                     " Keybinding popup
+Plug 'voldikss/vim-floaterm'                        " Floating terminal
 
 call plug#end()

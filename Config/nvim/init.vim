@@ -19,9 +19,11 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/sneak.vim
 source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/closetag.vim
+source $HOME/.config/nvim/plug-config/floaterm.vim
 
 " - Key Bindings ---------------------------------------------------------------
 source $HOME/.config/nvim/keys/mappings.vim
+source $HOME/.config/nvim/keys/which-key.vim
 
 " - Themes ---------------------------------------------------------------------
 source $HOME/.config/nvim/themes/tokyonight.vim
