@@ -20,7 +20,7 @@ yabai -m config focus_follows_mouse          autoraise
 
 # - Gaps / Padding Settings ----------------------------------------------------
 
-yabai -m config top_padding                  40
+yabai -m config top_padding                  34
 yabai -m config bottom_padding               10
 yabai -m config left_padding                 10
 yabai -m config right_padding                10
@@ -35,6 +35,7 @@ yabai -m config normal_window_border_color   0xff505050
 
 # - Yabai Rules ----------------------------------------------------------------
 
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^Messages$" manage=off

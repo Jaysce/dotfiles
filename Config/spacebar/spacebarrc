@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+spacebar -m config position           top
+spacebar -m config height             23
+spacebar -m config spacing_left       25
+spacebar -m config spacing_right      15
+spacebar -m config text_font          "JetBrainsMono Nerd Font:Regular:12.0"
+spacebar -m config icon_font          "JetBrainsMono Nerd Font:Regular:12.0"
+spacebar -m config background_color   0xff1A1B27
+spacebar -m config foreground_color   0xffA8B1D9
+spacebar -m config space_icon_color   0xffFF6C8D
+spacebar -m config power_icon_color   0xffcFFE0AC
+spacebar -m config battery_icon_color 0xff8FD15A
+spacebar -m config dnd_icon_color     0xffC396FE
+spacebar -m config clock_icon_color   0xff72A1FE
+spacebar -m config space_icon_strip   I II III IV V VI VII VIII IX X
+spacebar -m config power_icon_strip    
+spacebar -m config space_icon         
+spacebar -m config clock_icon         
+spacebar -m config dnd_icon           
+spacebar -m config clock_format       "%a %d %b %I:%M %p"
+
+echo "spacebar configuration loaded.."
