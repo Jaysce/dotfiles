@@ -17,7 +17,8 @@ echo 'If not exit with ⌃C, and install Xcode along with other MAS apps or use:
 echo 'xcode-select -install'
 echo ' '
 echo 'MAS apps to install:'
-echo 'Xcode, Things3, Wipr, Unarchiver, Affinity, ColorSlurp, Twitter, GoodNotes, Messenger'
+echo 'Xcode, Things3, Wipr, Unarchiver, Affinity, ColorSlurp, Twitter, GoodNotes,
+Messenger, Mimestream, JumpDesktop, Amphetamine, Thor'
 
 read response
 
@@ -73,7 +74,6 @@ cask=(
   font-fira-code
   font-hack-nerd-font
   font-jetbrains-mono-nerd-font
-  github
   google-chrome
   iina
   intellij-idea-ce
@@ -117,11 +117,11 @@ ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 # SymLink to .config
 ln -sv ~/dotfiles/Config/nvim ~/.config
+ln -sv ~/dotfiles/Config/ranger ~/.config
+ln -sv ~/dotfiles/Config/skhd ~/.config
+ln -sv ~/dotfiles/Config/spacebar ~/.config
+ln -sv ~/dotfiles/Config/yabai ~/.config
 ln -sv ~/dotfiles/Config/starship.toml ~/.config
-
-# Install Vim-Plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 #--- System / App Preferences --------------------------------------------------
 
