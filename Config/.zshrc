@@ -18,7 +18,6 @@ fortune ~/dotfiles/quotes
 export ZSH="/Users/sasindujayasinghe/.oh-my-zsh"
 
 # Path exports
-export PATH="/usr/local/anaconda3/bin:$PATH"
 export PATH=~/flutter/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
@@ -118,17 +117,8 @@ export EDITOR=nvim
 # alias ls="colorls --sd -A"
 # alias clear="clear; neofetch"
 
-# PowerLevel9K Customisation
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_MODE='nerdfont-complete'
-# source ~/powerlevel9k/powerlevel9k.zsh-theme
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Other Customisation
 eval "$(starship init zsh)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
