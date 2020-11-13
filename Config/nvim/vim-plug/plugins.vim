@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.nvim/autoload/plugged')
 
 Plug 'sheerun/vim-polyglot'                         " Better syntax support
 Plug 'jiangmiao/auto-pairs'                         " Auto close brackets
