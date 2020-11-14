@@ -5,6 +5,7 @@ Plug 'jiangmiao/auto-pairs'                         " Auto close brackets
 Plug 'joshdick/onedark.vim'                         " Atom Dark theme
 Plug 'wadackel/vim-dogrun'                          " Dark purple theme
 Plug 'ghifarit53/tokyonight-vim'                    " Dark sythmwave theme
+Plug 'sainnhe/gruvbox-material'                     " Gruuuuvbox
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Intellisense
 Plug 'ryanoasis/vim-devicons'                       " Icons in NERDTree
 Plug 'vim-airline/vim-airline'                      " Status line
