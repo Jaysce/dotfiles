@@ -1,7 +1,7 @@
 # Application Open Keybinds
-cmd - return : alacritty
-cmd + shift - return : code
-alt - return : open -a '/Applications/Safari.app'
+# cmd - return : alacritty
+# cmd + shift - return : code
+# alt - return : open -a '/Applications/Safari.app'
 
 # Yabai and Tmux Window Focus
 alt - h [
