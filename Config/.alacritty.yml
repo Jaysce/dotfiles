@@ -129,32 +129,32 @@ colors:
 
 # Colors (Tokyo Night)
 #colors:
-  ## Default colors
-  #primary:
-    #background: '0x1a1b26'
-    #foreground: '0xa9b1d6'
+  # Default colors
+  primary:
+    background: '0x1a1b26'
+    foreground: '0xa9b1d6'
 
-  ## Normal colors
-  #normal:
-    #black:   '0x32344a'
-    #red:     '0xf7768e'
-    #green:   '0x9ece6a'
-    #yellow:  '0xe0af68'
-    #blue:    '0x7aa2f7'
-    #magenta: '0xad8ee6'
-    #cyan:    '0x449dab'
-    #white:   '0x787c99'
+  # Normal colors
+  normal:
+    black:   '0x32344a'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xad8ee6'
+    cyan:    '0x449dab'
+    white:   '0x787c99'
 
-  ## Bright colors
-  #bright:
-    #black:   '0x444b6a'
-    #red:     '0xff7a93'
-    #green:   '0xb9f27c'
-    #yellow:  '0xff9e64'
-    #blue:    '0x7da6ff'
-    #magenta: '0xbb9af7'
-    #cyan:    '0x0db9d7'
-    #white:   '0xacb0d0'
+  # Bright colors
+  bright:
+    black:   '0x444b6a'
+    red:     '0xff7a93'
+    green:   '0xb9f27c'
+    yellow:  '0xff9e64'
+    blue:    '0x7da6ff'
+    magenta: '0xbb9af7'
+    cyan:    '0x0db9d7'
+    white:   '0xacb0d0'
 
 # Colors (Aubergine)
 #colors:
@@ -185,29 +185,29 @@ colors:
     #cyan: "#59E0DF"
     #white: "#E5E5E5"
 
-  cursor:
-    style: Block
-    unfocused_hollow: true
-    text: CellBackground
-    cursor: CellForeground
+  #cursor:
+    #style: Block
+    #unfocused_hollow: true
+    #text: CellBackground
+    #cursor: CellForeground
 
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
+  #vi_mode_cursor:
+    #text: CellBackground
+    #cursor: CellForeground
 
-  selection:
-    text: "0xffffff"
-    background: "0xdc3232"
-    white: "0xffffff"
+  #selection:
+    #text: "0xffffff"
+    #background: "0xdc3232"
+    #white: "0xffffff"
 
-  search:
-    matches:
-      foreground: "#000000"
-      background: "#ffffff"
+  #search:
+    #matches:
+      #foreground: "#000000"
+      #background: "#ffffff"
 
-    bar:
-      background: "#c5c8c6"
-      foreground: "#1d1f21"
+    #bar:
+      #background: "#c5c8c6"
+      #foreground: "#1d1f21"
 
 # Mouse
 mouse:

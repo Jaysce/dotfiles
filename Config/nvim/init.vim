@@ -26,5 +26,5 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/which-key.vim
 
 " - Themes ---------------------------------------------------------------------
-source $HOME/.config/nvim/themes/gruvbox.vim
+source $HOME/.config/nvim/themes/tokyonight.vim
 source $HOME/.config/nvim/themes/airline.vim

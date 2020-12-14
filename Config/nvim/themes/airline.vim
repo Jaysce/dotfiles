@@ -10,7 +10,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-let g:airline_theme = 'gruvbox_material'
+let g:airline_theme = 'tokyonight'
 
 set showtabline=2
 set noshowmode

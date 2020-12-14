@@ -48,6 +48,7 @@ brew=(
   gotop
   gradle
   htop
+  jq
   lazygit
   neofetch
   neovim
