@@ -18,7 +18,7 @@ for a number of applications.
 
 ## Images
 
-![Screenshot](https://raw.githubusercontent.com/jaysce/dotfiles/master/Images/Desktop.png)
+![Screenshot](Images/Desktop.png)
 
 ## Installation / Setup
 

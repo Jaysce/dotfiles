@@ -116,6 +116,7 @@ export EDITOR=nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias ls="colorls --sd -A"
 # alias clear="clear; neofetch"
+alias ccs='spctl -a -t exec -vv'
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
