@@ -19,5 +19,6 @@ Plug 'junegunn/gv.vim'                              " Git commit browser
 Plug 'alvan/vim-closetag'                           " Auto close
 Plug 'liuchengxu/vim-which-key'                     " Keybinding popup
 Plug 'voldikss/vim-floaterm'                        " Floating terminal
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()

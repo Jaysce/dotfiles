@@ -1,8 +1,11 @@
 # Application Open Keybinds
-cmd - return : alacritty
-cmd + shift - return : code
-alt - return : open -a '/Applications/Safari.app'
-ctrl - return : open -a '/Applications/Spotify.app'
+# cmd - return : open -a '/Applications/Alacritty.app'
+# cmd + shift - return : code
+# alt - return : open -a '/Applications/Safari.app'
+# ctrl - return : open -a '/Applications/Spotify.app'
+
+# Toggle between tiled and float
+cmd + alt + ctrl - t : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
 
 # Yabai and Tmux Window Focus
 alt - h [
