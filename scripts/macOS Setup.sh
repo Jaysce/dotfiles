@@ -42,7 +42,9 @@ brew=(
   ccls
   cmake
   cmatrix
+  fd
   fortune
+  fzf
   gcc
   gh
   gotop
@@ -50,14 +52,19 @@ brew=(
   htop
   jq
   lazygit
+  lua
+  luarocks
   neofetch
   neovim
   node
   openjdk
   ranger
+  ripgrep
   starship
   tmux
+  the_silver_searcher
   umlet
+  wget
   yarn
   zsh-autosuggestions
   zsh-completions
@@ -83,6 +90,7 @@ cask=(
   rectangle
   sf-symbols
   sketch
+  spaceman
   spotify
   visual-studio-code
 )
@@ -92,12 +100,12 @@ brew update
 brew upgrade
 
 # Tap into required repositories
-brew tap github/gh
 brew tap homebrew/cask-fonts
 
 # Begin installing formulae and casks
 brew install ${brew[@]}
-brew cask install ${cask[@]}
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+brew install --cask ${cask[@]}
 
 # Install Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

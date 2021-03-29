@@ -21,3 +21,6 @@ symbol = "Python "
 [rust]
 symbol = "Rust "
 style = "bold 131"
+
+[swift]
+symbol = "Swift "
