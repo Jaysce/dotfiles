@@ -15,6 +15,9 @@ style = "bold 208"
 [nodejs]
 symbol = "Node "
 
+[package]
+symbol = " "
+
 [python]
 symbol = "Python "
 

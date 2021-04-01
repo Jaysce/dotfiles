@@ -31,3 +31,4 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Other Customisation
 eval "$(starship init zsh)"
+export PATH=$HOME/.config/nvim/utils/bin:$PATH

@@ -125,7 +125,7 @@ ln -sv ~/dotfiles/Config/.gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 # SymLink to .config
-ln -sv ~/dotfiles/Config/nvim ~/.config
+# ln -sv ~/dotfiles/Config/nvim ~/.config
 ln -sv ~/dotfiles/Config/ranger ~/.config
 ln -sv ~/dotfiles/Config/skhd ~/.config
 ln -sv ~/dotfiles/Config/spacebar ~/.config

@@ -41,34 +41,34 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (One Darker)
-#colors:
-  ## Default colors
-  #primary:
-    #background: "#1E1E1E"
-    ## background: "#2E3440"
-    #foreground: "#D8DEE9"
+colors:
+  # Default colors
+  primary:
+    background: "#1E1E1E"
+    # background: "#2E3440"
+    foreground: "#D8DEE9"
 
-  ## Normal colors
-  #normal:
-    #black: "#3B4252"
-    #red: "#D54646"
-    #green: "#23D18B"
-    #yellow: "#D7BA7D"
-    #blue: "#569CD6"
-    #magenta: "#C586C0"
-    #cyan: "#29B8DB"
-    #white: "#abb2bf"
+  # Normal colors
+  normal:
+    black: "#3B4252"
+    red: "#D54646"
+    green: "#23D18B"
+    yellow: "#D7BA7D"
+    blue: "#569CD6"
+    magenta: "#C586C0"
+    cyan: "#29B8DB"
+    white: "#abb2bf"
 
-  ## Bright colors
-  #bright:
-    #black: "#3B4252"
-    #red: "#D54646"
-    #green: "#23D18B"
-    #yellow: "#D7BA7D"
-    #blue: "#569CD6"
-    #magenta: "#C586C0"
-    #cyan: "#29B8DB"
-    #white: "#ECEFF4"
+  # Bright colors
+  bright:
+    black: "#3B4252"
+    red: "#D54646"
+    green: "#23D18B"
+    yellow: "#D7BA7D"
+    blue: "#569CD6"
+    magenta: "#C586C0"
+    cyan: "#29B8DB"
+    white: "#ECEFF4"
 
 # Pale Night
 #colors:
@@ -187,33 +187,33 @@ draw_bold_text_with_bright_colors: true
     #white:   '#D8BE93'
 
 # Colors (Tokyo Night)
-colors:
-  # Default colors
-  primary:
-    background: '0x1a1b26'
-    foreground: '0xa9b1d6'
-
-  # Normal colors
-  normal:
-    black:   '0x32344a'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xad8ee6'
-    cyan:    '0x449dab'
-    white:   '0x787c99'
-
-  # Bright colors
-  bright:
-    black:   '0x444b6a'
-    red:     '0xff7a93'
-    green:   '0xb9f27c'
-    yellow:  '0xff9e64'
-    blue:    '0x7da6ff'
-    magenta: '0xbb9af7'
-    cyan:    '0x0db9d7'
-    white:   '0xacb0d0'
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x1a1b26'
+#    foreground: '0xa9b1d6'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x32344a'
+#    red:     '0xf7768e'
+#    green:   '0x9ece6a'
+#    yellow:  '0xe0af68'
+#    blue:    '0x7aa2f7'
+#    magenta: '0xad8ee6'
+#    cyan:    '0x449dab'
+#    white:   '0x787c99'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x444b6a'
+#    red:     '0xff7a93'
+#    green:   '0xb9f27c'
+#    yellow:  '0xff9e64'
+#    blue:    '0x7da6ff'
+#    magenta: '0xbb9af7'
+#    cyan:    '0x0db9d7'
+#    white:   '0xacb0d0'
 
 # Colors (Aubergine)
 #colors:
