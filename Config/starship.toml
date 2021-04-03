@@ -12,11 +12,14 @@ symbol = "Conda "
 symbol = "Java "
 style = "bold 208"
 
+[lua]
+symbol = "Lua "
+
 [nodejs]
 symbol = "Node "
 
 [package]
-symbol = " "
+symbol = " "
 
 [python]
 symbol = "Python "

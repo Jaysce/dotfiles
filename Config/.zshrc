@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export LANG=en_AU.UTF-8
 export EDITOR=nvim
+export TERM=xterm-256color
 
 # Aliases
 alias r='ranger'
