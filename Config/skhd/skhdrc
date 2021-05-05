@@ -82,16 +82,16 @@ shift + ctrl - w : yabai -m window --move rel:0:-30
 shift + ctrl - d : yabai -m window --move rel:30:0
 
 # Increase Window Size
-shift + alt - a : yabai -m window --resize left:-30:0
-shift + alt - s : yabai -m window --resize bottom:0:30
-shift + alt - w : yabai -m window --resize top:0:-30
-shift + alt - d : yabai -m window --resize right:30:0
+# shift + alt - a : yabai -m window --resize left:-30:0
+# shift + alt - s : yabai -m window --resize bottom:0:30
+# shift + alt - w : yabai -m window --resize top:0:-30
+# shift + alt - d : yabai -m window --resize right:30:0
 
 # Decrease Window Size
-shift + cmd - a : yabai -m window --resize left:30:0
-shift + cmd - s : yabai -m window --resize bottom:0:-30
-shift + cmd - w : yabai -m window --resize top:0:30
-shift + cmd - d : yabai -m window --resize right:-30:0
+# shift + cmd - a : yabai -m window --resize left:30:0
+# shift + cmd - s : yabai -m window --resize bottom:0:-30
+# shift + cmd - w : yabai -m window --resize top:0:30
+# shift + cmd - d : yabai -m window --resize right:-30:0
 
 # Toggle Window Fullscreen
 alt - f : yabai -m window --toggle zoom-fullscreen; \
