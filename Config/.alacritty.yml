@@ -40,35 +40,65 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-# Colors (One Darker)
+# Colors (Lunar)
 colors:
   # Default colors
   primary:
-    background: "#1E1E1E"
+    background: "#222732"
     # background: "#2E3440"
-    foreground: "#D8DEE9"
+    foreground: "#AAB2C0"
 
   # Normal colors
   normal:
     black: "#3B4252"
-    red: "#D54646"
-    green: "#23D18B"
-    yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
+    red: "#CC5A68"
+    green: "#00CDAF"
+    yellow: "#ECCB8B"
+    blue: "#7AA1C4"
+    magenta: "#BB8BAF"
+    cyan: "#78C2D2"
     white: "#abb2bf"
 
   # Bright colors
   bright:
     black: "#3B4252"
-    red: "#D54646"
-    green: "#23D18B"
-    yellow: "#D7BA7D"
-    blue: "#569CD6"
-    magenta: "#C586C0"
-    cyan: "#29B8DB"
-    white: "#ECEFF4"
+    red: "#CC5A68"
+    green: "#00CDAF"
+    yellow: "#ECCB8B"
+    blue: "#7AA1C4"
+    magenta: "#BB8BAF"
+    cyan: "#78C2D2"
+    white: "#D7DEEA"
+
+# Colors (One Darker)
+# colors:
+#   # Default colors
+#   primary:
+#     background: "#1E1E1E"
+#     # background: "#2E3440"
+#     foreground: "#D8DEE9"
+# 
+#   # Normal colors
+#   normal:
+#     black: "#3B4252"
+#     red: "#D54646"
+#     green: "#23D18B"
+#     yellow: "#D7BA7D"
+#     blue: "#569CD6"
+#     magenta: "#C586C0"
+#     cyan: "#29B8DB"
+#     white: "#abb2bf"
+# 
+#   # Bright colors
+#   bright:
+#     black: "#3B4252"
+#     red: "#D54646"
+#     green: "#23D18B"
+#     yellow: "#D7BA7D"
+#     blue: "#569CD6"
+#     magenta: "#C586C0"
+#     cyan: "#29B8DB"
+#     white: "#ECEFF4"
 
 # Pale Night
 #colors:
@@ -99,34 +129,34 @@ colors:
     #cyan:    '0xa3f7ff'
     #white:   '0xffffff'
 
-## Colors (Dogrun)
-#colors:
-  ## Default colors
-  #primary:
-    #background: "#222433"
-    #foreground: "#9ea3c0"
-
-  ## Normal colors
-  #normal:
-    #black: "#111219"
-    #red: "#db5966"
-    #green: "#7cbe8c"
-    #yellow: "#9b956b"
-    #blue: "#2994c6"
-    #magenta: "#6c75cb"
-    #cyan: "#73c1a9"
-    #white: "#9ea3c0"
-
-  ## Bright colors
-  #bright:
-    #black: "#6A709C"
-    #red: "#FD6776"
-    #green: "#96E6A9"
-    #yellow: "#DFD69A"
-    #blue: "#35BFFF"
-    #magenta: "#8893FF"
-    #cyan: "#84DEC2"
-    #white: "#D0D7FD"
+# Colors (Dogrun)
+# colors:
+#   # Default colors
+#   primary:
+#     background: "#222433"
+#     foreground: "#9ea3c0"
+# 
+#   # Normal colors
+#   normal:
+#     black: "#111219"
+#     red: "#db5966"
+#     green: "#7cbe8c"
+#     yellow: "#9b956b"
+#     blue: "#2994c6"
+#     magenta: "#6c75cb"
+#     cyan: "#73c1a9"
+#     white: "#9ea3c0"
+# 
+#   # Bright colors
+#   bright:
+#     black: "#6A709C"
+#     red: "#FD6776"
+#     green: "#96E6A9"
+#     yellow: "#DFD69A"
+#     blue: "#35BFFF"
+#     magenta: "#8893FF"
+#     cyan: "#84DEC2"
+#     white: "#D0D7FD"
 
 # Colors (One Dark)
 #colors:
