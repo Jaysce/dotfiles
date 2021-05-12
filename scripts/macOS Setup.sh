@@ -82,7 +82,7 @@ cask=(
   daisydisk
   discord
   figma
-  font-fira-code
+  font-fira-code-nerd-font
   font-hack-nerd-font
   font-jetbrains-mono-nerd-font
   google-chrome
