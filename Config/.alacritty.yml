@@ -1,8 +1,8 @@
 # Window Customisation
 window:
   dimensions:
-    columns: 95
-    lines: 30
+    columns: 85
+    lines: 25
   position:
     x: 310
     y: 500
@@ -20,19 +20,19 @@ background_opacity: 1
 # Font configuration
 font:
   normal:
-    family: JetBrainsMono Nerd Font
-    style: Regular
+    family: FiraCode Nerd Font
+    style: Retina
   bold:
-    family: JetBrainsMono Nerd Font
-    style: Extra Bold
+    family: FiraCode Nerd Font
+    style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
   size: 14.0
 
   offset:
     x: 0
-    y: 0
+    y: 2
 
   glyph_offset:
     x: 0
@@ -41,34 +41,34 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Lunar)
-colors:
-  # Default colors
-  primary:
-    background: "#222732"
-    # background: "#2E3440"
-    foreground: "#AAB2C0"
-
-  # Normal colors
-  normal:
-    black: "#3B4252"
-    red: "#CC5A68"
-    green: "#00CDAF"
-    yellow: "#ECCB8B"
-    blue: "#7AA1C4"
-    magenta: "#BB8BAF"
-    cyan: "#78C2D2"
-    white: "#abb2bf"
-
-  # Bright colors
-  bright:
-    black: "#3B4252"
-    red: "#CC5A68"
-    green: "#00CDAF"
-    yellow: "#ECCB8B"
-    blue: "#7AA1C4"
-    magenta: "#BB8BAF"
-    cyan: "#78C2D2"
-    white: "#D7DEEA"
+# colors:
+#   # Default colors
+#   primary:
+#     background: "#222732"
+#     # background: "#2E3440"
+#     foreground: "#AAB2C0"
+# 
+#   # Normal colors
+#   normal:
+#     black: "#3B4252"
+#     red: "#CC5A68"
+#     green: "#00CDAF"
+#     yellow: "#ECCB8B"
+#     blue: "#7AA1C4"
+#     magenta: "#BB8BAF"
+#     cyan: "#78C2D2"
+#     white: "#abb2bf"
+# 
+#   # Bright colors
+#   bright:
+#     black: "#3B4252"
+#     red: "#CC5A68"
+#     green: "#00CDAF"
+#     yellow: "#ECCB8B"
+#     blue: "#7AA1C4"
+#     magenta: "#BB8BAF"
+#     cyan: "#78C2D2"
+#     white: "#D7DEEA"
 
 # Colors (One Darker)
 # colors:
@@ -297,6 +297,46 @@ colors:
     #bar:
       #background: "#c5c8c6"
       #foreground: "#1d1f21"
+
+# Colors (Dracula PRO)
+colors:
+  # Default colors
+  primary:
+    background: '0x22212c'
+    foreground: '0xf8f8f2'
+
+
+  # Cursor colors
+  cursor:
+    text: '0x454158'
+    cursor: '0xf8f8f2'
+
+  # Selection colors
+  selection:
+    text: '0xf8f8f2'
+    background: '0x454158'
+
+  # Normal colors
+  normal:
+    black:   '0x22212c'
+    red:     '0xff9580'
+    green:   '0x8aff80'
+    yellow:  '0xffff80'
+    blue:    '0x9580ff'
+    magenta: '0xff80bf'
+    cyan:    '0x80ffea'
+    white:   '0xf8f8f2'
+
+  # Bright colors
+  bright:
+    black:   '0x7C6EAD'
+    red:     '0xffaa99'
+    green:   '0xa2ff99'
+    yellow:  '0xffff99'
+    blue:    '0xaa99ff'
+    magenta: '0xff99cc'
+    cyan:    '0x99ffee'
+    white:   '0xffffff'
 
 # Mouse
 mouse:
