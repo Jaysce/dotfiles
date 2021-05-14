@@ -21,10 +21,10 @@ background_opacity: 1
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Retina
+    style: Light
   bold:
     family: FiraCode Nerd Font
-    style: Bold
+    style: Medium
   italic:
     family: FiraCode Nerd Font
     style: Italic

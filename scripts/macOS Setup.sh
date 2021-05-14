@@ -40,6 +40,7 @@ fi
 brew=(
   git
   ccls
+  coreutils
   cmake
   cmatrix
   curl

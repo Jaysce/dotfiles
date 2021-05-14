@@ -6,8 +6,7 @@
 #   d88P            "888 888    888 888 T88b   888    888 
 #  d88P       Y88b  d88P 888    888 888  T88b  Y88b  d88P 
 # d8888888888  "Y8888P"  888    888 888   T88b  "Y8888P"  
-                                                        
-                                                        
+
 fortune ~/dotfiles/quotes
 
 # oh-my-zsh
@@ -33,3 +32,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Other Customisation
 eval "$(starship init zsh)"
 export PATH=$HOME/.config/nvim/utils/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
+source ptSh_set_aliases
