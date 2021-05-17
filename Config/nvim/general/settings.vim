@@ -23,7 +23,6 @@ set autoindent
 set laststatus=0
 set rnu nu
 set cursorline
-set colorcolumn=80
 set background=dark
 set cmdheight=1
 set noshowmode
@@ -36,7 +35,7 @@ set clipboard=unnamedplus
 nnoremap <silent> <esc><esc> :noh<return>
 "set autochdir " Your working directory will always be the same as your working directory
 
-cmap w!! w !sudo tee % 
+cmap w!! w !udo tee %
 
 "--- Integrated Terminal Settings ----------------------------------------------
 
@@ -55,4 +54,10 @@ function! OpenTerminal()
   split term://zsh
   resize 10
 endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <c-n> :call OpenTerminal()<CR>s
+
+" Escape to exit fzf
+if has("nvim")
+  au TermOpen * tnoremap <Esc> <c-\><c-n>
+  au FileType fzf tunmap <Esc>
+endif
