@@ -24,14 +24,17 @@ export TERM=xterm-256color
 alias r='ranger'
 alias lg='lazygit'
 alias ccs='spctl -a -t exec -vv'
+alias cat='bat'
 
 # Plugins
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Other Customisation
-eval "$(starship init zsh)"
-export PATH=$HOME/.config/nvim/utils/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
+export PATH=$HOME/.local/bin:$PATH # Needed for ptSh (Might remove later)
 source ptSh_set_aliases
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""' # Needed to fzf hidden files
+eval "$(starship init zsh)"
+
+# Path exports
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
