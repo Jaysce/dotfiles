@@ -17,8 +17,8 @@ echo 'If not exit with ⌃C, and install Xcode along with other MAS apps or use:
 echo 'xcode-select -install'
 echo ' '
 echo 'MAS apps to install:'
-echo 'Xcode, Things3, Wipr, Unarchiver, Affinity, ColorSlurp, Twitter, GoodNotes,
-Messenger, Mimestream, JumpDesktop, Amphetamine, Thor'
+echo 'Xcode, Things3, AdGuard, Unarchiver, Affinity, ColorSlurp, GoodNotes,
+Mimestream, Thor, CleanShot'
 
 read response
 
@@ -39,6 +39,7 @@ fi
 
 brew=(
   git
+  bat
   ccls
   coreutils
   cmake
