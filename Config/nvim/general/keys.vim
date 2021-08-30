@@ -2,33 +2,36 @@
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
-" Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
-
-" Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
-
-" TAB in general mode will move to text buffer
-nnoremap <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <S-TAB> :bprevious<CR>
-
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Move windows
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
 
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
 
-" Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
 
-nnoremap <Leader>o o<Esc>^Da
-nnoremap <Leder>O O<Esc>^Daa
+" TAB in general mode will move to text buffer
+nnoremap <TAB> :TablineBufferNext<CR>
+" SHIFT-TAB will go back
+nnoremap <S-TAB> :TablineBufferPrevious<CR>
+
+" Increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+" Select all
+nmap <C-a> gg<S-v>G
+
+" Executions
+nnoremap <silent> <leader>r :!g++-11 -Wall % && ./a.out<cr>
+
+nmap <leader>e :CocCommand explorer<CR>

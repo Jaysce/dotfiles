@@ -7,15 +7,14 @@
 
 
 " - Plugins --------------------------------------------------------------------
-source $HOME/.config/nvim/plugins/plugins.vim
+source $HOME/.config/nvim/after/plugin/plugins.vim
 
 " - General Settings -----------------------------------------------------------
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/keys.vim
-source $HOME/.config/nvim/general/executions.vim
 
 " - Plugin Settings ------------------------------------------------------------
-source $HOME/.config/nvim/plugins/plug-config/coc.vim
-source $HOME/.config/nvim/plugins/plug-config/closetag.vim
-source $HOME/.config/nvim/plugins/plug-config/airline.vim
-source $HOME/.config/nvim/plugins/plug-config/fzf.vim
+source $HOME/.config/nvim/after/plugin/coc.vim
+source $HOME/.config/nvim/after/plugin/closetag.vim
+
+set exrc

@@ -11,6 +11,8 @@ fortune ~/dotfiles/quotes
 
 # oh-my-zsh
 export ZSH="/Users/sasindujayasinghe/.oh-my-zsh"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/"
 ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -32,9 +34,26 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Other Customisation
 export PATH=$HOME/.local/bin:$PATH # Needed for ptSh (Might remove later)
+export PATH=/usr/local/anaconda3/bin/:$PATH # conda
 source ptSh_set_aliases
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""' # Needed to fzf hidden files
 eval "$(starship init zsh)"
 
 # Path exports
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

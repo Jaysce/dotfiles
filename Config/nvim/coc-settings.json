@@ -1,3 +1,15 @@
 {
-  "clangd.path": "/Users/sasindujayasinghe/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
+  "clangd.path": "/Users/sasindujayasinghe/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+  "explorer.width": 30,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.keyMappings.global": {
+    "v": "open:vsplit",
+    "rn": "rename",
+    "yy": "copyFile",
+    "dd": "delete",
+    "a": "addFile",
+    "A": "addDirectory"
+  }
 }
