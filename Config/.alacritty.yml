@@ -188,33 +188,33 @@ draw_bold_text_with_bright_colors: true
     #white:   '0x5c6370'
 
 # Colors (Gruvbox Material)
-#colors:
-  ## Default colors
-  #primary:
-    #background: '#202020'
-    #foreground: '#D8BE93'
+colors:
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd4be98'
 
-  ## Normal colors
-  #normal:
-    #black:   '#2A2827'
-    #red:     '#FB5F5C'
-    #green:   '#A5B858'
-    #yellow:  '#E0A546'
-    #blue:    '#6FB0A3'
-    #magenta: '#DF819B'
-    #cyan:    '#7CB67D'
-    #white:   '#D8BE93'
+  # Normal colors
+  normal:
+    black:   '0x32302f'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
 
-  ## Bright colors
-  #bright:
-    #black:   '#6B5E52'
-    #red:     '#FB5F5C'
-    #green:   '#A5B858'
-    #yellow:  '#E0A546'
-    #blue:    '#6FB0A3'
-    #magenta: '#DF819B'
-    #cyan:    '#7CB67D'
-    #white:   '#D8BE93'
+  # Bright colors
+  bright:
+    black:   '0x32302f'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xd4be98'
 
 # Colors (Tokyo Night)
 #colors:
@@ -299,44 +299,44 @@ draw_bold_text_with_bright_colors: true
       #foreground: "#1d1f21"
 
 # Colors (Dracula PRO)
-colors:
-  # Default colors
-  primary:
-    background: '0x22212c'
-    foreground: '0xf8f8f2'
+#colors:
+  ## Default colors
+  #primary:
+    #background: '0x22212c'
+    #foreground: '0xf8f8f2'
 
 
-  # Cursor colors
-  cursor:
-    text: '0x454158'
-    cursor: '0xf8f8f2'
+  ## Cursor colors
+  #cursor:
+    #text: '0x454158'
+    #cursor: '0xf8f8f2'
 
-  # Selection colors
-  selection:
-    text: '0xf8f8f2'
-    background: '0x454158'
+  ## Selection colors
+  #selection:
+    #text: '0xf8f8f2'
+    #background: '0x454158'
 
-  # Normal colors
-  normal:
-    black:   '0x22212c'
-    red:     '0xff9580'
-    green:   '0x8aff80'
-    yellow:  '0xffff80'
-    blue:    '0x9580ff'
-    magenta: '0xff80bf'
-    cyan:    '0x80ffea'
-    white:   '0xf8f8f2'
+  ## Normal colors
+  #normal:
+    #black:   '0x22212c'
+    #red:     '0xff9580'
+    #green:   '0x8aff80'
+    #yellow:  '0xffff80'
+    #blue:    '0x9580ff'
+    #magenta: '0xff80bf'
+    #cyan:    '0x80ffea'
+    #white:   '0xf8f8f2'
 
   # Bright colors
-  bright:
-    black:   '0x7C6EAD'
-    red:     '0xffaa99'
-    green:   '0xa2ff99'
-    yellow:  '0xffff99'
-    blue:    '0xaa99ff'
-    magenta: '0xff99cc'
-    cyan:    '0x99ffee'
-    white:   '0xffffff'
+  #bright:
+    #black:   '0x7C6EAD'
+    #red:     '0xffaa99'
+    #green:   '0xa2ff99'
+    #yellow:  '0xffff99'
+    #blue:    '0xaa99ff'
+    #magenta: '0xff99cc'
+    #cyan:    '0x99ffee'
+    #white:   '0xffffff'
 
 # Mouse
 mouse:
