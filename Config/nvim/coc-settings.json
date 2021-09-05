@@ -11,5 +11,10 @@
     "dd": "delete",
     "a": "addFile",
     "A": "addDirectory"
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+      "css", 
+      "javascript",
+      "typescript"
+  ]
 }

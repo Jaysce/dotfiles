@@ -11,6 +11,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'tpope/vim-surround'
 Plug 'sainnhe/gruvbox-material'
+Plug 'ntk148v/vim-horizon'
 Plug 'eddyekofo94/gruvbox-flat.nvim'
 
 Plug 'windwp/nvim-autopairs'

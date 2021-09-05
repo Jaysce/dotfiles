@@ -16,5 +16,6 @@ source $HOME/.config/nvim/general/keys.vim
 " - Plugin Settings ------------------------------------------------------------
 source $HOME/.config/nvim/after/plugin/coc.vim
 source $HOME/.config/nvim/after/plugin/closetag.vim
+source $HOME/.config/nvim/after/plugin/coc-prettier.vim
 
 set exrc

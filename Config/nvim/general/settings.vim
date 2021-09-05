@@ -13,9 +13,9 @@ set iskeyword+=-
 set mouse=a
 set t_Co=256
 set conceallevel=0
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 set smartindent
@@ -54,13 +54,15 @@ set formatoptions+=r
 
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
   set winblend=0
   set wildoptions=pum
   set pumblend=5
   set background=dark
-  let g:gruvbox_material_background = 'hard'
-  colorscheme gruvbox-material
+  "let g:gruvbox_material_background = 'hard'
+  colorscheme horizon
 endif
 
 "--- Integrated Terminal Settings ----------------------------------------------
