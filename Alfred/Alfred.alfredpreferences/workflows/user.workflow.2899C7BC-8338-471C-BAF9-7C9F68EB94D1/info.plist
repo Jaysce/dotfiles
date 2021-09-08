@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D2970D35-74DD-4182-B391-2CD52F1C7D21</string>
+				<string>C646725E-9826-479A-9B5F-376156CF25B0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -37,7 +37,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Alacritty.app</string>
+					<string>/Applications/iTerm.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -45,7 +45,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>D2970D35-74DD-4182-B391-2CD52F1C7D21</string>
+			<string>C646725E-9826-479A-9B5F-376156CF25B0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -96,10 +96,10 @@ A hotkey needs to contain a modifier (Cmd, Ctrl or Alt) and a keyboard character
 			<key>ypos</key>
 			<integer>35</integer>
 		</dict>
-		<key>D2970D35-74DD-4182-B391-2CD52F1C7D21</key>
+		<key>C646725E-9826-479A-9B5F-376156CF25B0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>190</integer>
+			<integer>200</integer>
 			<key>ypos</key>
 			<integer>35</integer>
 		</dict>
