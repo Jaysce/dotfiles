@@ -24,10 +24,6 @@ nnoremap <TAB> :TablineBufferNext<CR>
 " SHIFT-TAB will go back
 nnoremap <S-TAB> :TablineBufferPrevious<CR>
 
-" Increment/decrement
-nnoremap + <C-a>
-nnoremap - <C-x>
-
 " Select all
 nmap <C-a> gg<S-v>G
 

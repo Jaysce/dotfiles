@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'sainnhe/gruvbox-material'
 Plug 'ntk148v/vim-horizon'
 Plug 'eddyekofo94/gruvbox-flat.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'windwp/nvim-autopairs'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }

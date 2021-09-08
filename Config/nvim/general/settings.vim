@@ -61,8 +61,14 @@ if exists("&termguicolors") && exists("&winblend")
   set wildoptions=pum
   set pumblend=5
   set background=dark
-  "let g:gruvbox_material_background = 'hard'
-  colorscheme horizon
+  let g:tokyonight_style = "night"
+  let g:tokyonight_transparent = "true"
+  let g:tokyonight_lualine_bold = "true"
+  let g:tokyonight_hide_inactive_statusline = "true"
+  let g:tokyonight_italic_comments = "true"
+  let g:tokyonight_dark_float = "true"
+  let g:tokyonight_italic_keywords = "false"
+  colorscheme tokyonight
 endif
 
 "--- Integrated Terminal Settings ----------------------------------------------
