@@ -10,7 +10,7 @@ symbol = "Conda "
 
 [java]
 symbol = "Java "
-style = "bold 208"
+style = "bold 209"
 
 [lua]
 symbol = "Lua "
@@ -31,3 +31,4 @@ style = "bold 131"
 
 [swift]
 symbol = "Swift "
+style = "bold 209"

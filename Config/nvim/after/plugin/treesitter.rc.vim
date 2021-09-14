@@ -10,8 +10,8 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   indent = {
-    enable = false,
-    disable = {},
+    enable = true,
+    disable = {"c", "cpp", "java"},
   },
   ensure_installed = {
     "bash",
