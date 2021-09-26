@@ -7,7 +7,7 @@
 #  d88P       Y88b  d88P 888    888 888  T88b  Y88b  d88P 
 # d8888888888  "Y8888P"  888    888 888   T88b  "Y8888P"  
 
-fortune ~/dotfiles/quotes
+# fortune ~/dotfiles/quotes
 
 # oh-my-zsh
 export ZSH="/Users/sasindujayasinghe/.oh-my-zsh"

@@ -16,5 +16,8 @@
       "css", 
       "javascript",
       "typescript"
-  ]
+  ],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
