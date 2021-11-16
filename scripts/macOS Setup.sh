@@ -18,7 +18,7 @@ echo 'xcode-select -install'
 echo ' '
 echo 'MAS apps to install:'
 echo 'Xcode, Things3, AdGuard, Unarchiver, Affinity, ColorSlurp, GoodNotes,
-Mimestream, Thor, CleanShot'
+Mimestream, CleanShot, Craft, Amphetamine, Twitter, Developer, Dev Cleaner'
 
 read response
 
@@ -29,7 +29,7 @@ cd ~
 if test ! $(which brew)
 then
   echo "Installing Homebrew... "
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   echo "Homebrew is already installed"
   exit 1
@@ -41,16 +41,13 @@ brew=(
   git
   bat
   ccls
-  coreutils
   cmake
-  cmatrix
   curl
   fd
   fortune
   fzf
   gcc
   gh
-  go
   gotop
   gradle
   htop
@@ -70,7 +67,6 @@ brew=(
   the_silver_searcher
   umlet
   wget
-  yarn
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
@@ -81,6 +77,8 @@ cask=(
   alfred
   appcleaner
   bartender
+  brooklyn
+  cleanshot
   daisydisk
   discord
   figma
@@ -90,14 +88,17 @@ cask=(
   google-chrome
   iina
   intellij-idea-ce
+  iterm2
   mos
   notion
+  postman
   rectangle
   sf-symbols
   sketch
   spaceman
   spotify
   visual-studio-code
+  zoom
 )
 
 # Update and upgrade existing homebrew recipes and formulae
@@ -127,10 +128,11 @@ mkdir -p ~/.config
 # SymLink to ~
 ln -sv ~/dotfiles/Config/.alacritty.yml ~/.alacritty.yml
 ln -sv ~/dotfiles/Config/.gitconfig ~/.gitconfig
+ln -sv ~/dotfiles/Config/tmux/.tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 # SymLink to .config
-# ln -sv ~/dotfiles/Config/nvim ~/.config
+ln -sv ~/dotfiles/Config/nvim ~/.config
 ln -sv ~/dotfiles/Config/ranger ~/.config
 ln -sv ~/dotfiles/Config/skhd ~/.config
 ln -sv ~/dotfiles/Config/spacebar ~/.config
