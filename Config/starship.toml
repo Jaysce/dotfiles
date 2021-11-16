@@ -27,6 +27,9 @@ style = "bold 223"
 [python]
 symbol = "Python "
 
+[ruby]
+symbol = "Ruby "
+
 [rust]
 symbol = "Rust "
 style = "bold 131"

@@ -15,7 +15,8 @@
   "coc.preferences.formatOnSaveFiletypes": [
       "css", 
       "javascript",
-      "typescript"
+      "typescript",
+      "typescriptreact"
   ],
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
