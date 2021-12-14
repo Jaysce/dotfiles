@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.googlesuggest</string>
+	<key>connections</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8FFA3AB-AD7D-4316-A84F-5958A671D4FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Get Google Search Suggestions</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Google Suggest</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>searcher</key>
+				<integer>1635215215</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.systemwebsearch</string>
+			<key>uid</key>
+			<string>B8FFA3AB-AD7D-4316-A84F-5958A671D4FF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>g</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Querying suggestions…</string>
+				<key>script</key>
+				<string>require 'cgi'
+require 'json'
+require 'net/http'
+require 'uri'
+
+Seed = ENV['uid_seed'] || Time.now.to_s
+
+def new_result(name)
+  {
+    uid: "#{Seed} #{name}",
+    title: name,
+    subtitle: "Search “#{name}” on Google",
+    arg: name
+  }
+end
+
+script_filter_items = []
+
+script_filter_items.push(new_result(ARGV[0]))
+
+if ARGV[0] != ENV['current_arg']
+  ENV['results']&amp;.split("\n")&amp;.first(8)&amp;.each do |result| script_filter_items.push(new_result(result)) end
+
+  puts({
+    rerun: 0.1,
+    variables: { results: ENV['results'], current_arg: ARGV[0], uid_seed: Seed },
+    items: script_filter_items
+  }.to_json)
+
+  exit 0
+end
+
+Encoded = CGI.escape(ARGV[0])
+Query_url = "https://suggestqueries.google.com/complete/search?output=firefox&amp;q=#{Encoded}"
+Results = JSON.parse(Net::HTTP.get(URI.parse(Query_url)).force_encoding('iso-8859-1').encode('utf-8'))[1]
+
+Results.reject { |result| result == ARGV[0] }.first(8).each do |result| script_filter_items.push(new_result(result)) end
+
+puts({
+  variables: { results: Results.join("\n"), current_arg: ARGV[0], uid_seed: Seed },
+  items: script_filter_items
+}.to_json)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search Google with suggestions</string>
+				<key>title</key>
+				<string>Search Google</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63F60794-BB56-4415-9372-BAF974C3A7E1</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Get inline suggestions to your Google searches.</string>
+	<key>uidata</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>45</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>B8FFA3AB-AD7D-4316-A84F-5958A671D4FF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>265</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.4</string>
+	<key>webaddress</key>
+	<string>https://www.alfredapp.com/</string>
+</dict>
+</plist>
