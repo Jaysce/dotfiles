@@ -37,3 +37,6 @@ style = "bold 131"
 [swift]
 symbol = "Swift "
 style = "bold 209"
+
+[terraform]
+symbol = "Terraform "
