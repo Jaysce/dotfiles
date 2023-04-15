@@ -12,20 +12,21 @@
 
 #--- Homebrew ------------------------------------------------------------------
 
-echo 'Are the Xcode command line tools installed?'
-echo 'If not exit with ⌃C, and install Xcode along with other MAS apps or use:'
-echo 'xcode-select -install'
-echo ' '
-echo 'MAS apps to install:'
-echo 'Xcode, Things3, AdGuard, Unarchiver, Affinity, ColorSlurp, GoodNotes,
-Mimestream, CleanShot, Craft, Amphetamine, Twitter, Developer, Dev Cleaner'
+# Check if Xcode command line tools are installed
+if [[ ! $(xcode-select --version) ]]
+then
+  echo "Xcode Command Line Tools are not installed"
+  echo "Install using 'xcode-select --install' then re-run install script"
+  exit 1
+fi
 
+echo "Press any key to start installation..."
 read response
 
 sudo -v
 cd ~
 
-# Check if Homebrew is installed and install if not
+# Check if Homebrew is already installed and install if not
 if test ! $(which brew)
 then
   echo "Installing Homebrew... "
@@ -48,6 +49,7 @@ brew=(
   fzf
   gcc
   gh
+  git-delta
   gotop
   gradle
   htop
@@ -56,6 +58,7 @@ brew=(
   llvm
   lua
   luarocks
+  mas
   neofetch
   neovim
   node
@@ -73,13 +76,14 @@ brew=(
 )
 
 cask=(
-  alacritty
-  alfred
+  1password
+  affinity-designer
   appcleaner
-  bartender
+  arc
   brooklyn
+  cleanmymac
   cleanshot
-  daisydisk
+  coconutbattery
   discord
   figma
   font-fira-code-nerd-font
@@ -89,16 +93,27 @@ cask=(
   iina
   intellij-idea-ce
   iterm2
-  mos
-  notion
-  postman
+  keka
+  mimestream
+  pictogram
+  raycast
   rectangle
   sf-symbols
-  sketch
   spaceman
   spotify
   visual-studio-code
-  zoom
+)
+
+mas=(
+  497799835   # Xcode
+  1440147259  # AdGuard for Safari
+  937984704   # Amphetamine
+  1287239339  # ColorSlurp
+  1487937127  # Craft
+  1388020431  # DevCleaner
+  640199958   # Developer
+  1444383602  # GoodNotes
+  904280696   # Things
 )
 
 # Update and upgrade existing homebrew recipes and formulae
@@ -108,8 +123,9 @@ brew upgrade
 # Tap into required repositories
 brew tap homebrew/cask-fonts
 
-# Begin installing formulae and casks
+# Begin installing formulae, MAS apps and casks
 brew install ${brew[@]}
+mas install ${mas[@]}
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 brew install --cask ${cask[@]}
 
