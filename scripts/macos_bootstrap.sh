@@ -63,7 +63,6 @@ brew=(
   neovim
   node
   openjdk
-  ranger
   ripgrep
   starship
   tmux
