@@ -10,6 +10,10 @@ style = "bold white"
 [conda]
 symbol = "Conda "
 
+[golang]
+symbol = "Go "
+style = "bold 45"
+
 [java]
 symbol = "Java "
 style = "bold 209"
