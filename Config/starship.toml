@@ -3,6 +3,10 @@ command_timeout = 2000
 [git_branch]
 symbol = " "
 
+[git_status]
+ahead = "󱦲"
+behind = "󱦳"
+
 [aws]
 symbol = "AWS "
 style = "bold white"
