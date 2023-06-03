@@ -29,7 +29,7 @@ symbol = "Lua "
 symbol = "Node "
 
 [package]
-symbol = " "
+symbol = "󰏖 "
 style = "bold 223"
 
 [python]
