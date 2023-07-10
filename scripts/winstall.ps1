@@ -8,6 +8,7 @@ $tui =
 "gh",
 "neovim",
 "starship",
+"delta",
 "FiraCode"
 
 $gui = 
