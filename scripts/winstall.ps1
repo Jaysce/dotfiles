@@ -28,6 +28,7 @@ Set-Location
 Write-Output "Installing scoop..."
 Invoke-RestMethod get.scoop.sh | Invoke-Expression
 scoop bucket add nerd-fonts
+scoop bucket add extras
 
 Write-Output "Installing scoop apps..."
 for ($i = 0; $i -lt $tui.Count; $i++) {
@@ -48,3 +49,6 @@ Write-Output "Installing GUI Apps..."
 for ($i = 0; $i -lt $gui.Count; $i++) {
     winget install -e --id $gui[$i]
 }
+
+Write-Output "Setting System Product Name..."
+Set-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation -Name "Model" -Value "Sasindu's PC" -Type String
