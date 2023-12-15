@@ -79,6 +79,7 @@ cask=(
   brooklyn
   cleanshot
   discord
+  docker
   figma
   font-fira-code-nerd-font
   font-hack-nerd-font
@@ -92,6 +93,7 @@ cask=(
   sf-symbols
   spaceman
   spotify
+  tableplus
   visual-studio-code
 )
 
