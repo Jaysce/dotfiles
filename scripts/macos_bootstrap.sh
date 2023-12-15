@@ -45,13 +45,11 @@ brew=(
   cmake
   curl
   fd
-  fortune
   fzf
   gcc
   gh
   git-delta
   gotop
-  gradle
   htop
   jq
   lazygit
@@ -76,23 +74,17 @@ brew=(
 
 cask=(
   1password
-  affinity-designer
   appcleaner
   arc
   brooklyn
-  cleanmymac
   cleanshot
-  coconutbattery
   discord
   figma
   font-fira-code-nerd-font
   font-hack-nerd-font
   font-jetbrains-mono-nerd-font
-  google-chrome
   iina
-  intellij-idea-ce
   iterm2
-  keka
   mimestream
   pictogram
   raycast
@@ -111,7 +103,6 @@ mas=(
   1487937127  # Craft
   1388020431  # DevCleaner
   640199958   # Developer
-  1444383602  # GoodNotes
   904280696   # Things
 )
 
@@ -148,7 +139,6 @@ ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 # SymLink to .config
 ln -sv ~/dotfiles/Config/nvim ~/.config
-ln -sv ~/dotfiles/Config/ranger ~/.config
 ln -sv ~/dotfiles/Config/skhd ~/.config
 ln -sv ~/dotfiles/Config/spacebar ~/.config
 ln -sv ~/dotfiles/Config/yabai ~/.config
