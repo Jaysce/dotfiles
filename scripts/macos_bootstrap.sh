@@ -49,23 +49,16 @@ brew=(
   gcc
   gh
   git-delta
-  gotop
-  htop
   jq
   lazygit
   llvm
-  lua
-  luarocks
   mas
-  neofetch
   neovim
   node
   openjdk
   ripgrep
   starship
   tmux
-  the_silver_searcher
-  umlet
   wget
   zsh-autosuggestions
   zsh-completions
@@ -76,7 +69,6 @@ cask=(
   1password
   appcleaner
   arc
-  brooklyn
   cleanshot
   discord
   docker
@@ -90,7 +82,6 @@ cask=(
   pictogram
   raycast
   rectangle
-  sf-symbols
   spaceman
   spotify
   tableplus
@@ -118,13 +109,12 @@ brew tap homebrew/cask-fonts
 # Begin installing formulae, MAS apps and casks
 brew install ${brew[@]}
 mas install ${mas[@]}
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 brew install --cask ${cask[@]}
 
 # Install Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-#--- Install Vim-Plug / SymLink Dotfiles ---------------------------------------
+#--- SymLink Dotfiles ----------------------------------------------------------
 
 # Link dotfiles
 cd ~
@@ -134,16 +124,11 @@ git clone https://github.com/Jaysce/dotfiles.git
 mkdir -p ~/.config
 
 # SymLink to ~
-ln -sv ~/dotfiles/Config/.alacritty.yml ~/.alacritty.yml
 ln -sv ~/dotfiles/Config/.gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/Config/tmux/.tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 # SymLink to .config
-ln -sv ~/dotfiles/Config/nvim ~/.config
-ln -sv ~/dotfiles/Config/skhd ~/.config
-ln -sv ~/dotfiles/Config/spacebar ~/.config
-ln -sv ~/dotfiles/Config/yabai ~/.config
 ln -sv ~/dotfiles/Config/starship.toml ~/.config
 
 #--- System / App Preferences --------------------------------------------------
