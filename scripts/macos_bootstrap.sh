@@ -59,6 +59,7 @@ brew=(
   ripgrep
   starship
   tmux
+  tree
   wget
   zsh-autosuggestions
   zsh-completions
@@ -78,8 +79,10 @@ cask=(
   font-jetbrains-mono-nerd-font
   iina
   iterm2
+  intellij-idea
   mimestream
   pictogram
+  postman
   raycast
   rectangle
   spaceman
