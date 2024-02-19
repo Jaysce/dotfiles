@@ -5,6 +5,11 @@
 #  _ / /\__ \ | | | | | (__ 
 # (_)___|___/_| |_|_|  \___|
 
+# Work
+source $HOME/.config/work-config/work-aliases.zsh
+
+# Aliases
+alias lg='lazygit'
 
 # Path Exports
 export PATH="/usr/local/opt/llvm/bin:$PATH"
