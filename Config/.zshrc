@@ -6,7 +6,10 @@
 # (_)___|___/_| |_|_|  \___|
 
 # Work
-source $HOME/.config/work-config/work-aliases.zsh
+if [[ -f $HOME/.config/work-config/work-aliases.zsh ]]; then
+    source $HOME/.config/work-config/work-aliases.zsh
+fi
+
 
 # Aliases
 alias lg='lazygit'
