@@ -9,34 +9,23 @@
 #                                                             | |    
 #                                                             |_|    
 
-
-#--- Homebrew ------------------------------------------------------------------
-
-# Check if Xcode command line tools are installed
-if [[ ! $(xcode-select --version) ]]
-then
-  echo "Xcode Command Line Tools are not installed"
-  echo "Install using 'xcode-select --install' then re-run install script"
-  exit 1
-fi
-
-echo "Press any key to start installation..."
-read response
-
 sudo -v
 cd ~
 
-# Check if Homebrew is already installed and install if not
-if test ! $(which brew)
-then
-  echo "Installing Homebrew... "
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  echo "Homebrew is already installed"
-  exit 1
-fi
+# --- Xcode CLT ---
 
-#--- Install / Update Apps via Homebrew ----------------------------------------
+echo "💻 Installing Xcode Command Line Tools..."
+xcode-select --install
+
+
+# --- Homebrew ---
+
+if test ! $(which brew) then
+  echo "🍺 Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$user/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 brew=(
   git
@@ -81,10 +70,10 @@ cask=(
   iterm2
   intellij-idea
   mimestream
-  pictogram
   postman
   raycast
   rectangle
+  replacicon
   spaceman
   spotify
   tableplus
@@ -93,8 +82,6 @@ cask=(
 
 mas=(
   497799835   # Xcode
-  1440147259  # AdGuard for Safari
-  937984704   # Amphetamine
   1287239339  # ColorSlurp
   1487937127  # Craft
   1388020431  # DevCleaner
@@ -102,47 +89,46 @@ mas=(
   904280696   # Things
 )
 
-# Update and upgrade existing homebrew recipes and formulae
+echo "☁️ Updating homebrew..."
 brew update
-brew upgrade
-
-# Tap into required repositories
 brew tap homebrew/cask-fonts
 
-# Begin installing formulae, MAS apps and casks
+echo "📦 Installing packages..."
 brew install ${brew[@]}
 mas install ${mas[@]}
 brew install --cask ${cask[@]}
 
-# Install Oh My ZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-#--- SymLink Dotfiles ----------------------------------------------------------
+# --- Oh My ZSH ---
 
-# Link dotfiles
+echo "😱 Installing Oh My ZSH..."
+curl -L http://install.ohmyz.sh | sh
+
+
+# --- SymLink Dotfiles ---
+
+echo "☁️ Cloning dotfiles and symlinking..."
 cd ~
 git clone https://github.com/Jaysce/dotfiles.git
-
-# Make .config directory if it doesn't already exist
 mkdir -p ~/.config
-
-# SymLink to ~
 ln -sv ~/dotfiles/Config/.gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/Config/tmux/.tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
-
-# SymLink to .config
 ln -sv ~/dotfiles/Config/starship.toml ~/.config
 
-#--- System / App Preferences --------------------------------------------------
 
+# --- System / App Preferences ---
+
+echo "⚙️ Setting System Preferences..."
 defaults write com.knollsoft.Rectangle gapSize -float 10
 defaults write com.apple.Dock showhidden -bool TRUE
 defaults write com.apple.dock autohide-delay -float 0; killall Dock
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
-# Remove garbage
+
+# --- Cleanup ---
+
 brew cleanup
 brew cleanup -s
 
-echo Done!
+echo "🎉 Done!"
