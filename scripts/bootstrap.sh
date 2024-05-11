@@ -32,9 +32,9 @@ ln -sv ~/dotfiles/Config/tmux/.tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/Config/starship.toml ~/.config
 
 # prompt / omz
-rm .zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 curl -sS https://starship.rs/install.sh | sh
+rm .zshrc
 ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
