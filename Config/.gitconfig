@@ -8,7 +8,7 @@
     format = ssh
 
 [gpg "ssh"]
-    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+    program = "/mnt/c/Users/sasin/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
 
 [commit]
     gpgsign = true
@@ -27,6 +27,7 @@
 # Delta Preferences
 [core]
     pager = delta
+    sshCommand = ssh.exe
 
 [interactive]
     diffFilter = delta --color-only
