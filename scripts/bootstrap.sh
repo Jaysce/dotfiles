@@ -7,7 +7,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # essentials
-sudo apt install -y curl wget git xclip vim bat unzip zip tmux zsh
+sudo apt install -y curl wget git xclip vim bat unzip zip tmux zsh gh
 
 # node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
