@@ -3,11 +3,11 @@
 cd
 
 # update and upgrade
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 
 # essentials
-sudo apt-get install -y curl wget git xclip vim bat unzip zip tmux zsh
+sudo apt install -y curl wget git xclip vim bat unzip zip tmux zsh
 
 # node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -17,7 +17,7 @@ nvm install 20
 curl -s "https://get.sdkman.io" | bash
 
 # build tools
-sudo apt-get install -y gcc g++ make
+sudo apt install -y gcc g++ make
 
 # cleanup
 sudo apt autoremove -y
@@ -39,3 +39,5 @@ ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+chsh -s $(which zsh)
