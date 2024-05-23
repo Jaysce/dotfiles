@@ -8,6 +8,7 @@ ahead = "󱦲"
 behind = "󱦳"
 
 [aws]
+disabled = true
 symbol = "AWS "
 style = "bold white"
 
@@ -15,10 +16,12 @@ style = "bold white"
 symbol = "Conda "
 
 [golang]
+disabled = true
 symbol = "Go "
 style = "bold 45"
 
 [java]
+disabled = true
 symbol = "Java "
 style = "bold 209"
 
@@ -26,9 +29,11 @@ style = "bold 209"
 symbol = "Lua "
 
 [nodejs]
+disabled = true
 symbol = "Node "
 
 [package]
+disabled = true
 symbol = "󰏖 "
 style = "bold 223"
 
@@ -39,6 +44,7 @@ symbol = "Python "
 symbol = "Ruby "
 
 [rust]
+disabled = true
 symbol = "Rust "
 style = "bold 131"
 
