@@ -29,6 +29,7 @@ fi
 
 brew=(
   git
+  ack
   bat
   ccls
   cmake
