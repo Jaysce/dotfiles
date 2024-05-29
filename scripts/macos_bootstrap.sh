@@ -121,8 +121,7 @@ ln -sv ~/dotfiles/Config/starship.toml ~/.config
 
 echo "⚙️ Setting System Preferences..."
 defaults write com.knollsoft.Rectangle gapSize -float 10
-defaults write com.apple.Dock showhidden -bool TRUE
-defaults write com.apple.dock autohide-delay -float 0; killall Dock
+defaults write com.apple.Dock showhidden -bool TRUE; killall Dock
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 
