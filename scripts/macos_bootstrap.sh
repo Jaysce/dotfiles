@@ -63,10 +63,10 @@ cask=(
   cleanshot
   discord
   docker
-  figma
   font-fira-code-nerd-font
   font-hack-nerd-font
   font-jetbrains-mono-nerd-font
+  hidock
   iina
   iterm2
   intellij-idea
@@ -77,7 +77,6 @@ cask=(
   replacicon
   spaceman
   spotify
-  tableplus
   visual-studio-code
 )
 
