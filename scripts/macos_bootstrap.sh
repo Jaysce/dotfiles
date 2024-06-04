@@ -58,7 +58,6 @@ brew=(
 
 cask=(
   1password
-  appcleaner
   arc
   cleanshot
   discord
