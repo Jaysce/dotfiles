@@ -60,3 +60,4 @@
     lg = !"git lg3"
     undo = reset HEAD~1
     discard = checkout --
+    sync = !"git fetch origin $1:$1"
