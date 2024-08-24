@@ -9,6 +9,7 @@
 #                                                             | |    
 #                                                             |_|    
 
+# bash <(curl -sSL https://raw.githubusercontent.com/Jaysce/dotfiles/master/scripts/macos_bootstrap.sh)
 sudo -v
 cd ~
 
