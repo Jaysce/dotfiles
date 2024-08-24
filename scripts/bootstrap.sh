@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# sh <(curl -sSL https://raw.githubusercontent.com/Jaysce/dotfiles/master/scripts/bootstrap.sh)
+
 cd
 
 # update and upgrade
