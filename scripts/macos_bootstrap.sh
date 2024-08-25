@@ -87,6 +87,7 @@ mas=(
   1388020431  # DevCleaner
   640199958   # Developer
   904280696   # Things
+  1444636541  # Photomator
 )
 
 echo "☁️ Updating homebrew..."
