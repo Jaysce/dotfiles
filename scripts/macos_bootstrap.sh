@@ -105,6 +105,10 @@ brew install --cask ${cask[@]}
 echo "😱 Installing Oh My ZSH..."
 curl -L http://install.ohmyz.sh | sh
 
+# --- TPM ---
+
+echo "🛠️ Installing TPM..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # --- SymLink Dotfiles ---
 
