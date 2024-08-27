@@ -41,6 +41,7 @@ alias cat='bat'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias f='nvim $(fzf)'
 
 # ZSH Plugins & Customization
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
