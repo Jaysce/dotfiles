@@ -20,6 +20,7 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instea
 export PATH="/opt/homebrew/bin:$PATH" # Require for Apple Silicon
 export PATH=/usr/local/anaconda3/bin/:$PATH # conda
 export PATH=$PATH:$HOME/go/bin # go install bins
+export PATH=$PATH:/usr/local/go/bin # golang
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/"
 
 # oh-my-zsh
