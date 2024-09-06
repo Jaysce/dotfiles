@@ -49,6 +49,7 @@ brew=(
   openjdk
   ripgrep
   starship
+  tig
   tmux
   tree
   wget
