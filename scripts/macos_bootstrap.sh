@@ -49,6 +49,7 @@ brew=(
   openjdk
   ripgrep
   starship
+  the_silver_searcher
   tig
   tmux
   tree
