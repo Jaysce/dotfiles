@@ -100,6 +100,7 @@ brew tap homebrew/cask-fonts
 echo "📦 Installing packages..."
 brew install ${brew[@]}
 mas install ${mas[@]}
+sudo xcodebuild -license accept
 brew install --cask ${cask[@]}
 
 
