@@ -69,10 +69,10 @@ cask=(
   font-fira-code-nerd-font
   font-hack-nerd-font
   font-jetbrains-mono-nerd-font
-  hidock
   iina
   iterm2
   intellij-idea
+  jordanbaird-ice
   mimestream
   postman
   raycast
