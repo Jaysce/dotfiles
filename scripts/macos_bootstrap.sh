@@ -95,7 +95,6 @@ mas=(
 
 echo "☁️ Updating homebrew..."
 brew update
-brew tap homebrew/cask-fonts
 
 echo "📦 Installing packages..."
 brew install ${brew[@]}
