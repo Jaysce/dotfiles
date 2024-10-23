@@ -1,7 +1,7 @@
 # Profile
 [user]
     name = Sasindu Jayasinghe
-    email = jaysce@canva.com
+    email = sasindu.jayasinghe@gmail.com
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINVp0oR1IFN2Ro2wYJZeyKxlSzFCPqq9OtNucj2K1kFf
 
 [gpg]
