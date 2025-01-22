@@ -41,6 +41,7 @@ brew=(
   gcc
   gh
   git-delta
+  httpie
   jq
   lazygit
   llvm
