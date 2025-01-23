@@ -41,7 +41,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # Aliases
 alias lg='lazygit'
 alias ccs='spctl -a -t exec -vv'
-alias cat='bat'
+alias cat='batcat'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
