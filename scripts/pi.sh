@@ -9,7 +9,12 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # essentials
-sudo apt install -y curl wget git xclip bat unzip zip tmux zsh gh neovim
+sudo apt install -y curl wget git xclip bat unzip zip tmux zsh gh
+
+# git delta
+wget https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_arm64.deb
+dpkg -i git-delta_0.18.2_arm64.deb
+rm git-delta_0.18.2_arm64.deb
 
 # install 1password cli
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
