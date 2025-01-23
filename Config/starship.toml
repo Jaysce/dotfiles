@@ -54,3 +54,11 @@ style = "bold 209"
 
 [terraform]
 symbol = "Terraform "
+
+[username]
+style_user = "bold 147"
+format = '[ $user@]($style)'
+
+[hostname]
+style = "bold 147"
+format = '[$hostname]($style) '
