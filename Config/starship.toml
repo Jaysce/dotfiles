@@ -12,6 +12,10 @@ disabled = true
 symbol = "AWS "
 style = "bold white"
 
+[bun]
+symbol = " "
+style = "bold 224"
+
 [conda]
 symbol = "Conda "
 
