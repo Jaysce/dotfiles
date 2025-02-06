@@ -75,6 +75,18 @@ function Set-PowerShellProfile {
     }
 }
 
+function Set-StarshipConfig {
+    Write-Output "`nSetting up Starship config..."
+    try {
+        $starshipConfigPath = Join-Path -Path $HOME -ChildPath ".config\starship"
+        $sourcePath = Join-Path -Path $HOME -ChildPath "dotfiles\.config\starship"
+        New-Item -ItemType SymbolicLink -Path $starshipConfigPath -Target $sourcePath
+        Write-Output "Starship config symlink created successfully."
+    } catch {
+        $script:errorLog += "Failed to setup Starship config: $_"
+    }
+}
+
 function Set-GitConfig {
     Write-Output "`nSetting up Git config..."
     try {
@@ -83,7 +95,7 @@ function Set-GitConfig {
             Remove-Item $gitConfigPath -Force
         }
 
-        $sourcePath = Join-Path -Path $HOME -ChildPath "dotfiles\Config\.gitconfig"
+        $sourcePath = Join-Path -Path $HOME -ChildPath "dotfiles\.gitconfig"
         New-Item -ItemType SymbolicLink -Path $gitConfigPath -Target $sourcePath
         Write-Output "Git config symlink created successfully."
     } catch {
@@ -219,6 +231,7 @@ Initialize-Environment
 Install-Applications
 Install-Dotfiles
 Set-PowerShellProfile
+Set-StarshipConfig
 Set-GitConfig
 Enable-UltimatePerformance
 Set-RecycleBinConfig
