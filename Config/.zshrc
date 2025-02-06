@@ -37,6 +37,7 @@ export LANG=en_AU.UTF-8
 export EDITOR=nvim
 export TERM=xterm-256color
 export BAT_THEME="base16"
+export MANPAGER="nvim +Man!"
 
 # Aliases
 alias r='ranger'
