@@ -67,7 +67,7 @@ function Set-PowerShellProfile {
             Remove-Item $PROFILE -Force
         }
 
-        $sourcePath = Join-Path -Path $HOME -ChildPath "dotfiles\Config\powershell\user_profile.ps1"
+        $sourcePath = Join-Path -Path $HOME -ChildPath "dotfiles\Config\powershell\Microsoft.PowerShell_profile.ps1"
         New-Item -ItemType SymbolicLink -Path $PROFILE -Target $sourcePath
         Write-Output "PowerShell profile symlink created successfully."
     } catch {
