@@ -51,6 +51,7 @@ brew=(
   openjdk
   ripgrep
   starship
+  stow
   the_silver_searcher
   tig
   tmux
@@ -112,21 +113,22 @@ rm .zshrc
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+
 # --- TPM ---
 
 echo "🛠️ Installing TPM..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 
 # --- SymLink Dotfiles ---
 
 echo "☁️ Cloning dotfiles and symlinking..."
 cd ~
 git clone https://github.com/Jaysce/dotfiles.git
-mkdir -p ~/.config
-ln -sv ~/dotfiles/Config/.gitconfig ~/.gitconfig
-ln -sv ~/dotfiles/Config/tmux/.tmux.conf ~/.tmux.conf
-ln -sv ~/dotfiles/Config/.zshrc ~/.zshrc
-ln -sv ~/dotfiles/Config/starship.toml ~/.config
+mkdir -p ~/.config/starship
+cd dotfiles
+stow .
+cd ~
 
 
 # --- System / App Preferences ---

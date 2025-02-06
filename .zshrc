@@ -18,9 +18,7 @@ alias lg='lazygit'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
 export PATH="/opt/homebrew/bin:$PATH" # Require for Apple Silicon
-export PATH=/usr/local/anaconda3/bin/:$PATH # conda
 export PATH=$PATH:$HOME/go/bin # go install bins
-# export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/"
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -38,9 +36,9 @@ export EDITOR=nvim
 export TERM=xterm-256color
 export BAT_THEME="base16"
 export MANPAGER="nvim +Man!"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Aliases
-alias r='ranger'
 alias lg='lazygit'
 alias ccs='spctl -a -t exec -vv'
 alias cat='bat'

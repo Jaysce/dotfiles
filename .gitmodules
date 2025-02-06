@@ -1,3 +1,0 @@
-[submodule "Config/nvim"]
-	path = Config/nvim
-	url = https://github.com/Jaysce/nvim.git
