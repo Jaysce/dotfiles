@@ -17,6 +17,8 @@ rm -rf yay
 # Install packages
 packages=(
     bat
+    bluez
+    bluez-utils
     curl
     github-cli
     git-delta
@@ -64,5 +66,9 @@ yay -S --noconfirm ttf-jetbrains-mono-nerd
 
 # Install TPM (Tmux Plugin Manager)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Enable bluetooh
+systemctl enable bluetooth.service
+systemctl start bluetooth.service
 
 chsh -s $(which zsh)
