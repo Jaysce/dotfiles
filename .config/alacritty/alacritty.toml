@@ -47,34 +47,3 @@ white = "0xacb0d0"
 
 [mouse]
 hide_when_typing = true
-
-[key_bindings]
-[[key_bindings]]
-key = "N"
-mods = "Control|Shift"
-action = "SpawnNewInstance"
-
-[[key_bindings]]
-key = "Right"
-mods = "Alt"
-chars = "\x1bf"
-
-[[key_bindings]]
-key = "Left"
-mods = "Alt"
-chars = "\x1bb"
-
-[[key_bindings]]
-key = "Right"
-mods = "Command"
-chars = "\x1bOF"
-
-[[key_bindings]]
-key = "Left"
-mods = "Command"
-chars = "\x1bOH"
-
-[[key_bindings]]
-key = "Back"
-mods = "Command"
-chars = "\x15"
