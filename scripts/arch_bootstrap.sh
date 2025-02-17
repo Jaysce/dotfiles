@@ -3,6 +3,9 @@
 # Ensure we are in the home directory
 cd ~
 
+# Use local time for RTC
+timedatectl set-local-rtc 1 --adjust-system-clock
+
 # Update package manager
 sudo pacman -Syu
 
