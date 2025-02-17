@@ -48,7 +48,6 @@ brew=(
   mas
   neovim
   node
-  openjdk
   ripgrep
   starship
   stow
@@ -60,23 +59,21 @@ brew=(
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
+  zulu
 )
 
 cask=(
   1password
-  arc
   cleanshot
   discord
   docker
   font-fira-code-nerd-font
-  font-hack-nerd-font
   font-jetbrains-mono-nerd-font
   iina
   iterm2
   intellij-idea
   jordanbaird-ice
   mimestream
-  postman
   raycast
   rectangle
   replacicon
