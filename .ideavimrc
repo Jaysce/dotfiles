@@ -1,0 +1,143 @@
+" leader key
+let mapleader = ' '
+
+" redo
+noremap U <C-r>
+
+" map black hole register
+" noremap \ "_
+
+" paste over without overwriting default register
+" xnoremap p P
+
+" sync Vim clipboard with OS clipboard
+set clipboard^=unnamed,unnamedplus
+
+" jump between angle brackets
+set matchpairs+=<:>
+
+" smart line joining
+set ideajoin
+
+" open config
+noremap <leader>cc :edit ~/.ideavimrc<cr>
+
+" source config
+noremap <leader>cs :source ~/.ideavimrc<cr>:nohlsearch<cr>
+
+" highlight search results
+set hlsearch
+
+" remove search highlights
+nnoremap <Esc> :nohlsearch<cr>
+
+" case-insensitive search
+set ignorecase
+
+" enable case-sensitive search when uppercased letter is present
+set smartcase
+
+" search while typing
+set incsearch
+
+set relativenumber
+
+" consider camelCase and snake_case words when jumping between words
+
+" move to the beginning of the next word
+map w [w
+
+" move to the end of the next word
+map e ]w
+
+" move to the beginning of the previous word
+map b [b
+
+" move to the end of the previous word
+map ge ]b
+
+" go to the left split
+map <A-h> <C-w>h
+
+" go to the bottom split
+map <A-j> <C-w>j
+
+" go to the top split
+map <A-k> <C-w>k
+
+" go to the right split
+map <A-l> <C-w>l
+
+map <leader>wv <Action>(SplitVertically)
+map <leader>wh <Action>(SplitHorizontally)
+map <leader>ww <Action>(Unsplit)
+map <leader>wa <Action>(UnsplitAll)
+
+map <leader>sc <Action>(GotoClass)
+map <leader>sf <Action>(GotoFile)
+map <leader>ss <Action>(GotoSymbol)
+map <leader>sa <Action>(GotoAction)
+map <leader>gd <Action>(GotoDeclaration)
+map <leader>gy <Action>(GotoTypeDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gt <Action>(GotoTest)
+map <leader>gm <Action>(GotoSuperMethod)
+map <leader>gl <Action>(GotoLine)
+
+map <leader>ug <Action>(FindUsages)
+map <leader>uu <Action>(ShowUsages)
+map <leader>vs <Action>(ViewSource)
+map <leader>im <Action>(QuickImplementations)
+map <leader>td <Action>(QuickTypeDefinition)
+map <leader>ti <Action>(ExpressionTypeInfo)
+map <leader>sh <Action>(ShowHoverInfo)
+map <leader>oo <Action>(FileStructurePopup)
+
+map <S-f> <Action>(Find)
+map <S-r> <Action>(Replace)
+map <leader>ff <Action>(FindInPath)
+map <leader>fr <Action>(ReplaceInPath)
+
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+map <leader>aa <Action>(ShowIntentionActions)
+map <leader>sw <Action>(SurroundWith)
+map <S-space> <Action>(Generate)
+map <S-k> <Action>(EditorDuplicateLines)
+map <C-[> <Action>(EditorCompleteStatement)
+
+map <leader>en <Action>(GotoNextError)
+map <leader>ep <Action>(GotoPreviousError)
+map <leader>lc <Action>(JumpToLastChange)
+map <leader>ll <Action>(RecentLocations)
+map <C-;> <Action>(RecentFiles)
+" map <S-k> <Action>(Forward)
+" map <S-l> <Action>(Back)
+map <A-[> <Action>(MethodUp)
+map <A-]> <Action>(MethodDown)
+
+map <leader><leader> <Action>(ReformatCode)
+map <leader>oi <Action>(OptimizeImports)
+map <leader>ra <Action>(RearrangeCode)
+
+map <C-j> <Action>(MoveLineDown)
+map <C-k> <Action>(MoveLineUp)
+map <C-i> <Action>(MoveStatementDown)
+map <C-o> <Action>(MoveStatementUp)
+map <leader>ca <Action>(CopyAbsolutePath)
+map <leader>cn <Action>(CopyFileName)
+map <leader>cp <Action>(CopyContentRootPath)
+
+map <leader>fs <Action>(NewScratchFile)
+map <leader>qq <Action>(CloseContent)
+map <leader>qa <Action>(CloseAllEditors)
+map <leader>nf <Action>(NewFile)
+map <leader>nd <Action>(NewDir)
+map <leader>re <Action>(RenameFile)
+map <leader>of <Action>(OpenFile)
+map <leader>ri <Action>(RestartIde)
