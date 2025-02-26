@@ -103,6 +103,18 @@ function Set-GitConfig {
     }
 }
 
+function Set-IntellijConfig {
+    Write-Output "`nSetting up IntelliJ IDEA config..."
+    try {
+        $intellijConfigPath = Join-Path -Path $HOME -ChildPath ".ideavimrc"
+        $sourcePath = Join-Path -Path $HOME -ChildPath "dotfiles\.ideavimrc"
+        New-Item -ItemType SymbolicLink -Path $intellijConfigPath -Target $sourcePath
+        Write-Output "IntelliJ IDEA config symlink created successfully."
+    } catch {
+        $script:errorLog += "Failed to setup IntelliJ IDEA config: $_"
+    }
+}
+
 function Start-AdminContext {
     param (
         [Parameter(Mandatory)]
@@ -233,6 +245,7 @@ Install-Dotfiles
 Set-PowerShellProfile
 Set-StarshipConfig
 Set-GitConfig
+Set-IntellijConfig
 Enable-UltimatePerformance
 Set-RecycleBinConfig
 Disable-BingSearch
