@@ -85,7 +85,7 @@ map <leader>vs <Action>(ViewSource)
 map <leader>im <Action>(QuickImplementations)
 map <leader>td <Action>(QuickTypeDefinition)
 map <leader>ti <Action>(ExpressionTypeInfo)
-map <leader>sh <Action>(ShowHoverInfo)
+map <S-k> <Action>(ShowHoverInfo)
 map <leader>oo <Action>(FileStructurePopup)
 
 " map <S-f> <Action>(Find)
@@ -138,5 +138,6 @@ map <leader>re <Action>(RenameFile)
 map <leader>of <Action>(OpenFile)
 map <leader>ri <Action>(RestartIde)
 
-" NERDTree
+" PLUGINS
 set NERDTree
+set idearefactormode=keep
