@@ -150,3 +150,18 @@ map <leader>ri <Action>(RestartIde)
 """ PLUGINS """
 set NERDTree
 set idearefactormode=keep
+
+
+""" HARPOONIJ """
+
+map <leader>1 <Action>(GotoHarpoon1)
+map <leader>2 <Action>(GotoHarpoon2)
+map <leader>3 <Action>(GotoHarpoon3)
+map <leader>4 <Action>(GotoHarpoon4)
+map <leader>5 <Action>(GotoHarpoon5)
+map <leader>h1 <Action>(SetHarpoon1)
+map <leader>h2 <Action>(SetHarpoon2)
+map <leader>h3 <Action>(SetHarpoon3)
+map <leader>h4 <Action>(SetHarpoon4)
+map <leader>h5 <Action>(SetHarpoon5)
+map <leader>hh <Action>(ShowHarpoon)
