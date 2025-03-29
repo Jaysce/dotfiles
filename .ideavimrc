@@ -58,6 +58,7 @@ map <leader>wv <Action>(SplitVertically)
 map <leader>wh <Action>(SplitHorizontally)
 map <leader>ww <Action>(Unsplit)
 map <leader>wa <Action>(UnsplitAll)
+map <leader>wq <Action>(HideAllWindows)
 
 
 """ COMMAND PALLETE """
@@ -82,8 +83,8 @@ map <leader>gt <Action>(GotoTest)
 map <leader>fu <Action>(FindUsages)
 map <leader>su <Action>(ShowUsages)
 map <leader>oo <Action>(FileStructurePopup)
-map <S-f> <Action>(Find)
-map <S-r> <Action>(Replace)
+map <leader>fi <Action>(Find)
+map <leader>fo <Action>(Replace)
 map <leader>ff <Action>(FindInPath)
 map <leader>fr <Action>(ReplaceInPath)
 
@@ -128,7 +129,7 @@ map <A-]> <Action>(MethodDown)
 
 """ FORMATTING """ 
 
-map <leader><leader> <Action>(ReformatCode)
+map <leader><leader> <Action>(SelectInProjectView)
 map <leader>oi <Action>(OptimizeImports)
 map <leader>ra <Action>(RearrangeCode)
 
