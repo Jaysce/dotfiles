@@ -149,6 +149,7 @@ map <leader>nd <Action>(NewDir)
 map <leader>re <Action>(RenameFile)
 map <leader>of <Action>(OpenFile)
 map <leader>ri <Action>(RestartIde)
+map <leader>t <Action>(ActivateTerminalToolWindow)
 
 
 """ PLUGINS """
