@@ -9,7 +9,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # essentials
-sudo apt install -y curl wget git xclip neovim bat unzip zip tmux zsh gh stow
+sudo apt install -y curl wget git xclip neovim bat unzip zip tmux zsh gh stow jq httpie
 
 # cleanup
 sudo apt autoremove -y
