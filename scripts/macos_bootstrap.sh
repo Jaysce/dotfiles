@@ -36,6 +36,7 @@ brew=(
   ccls
   cmake
   curl
+  doggo
   fd
   fzf
   gcc
