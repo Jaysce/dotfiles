@@ -52,6 +52,7 @@ brew=(
   ripgrep
   starship
   stow
+  sshs
   the_silver_searcher
   tig
   tmux
