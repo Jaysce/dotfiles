@@ -8,7 +8,7 @@ return {
 	config = function()
 		local wilder = require("wilder")
 
-		wilder.setup({ modes = { ":", "/", "?" } })
+		wilder.setup({ modes = { ":" } })
 
 		-- Define custom highlight groups
 

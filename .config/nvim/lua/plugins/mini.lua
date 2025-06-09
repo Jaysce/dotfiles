@@ -43,6 +43,7 @@ return {
             vim.keymap.set("n", "<leader>ef", function()
                 MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
                 MiniFiles.reveal_cwd()
+            vim.keymap.set("n", "<esc>", "<cmd>lua MiniFiles.close()<CR>", { desc = "Close mini file explorer"})
             end, { desc = "Toggle into currently opened file" })
         end,
     },
