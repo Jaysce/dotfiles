@@ -36,6 +36,7 @@ function Install-Applications {
         @{name = "Steam"; id = "Valve.Steam"},
         @{name = "Twinkle Tray"; id = "xanderfrangos.twinkletray"},
         @{name = "PowerToys"; id = "Microsoft.PowerToys"}
+        @{name = "Windhawk"; id = "RamenSoftware.Windhawk"}
     )
 
     foreach ($app in $apps) {
