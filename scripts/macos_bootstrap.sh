@@ -13,12 +13,6 @@
 sudo -v
 cd ~
 
-# --- Xcode CLT ---
-
-echo "💻 Installing Xcode Command Line Tools..."
-xcode-select --install
-
-
 # --- Homebrew ---
 
 if test ! $(which brew) 
@@ -134,6 +128,8 @@ cd ~
 
 echo "⚙️ Setting System Preferences..."
 defaults write com.knollsoft.Rectangle gapSize -float 10
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.6
 defaults write com.apple.Dock showhidden -bool TRUE; killall Dock
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
