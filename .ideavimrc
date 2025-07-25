@@ -12,6 +12,7 @@ set showcmd
 set visualbell
 set clipboard+=unnamed
 set notimeout
+set ideajoin
 
 " Search improvements
 set ignorecase
