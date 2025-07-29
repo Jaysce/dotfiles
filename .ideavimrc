@@ -89,7 +89,11 @@ let g:WhichKeyDesc_harpoon_set_two = "<leader>h2 Set harpoon 2"
 let g:WhichKeyDesc_harpoon_set_three = "<leader>h3 Set harpoon 3"
 let g:WhichKeyDesc_harpoon_set_four = "<leader>h4 Set harpoon 4"
 let g:WhichKeyDesc_harpoon_set_five = "<leader>h5 Set harpoon 5"
-let g:WhichKeyDesc_harpoon_show = "<leader>hh Show harpoons"
+let g:WhichKeyDesc_harpoon_one = "<leader>1 Harpoon 1"
+let g:WhichKeyDesc_harpoon_two = "<leader>2 Harpoon 2"
+let g:WhichKeyDesc_harpoon_three = "<leader>3 Harpoon 3"
+let g:WhichKeyDesc_harpoon_four = "<leader>4 Harpoon 4"
+let g:WhichKeyDesc_harpoon_five = "<leader>5 Harpoon 5"
 
 
 " Harpoon settings
