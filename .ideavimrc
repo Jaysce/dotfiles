@@ -55,7 +55,7 @@ let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 let g:WhichKeyDesc_action= "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>aa Open context menu"
 let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
-let g:WhichKeyDesc_restart_ide = "<leader>as Restart IDE"
+let g:WhichKeyDesc_restart_ide = "<leader>ar Restart IDE"
 
 let g:WhichKeyDesc_file_quickLook = "<leader><leader> Show file in explorer"
 let g:WhichKeyDesc_thing = "<leader>q Hide windows"
@@ -83,6 +83,27 @@ let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
 let g:WhichKeyDesc_goto_back = "<leader>gb Go Back"
 let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
 
+let g:WhichKeyDesc_harpoon = "<leader>h Set harpoon"
+let g:WhichKeyDesc_harpoon_set_one = "<leader>h1 Set harpoon 1"
+let g:WhichKeyDesc_harpoon_set_two = "<leader>h2 Set harpoon 2"
+let g:WhichKeyDesc_harpoon_set_three = "<leader>h3 Set harpoon 3"
+let g:WhichKeyDesc_harpoon_set_four = "<leader>h4 Set harpoon 4"
+let g:WhichKeyDesc_harpoon_set_five = "<leader>h5 Set harpoon 5"
+let g:WhichKeyDesc_harpoon_show = "<leader>hh Show harpoons"
+
+
+" Harpoon settings
+map <leader>1 <Action>(GotoHarpoon1)
+map <leader>2 <Action>(GotoHarpoon2)
+map <leader>3 <Action>(GotoHarpoon3)
+map <leader>4 <Action>(GotoHarpoon4)
+map <leader>5 <Action>(GotoHarpoon5)
+map <leader>h1 <Action>(SetHarpoon1)
+map <leader>h2 <Action>(SetHarpoon2)
+map <leader>h3 <Action>(SetHarpoon3)
+map <leader>h4 <Action>(SetHarpoon4)
+map <leader>h5 <Action>(SetHarpoon5)
+map <leader>hh <Action>(ShowHarpoon)
 
 "" Key mappings
 "" ========================================================
