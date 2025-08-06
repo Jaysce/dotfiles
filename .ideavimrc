@@ -39,7 +39,10 @@ let g:WhichKeyDesc_leader = "<leader> Leader key"
 
 let g:WhichKeyDesc_leader = "<leader>e Open file explorer"
 
-let g:WhichKeyDesc_comment = "<leader>c Comment line"
+let g:WhichKeyDesc_copy = "<leader>c Copy path / reference"
+let g:WhichKeyDesc_copy_absolute = "<leader>ca Absolute path"
+let g:WhichKeyDesc_copy_name = "<leader>cn File name"
+let g:WhichKeyDesc_copy_root = "<leader>cr From content root"
 
 let g:WhichKeyDesc_window = "<leader>w Window splits"
 let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
@@ -136,8 +139,10 @@ inoremap <C-k> <Action>(PopupMenu-selectprev)
 
 map <leader>q <Action>(HideAllWindows)
 
-" Comment lines
-map <leader>c <action>(CommentByLineComment)
+" Copy Path
+map <leader>ca <Action>(CopyAbsolutePath)
+map <leader>cn <Action>(CopyFileName)
+map <leader>cr <Action>(CopyContentRootPath)
 
 " Open NERDTree (use q to exit)
 map <leader>e :NERDTreeToggle<CR>
