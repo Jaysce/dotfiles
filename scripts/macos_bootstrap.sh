@@ -43,6 +43,7 @@ brew=(
   mas
   neovim
   node
+  oha
   ripgrep
   starship
   stow
