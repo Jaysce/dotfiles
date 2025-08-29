@@ -25,3 +25,8 @@ Config
 scripts
 Images
 .DS_Store
+
+.config/alacritty
+.config/hypr
+.config/nvim
+.config/waybar
