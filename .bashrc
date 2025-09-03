@@ -6,6 +6,7 @@ source ~/.local/share/omarchy/default/bash/rc
 #
 # Make an alias for invoking commands you use constantly
 alias cat=bat
+alias lg=lazygit
 #
 # Use VSCode instead of neovim as your default editor
 # export EDITOR="code"
