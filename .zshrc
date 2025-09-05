@@ -11,9 +11,6 @@ if [[ -f $HOME/.config/work-config/work-aliases.zsh ]]; then
 fi
 
 
-# Aliases
-alias lg='lazygit'
-
 # Path Exports
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
@@ -41,12 +38,25 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Aliases
 alias lg='lazygit'
+alias ld='lazydocker'
 alias ccs='spctl -a -t exec -vv'
 alias cat='bat'
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
-alias f='nvim $(fzf)'
+alias n='nvim'
+alias ls='eza -lh --group-directories-first --icons=auto'
+alias la='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
 
 # ZSH Plugins & Customization
 if type brew &>/dev/null; then

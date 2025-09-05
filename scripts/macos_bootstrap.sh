@@ -30,6 +30,7 @@ brew=(
   cmake
   curl
   doggo
+  eza
   fd
   fzf
   gcc
@@ -53,6 +54,7 @@ brew=(
   tmux
   tree
   wget
+  zoxide
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
