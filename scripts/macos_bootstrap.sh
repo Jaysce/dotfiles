@@ -100,7 +100,6 @@ mas install ${mas[@]}
 sudo xcodebuild -license accept
 brew install --cask ${cask[@]}
 
-
 # --- Oh My ZSH ---
 
 echo "😱 Installing Oh My ZSH..."
@@ -109,14 +108,12 @@ rm .zshrc
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-
 # --- TPM ---
 
 echo "🛠️ Installing TPM..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-
-# --- SymLink Dotfiles ---
+# --- Dotfiles ---
 
 echo "☁️ Cloning dotfiles and symlinking..."
 cd ~
@@ -126,6 +123,9 @@ cd dotfiles
 stow .
 cd ~
 
+# --- Neovim ---
+echo "☁️ Cloning nvim and symlinking..."
+git clone https://github.com/Jaysce/nvim.git ~/.config/nvim
 
 # --- System / App Preferences ---
 
@@ -133,9 +133,9 @@ echo "⚙️ Setting System Preferences..."
 defaults write com.knollsoft.Rectangle gapSize -float 10
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.6
-defaults write com.apple.Dock showhidden -bool TRUE; killall Dock
+defaults write com.apple.Dock showhidden -bool TRUE
+killall Dock
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
 
 # --- Cleanup ---
 
