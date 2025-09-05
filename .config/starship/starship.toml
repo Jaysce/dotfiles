@@ -26,3 +26,4 @@ symbol = " "
 [git_status]
 ahead = "󱦲"
 behind = "󱦳"
+typechanged = "ƒ"
