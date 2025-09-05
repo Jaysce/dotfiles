@@ -1,13 +1,13 @@
 #!/bin/bash
 
-#                         ____   _____    _____      _               
-#                        / __ \ / ____|  / ____|    | |              
-#   _ __ ___   __ _  ___| |  | | (___   | (___   ___| |_ _   _ _ __  
-#  | '_ ` _ \ / _` |/ __| |  | |\___ \   \___ \ / _ \ __| | | | '_ \ 
+#                         ____   _____    _____      _
+#                        / __ \ / ____|  / ____|    | |
+#   _ __ ___   __ _  ___| |  | | (___   | (___   ___| |_ _   _ _ __
+#  | '_ ` _ \ / _` |/ __| |  | |\___ \   \___ \ / _ \ __| | | | '_ \
 #  | | | | | | (_| | (__| |__| |____) |  ____) |  __/ |_| |_| | |_) |
-#  |_| |_| |_|\__,_|\___|\____/|_____/  |_____/ \___|\__|\__,_| .__/ 
-#                                                             | |    
-#                                                             |_|    
+#  |_| |_| |_|\__,_|\___|\____/|_____/  |_____/ \___|\__|\__,_| .__/
+#                                                             | |
+#                                                             |_|
 
 # bash <(curl -sSL https://raw.githubusercontent.com/Jaysce/dotfiles/master/scripts/macos_bootstrap.sh)
 sudo -v
@@ -15,11 +15,10 @@ cd ~
 
 # --- Homebrew ---
 
-if test ! $(which brew) 
-then
+if test ! $(which brew); then
   echo "🍺 Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$user/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/$user/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -38,6 +37,7 @@ brew=(
   git-delta
   httpie
   jq
+  lazydocker
   lazygit
   llvm
   mas
@@ -80,13 +80,13 @@ cask=(
 )
 
 mas=(
-  497799835   # Xcode
-  1287239339  # ColorSlurp
-  1487937127  # Craft
-  1388020431  # DevCleaner
-  640199958   # Developer
-  904280696   # Things
-  1444636541  # Photomator
+  497799835  # Xcode
+  1287239339 # ColorSlurp
+  1487937127 # Craft
+  1388020431 # DevCleaner
+  640199958  # Developer
+  904280696  # Things
+  1444636541 # Photomator
 )
 
 echo "☁️ Updating homebrew..."
