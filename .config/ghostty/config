@@ -1,0 +1,41 @@
+shell-integration-features = no-cursor
+quick-terminal-position = center
+quick-terminal-autohide = false
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
+window-padding-x = 14
+window-padding-y = 14
+window-padding-balance = true
+background-opacity = 0.9
+background-blur = 100
+window-height = 35
+window-width = 100
+theme = catppuccin-mocha
+background = #1e1e2e
+foreground = #cdd6f4
+selection-background = #585b70
+selection-foreground = #cdd6f4
+cursor-color = #f5e0dc
+cursor-text = #1e1e2e
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#a6adc8
+palette = 8=#585b70
+palette = 9=#f37799
+palette = 10=#89d88b
+palette = 11=#ebd391
+palette = 12=#74a8fc
+palette = 13=#f2aede
+palette = 14=#6bd7ca
+palette = 15=#bac2de
+font-family = FiraCode Nerd Font
+font-family-bold = FiraCode Nerd Font
+font-family-italic = FiraCode Nerd Font
+font-family-bold-italic = FiraCode Nerd Font
+mouse-hide-while-typing = true
