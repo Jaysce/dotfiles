@@ -4,5 +4,6 @@ source ~/.local/share/omarchy/default/bash/rc
 
 alias cat=bat
 alias lg=lazygit
+alias n=nvim
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
