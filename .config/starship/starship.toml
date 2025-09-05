@@ -1,4 +1,24 @@
-command_timeout = 2000
+command_timeout = 1000
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+[username]
+style_user = "bold blue"
+format = '[ $user@]($style)'
+
+[hostname]
+style = "bold blue"
+format = '[$hostname]($style) '
 
 [git_branch]
 symbol = " "
@@ -6,63 +26,3 @@ symbol = " "
 [git_status]
 ahead = "󱦲"
 behind = "󱦳"
-
-[aws]
-disabled = true
-symbol = "AWS "
-style = "bold white"
-
-[bun]
-symbol = " "
-style = "bold 224"
-
-[conda]
-symbol = "Conda "
-
-[golang]
-disabled = true
-symbol = "Go "
-style = "bold 45"
-
-[java]
-disabled = true
-symbol = "Java "
-style = "bold 209"
-
-[lua]
-symbol = "Lua "
-
-[nodejs]
-disabled = true
-symbol = "Node "
-
-[package]
-disabled = true
-symbol = "󰏖 "
-style = "bold 223"
-
-[python]
-symbol = "Python "
-
-[ruby]
-symbol = "Ruby "
-
-[rust]
-disabled = true
-symbol = "Rust "
-style = "bold 131"
-
-[swift]
-symbol = "Swift "
-style = "bold 209"
-
-[terraform]
-symbol = "Terraform "
-
-[username]
-style_user = "bold 147"
-format = '[ $user@]($style)'
-
-[hostname]
-style = "bold 147"
-format = '[$hostname]($style) '
