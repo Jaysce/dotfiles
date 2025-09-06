@@ -7,6 +7,7 @@ export TERM=xterm-256color
 export BAT_THEME="base16"
 export MANPAGER="nvim +Man!"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 
 # Aliases --------------------------------------------------------------------------------
 alias cat='bat'
