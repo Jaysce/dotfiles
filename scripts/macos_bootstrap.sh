@@ -136,6 +136,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0.6
 defaults write com.apple.Dock showhidden -bool TRUE
 killall Dock
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write -g NSWindowShouldDragOnGesture -bool true
 
 # --- Cleanup ---
 

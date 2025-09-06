@@ -7,7 +7,7 @@ macos-option-as-alt = true
 mouse-hide-while-typing = true
 shell-integration-features = no-cursor
 
-background-opacity = 0.9
+background-opacity = 0.8
 background-blur = 100
 window-width = 95
 window-height = 32
@@ -26,4 +26,3 @@ font-family-bold-italic = FiraCode Nerd Font
 quick-terminal-position = top
 quick-terminal-autohide = false
 quick-terminal-animation-duration = 0
-keybind = global:cmd+grave_accent=toggle_quick_terminal
