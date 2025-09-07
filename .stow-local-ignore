@@ -27,5 +27,4 @@ Images
 .DS_Store
 
 .config/aerospace
-.config/alacritty
 .config/waybar
