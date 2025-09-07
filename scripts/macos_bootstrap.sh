@@ -83,12 +83,8 @@ cask=(
 
 mas=(
   497799835  # Xcode
-  1287239339 # ColorSlurp
   1487937127 # Craft
-  1388020431 # DevCleaner
-  640199958  # Developer
   904280696  # Things
-  1444636541 # Photomator
 )
 
 echo "☁️ Updating homebrew..."
@@ -99,14 +95,6 @@ brew install ${brew[@]}
 mas install ${mas[@]}
 sudo xcodebuild -license accept
 brew install --cask ${cask[@]}
-
-# --- Oh My ZSH ---
-
-echo "😱 Installing Oh My ZSH..."
-curl -L http://install.ohmyz.sh | sh
-rm .zshrc
-sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # --- TPM ---
 
