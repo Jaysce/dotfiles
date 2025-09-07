@@ -52,6 +52,7 @@ setopt INTERACTIVE_COMMENTS # Allow comments in interactive shells
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
+WORDCHARS=''
 
 # ZSH Plugins ----------------------------------------------------------------------------
 if type brew &>/dev/null; then
