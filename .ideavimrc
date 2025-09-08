@@ -129,10 +129,8 @@ nnoremap ]] <Action>(MethodDown)
 vnoremap < <gv
 vnoremap > >gv
 
-" Popup navigation
-inoremap <C-j> <Action>(PopupMenu-selectnext)
-inoremap <C-k> <Action>(PopupMenu-selectprev)
-
+map <S-l> <Action>(NextTab)
+map <S-h> <Action>(PreviousTab)
 
 "" Leader commands
 "" ========================================================
@@ -186,5 +184,5 @@ nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
+nmap <leader>gf <Action>(Forward)
+nmap <leader>gb <Action>(Back)
