@@ -8,6 +8,7 @@ export BAT_THEME="base16"
 export MANPAGER="nvim +Man!"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Aliases --------------------------------------------------------------------------------
 alias cat='bat'
