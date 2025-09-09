@@ -116,10 +116,10 @@ map <leader>hh <Action>(ShowHarpoon)
 "" ========================================================
 
 " Pane navigation
-nnoremap <A-h> <C-w>h
-nnoremap <A-l> <C-w>l
-nnoremap <A-k> <C-w>k
-nnoremap <A-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
 
 " Jump between methods
 nnoremap [[ <Action>(MethodUp)
