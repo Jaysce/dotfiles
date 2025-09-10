@@ -20,10 +20,8 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-iTerm2
 Config
 scripts
-Images
 .DS_Store
 
 .config/aerospace
