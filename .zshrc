@@ -71,11 +71,17 @@ if type brew &>/dev/null; then
     
     [[ -f $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
         source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    [[ -f $BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]] && \
+        source $BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ''
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Other Tools ----------------------------------------------------------------------------
 eval "$(starship init zsh)"
