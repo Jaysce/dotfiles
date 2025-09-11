@@ -15,14 +15,45 @@
 
 
 # Git Preferences
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
 [init]
     defaultBranch = main
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[push]
+    autoSetupRemote = true
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 
 [pull]
     rebase = true
 
-[push]
-    autoSetupRemote = true
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
 
 # Delta Preferences
 [core]
@@ -36,12 +67,10 @@
     light = false
     line-numbers = true
     side-by-side = true
+    map-styles = bold purple => syntax "#330f29", bold cyan => syntax "#271344"
 
 [merge]
     conflictstyle = diff3
-
-[diff]
-    colorMoved = default
 
 
 # Git LFS
