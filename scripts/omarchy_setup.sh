@@ -50,6 +50,7 @@ rm -f "$HOME/.config/hypr/hyprsunset.conf"
 rm -f "$HOME/.config/hypr/monitors.conf"
 rm -f "$HOME/.config/omarchy/branding/about.txt"
 rm -f "$HOME/.config/omarchy/branding/screensaver.txt"
+rm -rf "$HOME/.config/waybar"
 
 # Ensure needed directories exist
 mkdir -p "$HOME/.config/alacritty" "$HOME/.config/hypr" "$HOME/.config/omarchy/branding"
