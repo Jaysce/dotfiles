@@ -1,4 +1,4 @@
-general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
+general.import = ["~/.config/omarchy/current/theme/alacritty.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -7,19 +7,17 @@ TERM = "xterm-256color"
 normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
 bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
 italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
-size = 9
-offset = {x = 0, y = 7}
-glyph_offset = {x = 0, y = 3}
+size = 11
+offset = { x = 0, y = 7 }
+glyph_offset = { x = 0, y = 3 }
 
 [window]
-padding.x = 14
-padding.y = 14
+padding.x = 20
+padding.y = 20
 decorations = "None"
 
 [mouse]
 hide_when_typing = true
 
 [keyboard]
-bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
-]
+bindings = [{ key = "F11", action = "ToggleFullscreen" }]
