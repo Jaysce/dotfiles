@@ -1,4 +1,4 @@
-theme = rose-pine
+theme = Rose Pine
 
 clipboard-read = allow
 clipboard-write = allow
@@ -25,8 +25,9 @@ font-family = FiraCode Nerd Font
 font-family-bold = FiraCode Nerd Font
 font-family-italic = FiraCode Nerd Font
 font-family-bold-italic = FiraCode Nerd Font
+window-new-tab-position = end
 
-quick-terminal-position = top
+quick-terminal-position = center
 quick-terminal-autohide = false
 quick-terminal-animation-duration = 0
 
@@ -35,3 +36,5 @@ keybind = super+shift+h=goto_split:left
 keybind = super+shift+j=goto_split:down
 keybind = super+shift+k=goto_split:up
 keybind = super+shift+l=goto_split:right
+keybind = global:super+enter=toggle_quick_terminal
+keybind = global:super+shift+enter=new_window
