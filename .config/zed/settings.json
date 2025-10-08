@@ -8,18 +8,29 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "minimap": {
-    "show": "auto"
+    "show": "never"
   },
   "inlay_hints": {
     "enabled": true
   },
-  "base_keymap": "JetBrains",
+  "base_keymap": "VSCode",
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Rosé Pine Dawn",
+    "dark": "Catppuccin Mocha (Blur) [Heavy]"
+  },
+  "relative_line_numbers": true,
+  "tab_bar": {
+    "show": false
+  },
+  "buffer_font_features": {
+    "calt": false
+  },
+  "centered_layout": {
+    "left_padding": 0.1,
+    "right_padding": 0.1
   }
 }
