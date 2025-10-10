@@ -32,5 +32,9 @@
   "centered_layout": {
     "left_padding": 0.1,
     "right_padding": 0.1
-  }
+  },
+  "terminal": {
+    "font_family": "FiraCode Nerd Font"
+  },
+  "format_on_save": "off"
 }

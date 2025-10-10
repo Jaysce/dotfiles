@@ -8,24 +8,11 @@
 [
   {
     "context": "Workspace && !Terminal",
-    "bindings": {
-      "space f f": "file_finder::Toggle",
-      "space z z": "workspace::ToggleCenteredLayout"
-    }
+    "bindings": {}
   },
+  // Window navigation
   {
-    "context": "Pane && !Dock",
-    "bindings": {
-      "space q a": "pane::CloseAllItems",
-      "space q o": "pane::CloseOtherItems",
-      "space e": "workspace::ToggleLeftDock",
-      "space a": "workspace::ToggleRightDock",
-      "space t": "workspace::ToggleBottomDock",
-      "space b": "tab_switcher::ToggleAll"
-    }
-  },
-  {
-    "context": "!menu",
+    "context": "Dock || Terminal || Editor",
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
@@ -33,19 +20,109 @@
       "ctrl-j": "workspace::ActivatePaneDown"
     }
   },
+  // File tree
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "q": "workspace::ToggleLeftDock",
+      "space e": "workspace::ToggleLeftDock",
+      ":": "command_palette::Toggle",
+      "/": "project_panel::NewSearchInDirectory",
+      "enter": "project_panel::OpenPermanent",
+      "escape": "project_panel::ToggleFocus",
+      "h": "project_panel::CollapseSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "l": "project_panel::ExpandSelectedEntry",
+      "o": "project_panel::OpenPermanent",
+      "v": "project_panel::OpenSplitVertical",
+      "V": "project_panel::OpenSplitHorizontal",
+      "g g": "menu::SelectFirst",
+      "shift-g": "menu::SelectLast",
+      "-": "project_panel::SelectParent"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space f f": "file_finder::Toggle",
+      "space f n": "workspace::NewFile",
+      "space f p": "projects::OpenRecent",
+      "space s g": "workspace::NewSearch"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // Files & Projects
+      "space e": "workspace::ToggleLeftDock",
+      "space space": "file_finder::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f n": "workspace::NewFile",
+      "space f p": "projects::OpenRecent",
+
+      // AI
+      "space a a": "agent::ToggleFocus",
+      "space a t": "workspace::ToggleRightDock",
+      "space a e": "assistant::InlineAssist",
+
+      // Git
+      "space g b": "git::Blame",
+
+      // Code
+      "space c r": "editor::Rename",
+      "space c f": "editor::Format",
+      "space m p": "markdown::OpenPreviewToTheSide",
+      "space s s": "outline::Toggle",
+      "space z z": "workspace::ToggleCenteredLayout",
+
+      // Terminal
+      "space t": "workspace::ToggleBottomDock",
+
+      // Panes & Tabs
+      "space -": "pane::SplitDown",
+      "space |": "pane::SplitRight",
+      "space q a": "pane::CloseAllItems",
+      "space q o": "pane::CloseOtherItems",
+      "space ,": "tab_switcher::Toggle",
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePreviousItem",
+      "] q": "editor::MoveToStartOfNextExcerpt",
+      "[ q": "editor::MoveToStartOfExcerpt"
+    }
+  },
   {
     "context": "VimControl && !menu",
     "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "n": ["workspace::SendKeystrokes", "n z z z v"],
+      "shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
+      "g r": "editor::FindAllReferences",
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown"
     }
   },
   {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {}
+    "context": "vim_operator == d",
+    "bindings": {
+      "o": "editor::ExpandAllDiffHunks",
+      "p": "git::Restore"
+    }
   },
   {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {}
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      "b": "vim::AnyBrackets"
+    }
   }
 ]
