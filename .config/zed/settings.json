@@ -22,6 +22,11 @@
     "light": "Rosé Pine Dawn",
     "dark": "Catppuccin Mocha (Blur) [Heavy]"
   },
+  "icon_theme": {
+    "mode": "system",
+    "dark": "Catppuccin Mocha",
+    "light": "Catppuccin Latte"
+  },
   "relative_line_numbers": true,
   "tab_bar": {
     "show": false
