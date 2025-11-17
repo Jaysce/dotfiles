@@ -29,7 +29,7 @@
   },
   "relative_line_numbers": true,
   "tab_bar": {
-    "show": false
+    "show": true
   },
   "buffer_font_features": {
     "calt": false
