@@ -27,7 +27,7 @@
     "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte"
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "tab_bar": {
     "show": true
   },
