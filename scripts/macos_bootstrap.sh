@@ -69,6 +69,7 @@ cask=(
   docker
   font-fira-code-nerd-font
   font-jetbrains-mono-nerd-font
+  ghostty
   iina
   iterm2
   intellij-idea
@@ -80,6 +81,7 @@ cask=(
   spaceman
   spotify
   visual-studio-code
+  zed
 )
 
 mas=(
