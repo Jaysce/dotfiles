@@ -71,7 +71,6 @@ cask=(
   font-jetbrains-mono-nerd-font
   ghostty
   iina
-  iterm2
   intellij-idea
   jordanbaird-ice
   mimestream
