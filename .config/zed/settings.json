@@ -41,5 +41,8 @@
   "terminal": {
     "font_family": "FiraCode Nerd Font"
   },
-  "format_on_save": "off"
+  "format_on_save": "off",
+  "project_panel": {
+    "auto_fold_dirs": false
+  }
 }
