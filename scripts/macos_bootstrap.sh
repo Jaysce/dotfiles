@@ -37,6 +37,7 @@ brew=(
   gh
   git-delta
   httpie
+  hexyl
   jq
   lazydocker
   lazygit
