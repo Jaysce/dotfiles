@@ -18,7 +18,7 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Rosé Pine Dawn",
     "dark": "Catppuccin Mocha (Blur) [Heavy]"
   },
