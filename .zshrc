@@ -1,22 +1,41 @@
 # Exports --------------------------------------------------------------------------------
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH # Use GNU utils instead of BSD
 export LANG=en_AU.UTF-8
 export EDITOR=nvim
 export TERM=xterm-256color
 export BAT_THEME="base16"
 export MANPAGER="nvim +Man!"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# OS Detection
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    IS_MACOS=true
+else
+    IS_MACOS=false
+fi
+
+# macOS-specific exports
+if $IS_MACOS; then
+    export PATH="/usr/local/opt/llvm/bin:$PATH"
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+fi
+
+# Handle bat/batcat and fd/fdfind differences
+if command -v batcat &>/dev/null; then
+    alias bat='batcat'
+fi
+if command -v fdfind &>/dev/null; then
+    alias fd='fdfind'
+    export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --exclude .git'
+else
+    export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+fi
 
 # Aliases --------------------------------------------------------------------------------
 alias cat='bat'
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias ffe="n \$(ff)"
 alias ffv="bat \$(ff)"
-alias ffc="ff | pbcopy"
-alias ffd="cd \$(dirname \$(ff))"
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias la='ls -a'
 alias lt='eza --tree --level=2 --long --icons --git'
@@ -28,6 +47,18 @@ alias cd="zd"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# Clipboard alias (pbcopy/xclip)
+if $IS_MACOS; then
+    alias ffc="ff | pbcopy"
+else
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+    alias ffc="ff | xclip -selection clipboard"
+fi
+
+alias ffd="cd \$(dirname \$(ff))"
+
 zd() {
   if [ $# -eq 0 ]; then
     builtin cd ~ && return
@@ -56,24 +87,32 @@ SAVEHIST=50000
 WORDCHARS=''
 
 # ZSH Plugins ----------------------------------------------------------------------------
-if type brew &>/dev/null; then
+if $IS_MACOS && type brew &>/dev/null; then
+    # macOS with Homebrew
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-autoload -Uz compinit
-compinit
+    autoload -Uz compinit
+    compinit
 
-if type brew &>/dev/null; then
     BREW_PREFIX=$(brew --prefix)
-
     [[ -f $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
         source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    
     [[ -f $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
         source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
     [[ -f $BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]] && \
         source $BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+else
+    # Linux (WSL/Ubuntu) with plugins in ~/.zsh
+    FPATH=$HOME/.zsh/zsh-completions/src:$FPATH
+    autoload -Uz compinit
+    compinit
+
+    [[ -f $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
+        source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+    [[ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+        source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    [[ -f $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh ]] && \
+        source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
