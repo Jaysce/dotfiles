@@ -26,9 +26,15 @@ brew=(
   git
   ack
   bat
+  bazelisk
+  buf
   ccls
   cmake
+  colima
   curl
+  docker
+  docker-compose
+  docker-credential-helper
   doggo
   eza
   fd
@@ -36,6 +42,7 @@ brew=(
   gcc
   gh
   git-delta
+  grpcurl
   httpie
   hexyl
   jq
@@ -67,7 +74,6 @@ cask=(
   1password
   cleanshot
   discord
-  docker
   font-fira-code-nerd-font
   font-jetbrains-mono-nerd-font
   ghostty
