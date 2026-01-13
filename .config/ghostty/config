@@ -7,7 +7,7 @@ macos-option-as-alt = true
 mouse-hide-while-typing = true
 shell-integration-features = no-cursor
 
-background-opacity = 0.8
+background-opacity = 0.9
 background-blur = 100
 window-width = 95
 window-height = 32
@@ -17,8 +17,8 @@ window-padding-balance = true
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
 
-adjust-cell-height = 6
-adjust-cursor-height = 6
+adjust-cell-height = 14
+adjust-cursor-height = 14
 
 font-size = 15
 font-family = FiraCode Nerd Font
@@ -36,5 +36,9 @@ keybind = super+shift+h=goto_split:left
 keybind = super+shift+j=goto_split:down
 keybind = super+shift+k=goto_split:up
 keybind = super+shift+l=goto_split:right
-keybind = global:super+enter=toggle_quick_terminal
-keybind = global:super+shift+enter=new_window
+keybind = super+shift+enter=toggle_split_zoom
+keybind = opt+shift+k=resize_split:up,20
+keybind = opt+shift+j=resize_split:down,20
+keybind = opt+shift+h=resize_split:left,20
+keybind = opt+shift+l=resize_split:right,20
+keybind = global:super+enter=new_window
