@@ -126,6 +126,11 @@ bindkey '^[[B' history-substring-search-down
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"
+
 # Work -----------------------------------------------------------------------------------
 if [[ -f $HOME/.config/work-config/work-aliases.zsh ]]; then
     source $HOME/.config/work-config/work-aliases.zsh

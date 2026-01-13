@@ -27,6 +27,7 @@ brew=(
   ack
   bat
   bazelisk
+  bun
   buf
   ccls
   cmake
@@ -98,6 +99,7 @@ mas=(
 
 echo "☁️ Updating homebrew..."
 brew update
+brew tap oven-sh/bun
 
 echo "📦 Installing packages..."
 brew install ${brew[@]}
