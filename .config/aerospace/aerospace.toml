@@ -57,12 +57,12 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 20
-    inner.vertical =   20
-    outer.left =       20
-    outer.bottom =     20
-    outer.top =        20
-    outer.right =      20
+    inner.horizontal = 15
+    inner.vertical =   15
+    outer.left =       10
+    outer.bottom =     10
+    outer.top =        10
+    outer.right =      10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -143,6 +143,12 @@ automatically-unhide-macos-hidden-apps = false
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+    # See: https://nikitabobko.github.io/AeroSpace/commands#join-with
+    alt-ctrl-h = 'join-with left'
+    alt-ctrl-j = 'join-with down'
+    alt-ctrl-k = 'join-with up'
+    alt-ctrl-l = 'join-with right'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
@@ -153,15 +159,3 @@ automatically-unhide-macos-hidden-apps = false
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
     backspace = ['close-all-windows-but-current', 'mode main']
-
-    # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-    #s = ['layout sticky tiling', 'mode main']
-
-    alt-shift-h = ['join-with left', 'mode main']
-    alt-shift-j = ['join-with down', 'mode main']
-    alt-shift-k = ['join-with up', 'mode main']
-    alt-shift-l = ['join-with right', 'mode main']
-
-    down = 'volume down'
-    up = 'volume up'
-    shift-down = ['volume set 0', 'mode main']
