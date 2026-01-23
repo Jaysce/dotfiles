@@ -51,6 +51,7 @@ brew=(
   lazygit
   llvm
   mas
+  mole
   neovim
   node
   oha
