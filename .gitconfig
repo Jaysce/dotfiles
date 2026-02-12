@@ -83,11 +83,19 @@
 
 # Aliases
 [alias]
+    # Logging
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     lg3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue) %h%C(reset)%C(bold red)%d%C(reset)%n''%C(bold cyan)%<(80,trunc)󰦨 %s%C(reset)%n''%C(magenta) %an • %ae%n''%C(dim white) %ar%n'
     lg = !"git lg3"
     lgo = log --decorate --format='%C(blue)%h%C(reset) %C(cyan)%s%C(reset)%C(bold red)%d%C(reset)'
+
+    # Worktrees
+    wta = "!f() { root=$(git rev-parse --show-toplevel); repo=$(basename \"$root\"); name=${1##*/}; git worktree add -b \"$1\" \"$root/../worktrees/$repo/$name/$repo\" ${2:-HEAD}; }; f"
+    wtr = "!f() { root=$(git rev-parse --show-toplevel); repo=$(basename \"$root\"); name=${1##*/}; git worktree remove \"$root/../worktrees/$repo/$name/$repo\"; }; f"
+    wtl = "!f() { git worktree list; }; f"
+
+    # Helpers
     undo = reset HEAD~1
     discard = checkout --
     sync = !"git fetch origin $1:$1"
