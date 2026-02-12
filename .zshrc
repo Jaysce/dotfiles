@@ -59,6 +59,39 @@ fi
 
 alias ffd="cd \$(dirname \$(ff))"
 
+# Checkout a GitHub PR into a new git worktree
+# The worktree will be named after the branch
+# If no remote is specified it defaults to 'origin'
+# Usage: cpr <pr-number> [remote]
+# Example: cpr 123
+#          cpr 123 upstream
+cpr() {
+  local root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [[ -z "$root" ]]; then
+    echo "Error: not inside a git repository"
+    return 1
+  fi
+  local pr="$1"
+  local remote="${2:-origin}"
+  local repo=$(basename "$root")
+  local branch=$(gh pr view "$pr" --json headRefName -q .headRefName)
+  local name="${branch##*/}"
+  if ! git fetch "$remote" "$branch"; then
+    echo "Error: failed to fetch branch '$branch' from $remote"
+    return 1
+  fi
+  if ! git worktree add -b "$branch" "$root/../worktrees/$repo/$name/$repo" FETCH_HEAD; then
+    echo "Error: failed to create worktree for branch '$branch'"
+    return 1
+  fi
+  cd "$root/../worktrees/$repo/$name/$repo" || return
+  echo "Switched to new worktree for PR #$pr: $branch"
+}
+
+# Smart cd: use zoxide if target isn't a direct path
+# Usage: zd [directory]
+# Example: zd ~/projects
+#          zd myproject    # uses zoxide to fuzzy match
 zd() {
   if [ $# -eq 0 ]; then
     builtin cd ~ && return
