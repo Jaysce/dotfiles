@@ -83,6 +83,7 @@ cask=(
   intellij-idea
   jordanbaird-ice
   mimestream
+  obsidian
   raycast
   rectangle
   replacicon
@@ -126,6 +127,14 @@ cd ~
 # --- Neovim ---
 echo "☁️ Cloning nvim and symlinking..."
 git clone https://github.com/Jaysce/nvim.git ~/.config/nvim
+
+# --- Agents ---
+
+echo "🤖 Cloning agents repo and installing skills..."
+if [ ! -d ~/agents/.git ]; then
+  git clone https://github.com/Jaysce/agents.git ~/agents
+fi
+bunx skills add ~/agents -g -a codex -y
 
 # --- System / App Preferences ---
 
