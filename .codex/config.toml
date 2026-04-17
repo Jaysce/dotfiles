@@ -19,7 +19,7 @@ writable_roots = []
 exclude_tmpdir_env_var = false
 exclude_slash_tmp = false
 
-# MCP
+# MCPs
 [mcp_servers.otter]
 command = "otter"
 args = ["mcp", "serve"]
