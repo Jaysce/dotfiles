@@ -47,6 +47,7 @@ alias cd="zd"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias gpo='git pull origin'
 
 # Clipboard alias (pbcopy/xclip)
 if $IS_MACOS; then
