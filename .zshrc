@@ -43,6 +43,7 @@ alias lta='lt -a'
 alias ld='lazydocker'
 alias lg='lazygit'
 alias n='nvim'
+alias oc='opencode'
 alias cd="zd"
 alias ..='cd ..'
 alias ...='cd ../..'
