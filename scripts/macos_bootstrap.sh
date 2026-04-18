@@ -55,6 +55,7 @@ brew=(
   neovim
   node
   oha
+  opencode
   ripgrep
   starship
   stow
@@ -102,6 +103,7 @@ mas=(
 echo "☁️ Updating homebrew..."
 brew update
 brew tap oven-sh/bun
+brew tap anomalyco/tap
 
 echo "📦 Installing packages..."
 brew install ${brew[@]}
@@ -135,6 +137,7 @@ if [ ! -d ~/agents/.git ]; then
   git clone https://github.com/Jaysce/agents.git ~/agents
 fi
 bunx skills add ~/agents -g -a codex -y
+bun add -g defuddle
 
 # --- System / App Preferences ---
 
