@@ -43,6 +43,7 @@ brew=(
   gcc
   gh
   git-delta
+  go-task
   grpcurl
   httpie
   hexyl
