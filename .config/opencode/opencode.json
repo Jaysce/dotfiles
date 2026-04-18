@@ -1,0 +1,74 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openai/gpt-5.4",
+  "small_model": "openai/gpt-5.4-mini",
+  "default_agent": "build",
+  "autoupdate": "notify",
+  "permission": {
+    "external_directory": {
+      "*": "ask",
+      "~/Developer": "allow",
+      "~/Developer/**": "allow",
+      "~/work": "allow",
+      "~/work/**": "allow",
+      "~/dotfiles": "allow",
+      "~/dotfiles/**": "allow"
+    }
+  },
+  "provider": {
+    "openai": {
+      "models": {
+        "gpt-5.4": {
+          "options": {
+            "reasoningEffort": "xhigh",
+            "reasoningSummary": "auto"
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "otter": {
+      "type": "local",
+      "command": [
+        "otter",
+        "mcp",
+        "serve"
+      ],
+      "enabled": true
+    }
+  },
+  "agent": {
+    "fast": {
+      "description": "Lower-latency coding agent with medium reasoning effort.",
+      "mode": "primary",
+      "model": "openai/gpt-5.4",
+      "reasoningEffort": "medium",
+      "steps": 4
+    },
+    "safe": {
+      "description": "Read-only analysis agent that avoids edits and blocks web access.",
+      "mode": "primary",
+      "model": "openai/gpt-5.4",
+      "reasoningEffort": "xhigh",
+      "permission": {
+        "edit": "deny",
+        "bash": {
+          "*": "deny",
+          "git status*": "allow",
+          "git diff*": "allow",
+          "git log*": "allow",
+          "pwd*": "allow",
+          "ls*": "allow"
+        },
+        "webfetch": "allow",
+        "websearch": "allow"
+      }
+    },
+    "unrestricted": {
+      "description": "Full-access agent that skips approval prompts.",
+      "mode": "primary",
+      "permission": "allow"
+    }
+  }
+}
