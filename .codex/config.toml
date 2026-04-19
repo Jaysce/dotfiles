@@ -8,6 +8,7 @@ approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = "cached"
 check_for_update_on_startup = true
+service_tier = "fast"
 
 [history]
 persistence = "save-all"
@@ -18,6 +19,9 @@ network_access = true
 writable_roots = []
 exclude_tmpdir_env_var = false
 exclude_slash_tmp = false
+
+[features]
+fast_mode = true
 
 # MCPs
 [mcp_servers.otter]
