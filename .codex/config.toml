@@ -1,5 +1,5 @@
 # General
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "xhigh"
 plan_mode_reasoning_effort = "xhigh"
 model_reasoning_summary = "auto"
@@ -28,18 +28,5 @@ fast_mode = true
 command = "otter"
 args = ["mcp", "serve"]
 
-# Profiles
-[profiles.fast]
-model_reasoning_effort = "medium"
-plan_mode_reasoning_effort = "medium"
-service_tier = "fast"
 
-[profiles.safe]
-approval_policy = "untrusted"
-sandbox_mode = "read-only"
-web_search = "disabled"
 
-[profiles.unrestricted]
-approval_policy = "never"
-sandbox_mode = "danger-full-access"
-web_search = "live"
