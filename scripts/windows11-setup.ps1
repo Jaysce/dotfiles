@@ -43,13 +43,39 @@ function Install-Applications {
         Write-Output "Installing $($app.name)..."
         winget install -e --id $app.id --accept-package-agreements --accept-source-agreements
     }
+
+    Update-SessionPath
+}
+
+function Update-SessionPath {
+    $pathEntries = @(
+        [Environment]::GetEnvironmentVariable("Path", "Machine")
+        [Environment]::GetEnvironmentVariable("Path", "User")
+        $env:Path
+    ) -split [System.IO.Path]::PathSeparator |
+        Where-Object { -not [string]::IsNullOrWhiteSpace($_) } |
+        Select-Object -Unique
+
+    $env:Path = $pathEntries -join [System.IO.Path]::PathSeparator
 }
 
 function Install-Dotfiles {
     Write-Output "`nCloning dotfiles repository..."
     try {
         Set-Location ~
-        git clone https://github.com/Jaysce/dotfiles.git
+        Update-SessionPath
+
+        $gitCommand = Get-Command git -CommandType Application -ErrorAction SilentlyContinue |
+            Select-Object -First 1
+        if (-not $gitCommand) {
+            throw "Git is not available in PATH after refreshing the current session. Verify the Git.Git winget install succeeded, or open a new terminal and rerun this script."
+        }
+
+        & $gitCommand.Source clone https://github.com/Jaysce/dotfiles.git
+        if ($LASTEXITCODE -ne 0) {
+            throw "git clone failed with exit code $LASTEXITCODE"
+        }
+
         Write-Output "Dotfiles cloned successfully."
     } catch {
         $script:errorLog += "Failed to clone dotfiles: $_"
