@@ -58,6 +58,7 @@ brew=(
   oha
   opencode
   ripgrep
+  shellcheck
   starship
   stow
   sshs
