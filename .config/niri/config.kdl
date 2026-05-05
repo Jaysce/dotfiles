@@ -89,7 +89,7 @@ window-rule {
 
 // Open TUI controls as floating windows.
 window-rule {
-    match app-id=r#"^terra\.(wlctl|bluetui)$"#
+    match app-id=r#"^terra\.(wlctl|bluetui|btop)$"#
     open-floating true
 }
 

@@ -6,6 +6,7 @@ set -Eeuo pipefail
 shell_packages=(
   quickshell
   jq
+  btop
 )
 
 terminal_packages=(
@@ -147,7 +148,7 @@ Bootstrap complete.
 
 Installed:
   - niri, ly
-  - quickshell, jq
+  - quickshell, jq, btop
   - alacritty
   - awww, matugen
   - upower
