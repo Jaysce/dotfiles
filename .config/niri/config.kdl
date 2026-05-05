@@ -84,6 +84,12 @@ window-rule {
     open-floating true
 }
 
+// Open TUI controls as floating windows.
+window-rule {
+    match app-id=r#"^terra\.(wlctl|bluetui)$"#
+    open-floating true
+}
+
 // Rounded corners for all windows
 window-rule {
     geometry-corner-radius 10
