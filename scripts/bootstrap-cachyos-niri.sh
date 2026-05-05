@@ -142,6 +142,10 @@ install_shell
 
 configure_wallpaper
 
+echo "Setting dark color scheme preference..."
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+
 cat <<'EOF'
 
 Bootstrap complete.
@@ -175,6 +179,7 @@ CachyOS no-DE installs already pull in xdg-desktop-portal-gtk on the tested
 default package selection, so it is not listed explicitly here.
 
 Wallpaper/theming:
+  - Apps and websites are set to prefer dark variants.
   - If ~/dotfiles/wallpaper exists, it is linked into ~/Pictures/Wallpaper.
   - If that directory contains an image, initial Material colors are generated
     from the first image.
