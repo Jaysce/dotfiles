@@ -7,10 +7,15 @@ shell_packages=(
   quickshell
   jq
   btop
+  stow
 )
 
 terminal_packages=(
   alacritty
+)
+
+font_packages=(
+  ttf-firacode-nerd
 )
 
 session_packages=(
@@ -50,6 +55,7 @@ packages=(
   "${session_packages[@]}"
   "${shell_packages[@]}"
   "${terminal_packages[@]}"
+  "${font_packages[@]}"
   "${wallpaper_packages[@]}"
   "${power_packages[@]}"
   "${brightness_packages[@]}"
@@ -141,6 +147,7 @@ fi
 install_shell
 
 configure_wallpaper
+"$quickshell_config_dir/bin/terra-sync-niri-accent"
 
 echo "Setting dark color scheme preference..."
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
@@ -152,8 +159,9 @@ Bootstrap complete.
 
 Installed:
   - niri, ly
-  - quickshell, jq, btop
+  - quickshell, jq, btop, stow
   - alacritty
+  - ttf-firacode-nerd
   - awww, matugen
   - upower
   - brightnessctl
