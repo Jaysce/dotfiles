@@ -132,6 +132,20 @@ window-rule {
     }
 }
 
+// Add a shadow to fuzzel.
+layer-rule {
+    match namespace="^launcher$"
+    geometry-corner-radius 8
+
+    shadow {
+        on
+        softness 45
+        spread 8
+        offset x=0 y=12
+        color "#00000090"
+    }
+}
+
 // Rounded corners for all windows
 window-rule {
     geometry-corner-radius 10
@@ -142,7 +156,7 @@ window-rule {
 binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; } // TODO: ghostty
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; } // TODO: quickshell launcher
+    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "pkill -x fuzzel || fuzzel"; } // TODO: quickshell launcher
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; } // TODO
 
     // TODO

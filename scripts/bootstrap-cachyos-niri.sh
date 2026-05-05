@@ -8,6 +8,7 @@ shell_packages=(
   jq
   btop
   stow
+  fuzzel
 )
 
 terminal_packages=(
@@ -147,7 +148,7 @@ fi
 install_shell
 
 configure_wallpaper
-"$quickshell_config_dir/bin/terra-sync-niri-accent"
+"$quickshell_config_dir/bin/terra-sync-theme"
 
 echo "Setting dark color scheme preference..."
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
@@ -159,7 +160,7 @@ Bootstrap complete.
 
 Installed:
   - niri, ly
-  - quickshell, jq, btop, stow
+  - quickshell, jq, btop, stow, fuzzel
   - alacritty
   - ttf-firacode-nerd
   - awww, matugen
