@@ -1,3 +1,5 @@
+spawn-at-startup "quickshell" "--no-duplicate"
+
 // Input device configuration.
 input {
     // Keyboard
