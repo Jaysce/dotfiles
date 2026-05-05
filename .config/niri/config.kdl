@@ -46,7 +46,7 @@ input {
 
 // Settings that influence how windows are positioned and sized.
 layout {
-    gaps 16
+    gaps 12
     center-focused-column "never"
 
     preset-column-widths {
@@ -58,15 +58,18 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 4
-        active-color "#7fc8ff"
-        inactive-color "#505050"
+        off
     }
 
     border {
-        off
+        width 2
+        active-color "#8fb3ff"
+        inactive-gradient from="#ffffff26" to="#5f697840" angle=135 relative-to="workspace-view" in="srgb-linear"
+        urgent-color "#f87171"
     }
 }
+
+include "~/.local/state/niri/terra-colors.kdl"
 
 hotkey-overlay {
     skip-at-startup
@@ -75,6 +78,13 @@ hotkey-overlay {
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+blur {
+    passes 5
+    offset 3.0
+    noise 0.02
+    saturation 1.5
+}
 
 // Window rules let you adjust behavior for individual windows.
 
@@ -93,9 +103,25 @@ window-rule {
     open-floating true
 }
 
+// Add blur to terminal windows.
+window-rule {
+    match app-id=r#"^(Alacritty|terra\..*)$"#
+    draw-border-with-background false
+
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
 // Add shadows to floating windows.
 window-rule {
     match is-floating=true
+
+    background-effect {
+        blur false
+        xray false
+    }
 
     shadow {
         on
