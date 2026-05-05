@@ -93,6 +93,19 @@ window-rule {
     open-floating true
 }
 
+// Add shadows to floating windows.
+window-rule {
+    match is-floating=true
+
+    shadow {
+        on
+        softness 45
+        spread 10
+        offset x=0 y=12
+        color "#000000b0"
+    }
+}
+
 // Rounded corners for all windows
 window-rule {
     geometry-corner-radius 10
