@@ -125,7 +125,7 @@ cd ~
 git clone https://github.com/Jaysce/dotfiles.git
 mkdir -p ~/.config/starship
 cd dotfiles
-stow .
+stow common macos
 cd ~
 
 # --- Neovim ---

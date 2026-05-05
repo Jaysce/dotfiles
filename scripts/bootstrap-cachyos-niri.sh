@@ -78,6 +78,11 @@ pictures_wallpaper_dir="$HOME/Pictures/Wallpaper"
 state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/quickshell"
 colors_file="$state_dir/material-colors.json"
 current_wallpaper_file="$state_dir/wallpaper"
+stow_backup_dir="$HOME/.local/state/dotfiles/stow-backup-$(date +%Y%m%d-%H%M%S)"
+stow_packages=(
+  common
+  linux
+)
 
 install_shell() {
   mkdir -p "$(dirname "$shell_dir")" "$(dirname "$quickshell_config_dir")"
@@ -126,6 +131,52 @@ configure_wallpaper() {
   printf '%s\n' "$initial_wallpaper" >"$current_wallpaper_file"
 }
 
+should_stow_path() {
+  local path="$1"
+
+  case "$path" in
+    README*|LICENSE*|COPYING|.gitignore|.stow-local-ignore|.bashrc|other/*|scripts/*)
+      return 1
+      ;;
+  esac
+
+  return 0
+}
+
+backup_stow_conflicts() {
+  local package
+  local tracked_path
+  local source_path
+  local target_path
+  local relative_path
+
+  for package in "${stow_packages[@]}"; do
+    git -C "$dotfiles_dir" ls-files -z -- "$package" | while IFS= read -r -d '' tracked_path; do
+      relative_path="${tracked_path#"$package"/}"
+      should_stow_path "$relative_path" || continue
+
+      source_path="$dotfiles_dir/$tracked_path"
+      target_path="$HOME/$relative_path"
+
+      if [[ -e $target_path || -L $target_path ]]; then
+        if [[ $(readlink -f "$target_path" 2>/dev/null || true) == "$source_path" ]]; then
+          continue
+        fi
+
+        mkdir -p "$stow_backup_dir/$(dirname "$relative_path")"
+        mv "$target_path" "$stow_backup_dir/$relative_path"
+        echo "Backed up $target_path -> $stow_backup_dir/$relative_path"
+      fi
+    done
+  done
+}
+
+stow_dotfiles() {
+  echo "Stowing dotfiles..."
+  backup_stow_conflicts
+  stow --dir "$dotfiles_dir" --target "$HOME" --restow "${stow_packages[@]}"
+}
+
 echo "Installing official packages..."
 sudo pacman -Syu --needed "${packages[@]}"
 
@@ -147,6 +198,7 @@ fi
 
 install_shell
 
+stow_dotfiles
 configure_wallpaper
 "$quickshell_config_dir/bin/terra-sync-theme"
 
