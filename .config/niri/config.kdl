@@ -19,6 +19,7 @@ input {
         accel-speed 0.0
         accel-profile "adaptive"
         scroll-method "two-finger"
+        scroll-factor 0.4
         drag true
         natural-scroll
     }
