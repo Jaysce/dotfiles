@@ -1,12 +1,10 @@
-general.import = ["~/.config/omarchy/current/theme/alacritty.toml"]
-
 [env]
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
-bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
-italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Italic" }
 size = 11
 offset = { x = 0, y = 7 }
 glyph_offset = { x = 0, y = 3 }
@@ -15,6 +13,7 @@ glyph_offset = { x = 0, y = 3 }
 padding.x = 20
 padding.y = 20
 decorations = "None"
+opacity = 0.88
 
 [mouse]
 hide_when_typing = true
