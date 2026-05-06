@@ -6,7 +6,7 @@ input {
     keyboard {
         xkb {
 	        layout "us"
-	        options "caps:escape"
+	        options "caps:escape,altwin:swap_alt_win"
         }
 	    repeat-delay 250
 	    repeat-rate 35
@@ -158,6 +158,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; } // TODO: ghostty
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "pkill -x fuzzel || fuzzel"; } // TODO: quickshell launcher
+    Mod+Alt+Space hotkey-overlay-title="Open Terra Menu" { spawn "/home/sasindu/.config/quickshell/bin/terra-toggle-launcher"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; } // TODO
 
     // TODO
