@@ -1,6 +1,8 @@
 # Exports --------------------------------------------------------------------------------
 export LANG=en_AU.UTF-8
 export EDITOR=nvim
+export VISUAL=nvim
+export SUDO_EDITOR=nvim
 export TERM=xterm-256color
 export BAT_THEME="base16"
 export MANPAGER="nvim +Man!"

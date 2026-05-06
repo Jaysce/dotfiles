@@ -57,6 +57,7 @@
 
 # Delta Preferences
 [core]
+    editor = nvim
     pager = delta
 
 [interactive]
