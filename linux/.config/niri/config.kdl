@@ -36,13 +36,7 @@ input {
 }
 
 // Displays
-// TODO
-/-output "eDP-1" {
-    mode "1920x1080@120.030"
-    scale 2
-    transform "normal"
-    position x=1280 y=0
-}
+include "~/.local/state/niri/outputs.local.kdl"
 
 // Settings that influence how windows are positioned and sized.
 layout {
