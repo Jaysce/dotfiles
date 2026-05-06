@@ -37,6 +37,11 @@ input {
 // Displays
 include "~/.local/state/niri/outputs.local.kdl"
 
+output "HDMI-A-1" {
+    mode "3840x2160@120.000"
+    scale 1.5
+}
+
 // Settings that influence how windows are positioned and sized.
 layout {
     gaps 12
