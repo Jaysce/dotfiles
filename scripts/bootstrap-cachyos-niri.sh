@@ -15,6 +15,10 @@ terminal_packages=(
   alacritty
 )
 
+clipboard_packages=(
+  wl-clipboard
+)
+
 font_packages=(
   ttf-firacode-nerd
 )
@@ -63,6 +67,7 @@ packages=(
   "${portal_packages[@]}"
   "${shell_packages[@]}"
   "${terminal_packages[@]}"
+  "${clipboard_packages[@]}"
   "${font_packages[@]}"
   "${wallpaper_packages[@]}"
   "${power_packages[@]}"
@@ -222,6 +227,7 @@ Installed:
   - xdg-desktop-portal, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome
   - quickshell, jq, btop, stow, fuzzel
   - alacritty
+  - wl-clipboard
   - ttf-firacode-nerd
   - awww, matugen
   - upower
@@ -241,7 +247,6 @@ Networking:
 
 Not installed yet, by design:
   - polkit-gnome: add when we need graphical privilege prompts
-  - wl-clipboard: add when the shell needs clipboard commands
 
 Wallpaper/theming:
   - Apps and websites are set to prefer dark variants.
