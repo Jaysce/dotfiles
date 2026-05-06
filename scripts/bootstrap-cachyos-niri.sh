@@ -24,6 +24,12 @@ session_packages=(
   ly
 )
 
+portal_packages=(
+  xdg-desktop-portal
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-gnome
+)
+
 wallpaper_packages=(
   awww
   matugen
@@ -54,6 +60,7 @@ bluetooth_packages=(
 
 packages=(
   "${session_packages[@]}"
+  "${portal_packages[@]}"
   "${shell_packages[@]}"
   "${terminal_packages[@]}"
   "${font_packages[@]}"
@@ -212,6 +219,7 @@ Bootstrap complete.
 
 Installed:
   - niri, ly
+  - xdg-desktop-portal, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome
   - quickshell, jq, btop, stow, fuzzel
   - alacritty
   - ttf-firacode-nerd
@@ -232,12 +240,8 @@ Networking:
   - Wi-Fi is controlled from the bar with wlctl.
 
 Not installed yet, by design:
-  - xdg-desktop-portal-gnome: add when we need Niri screencasting/screen sharing
   - polkit-gnome: add when we need graphical privilege prompts
   - wl-clipboard: add when the shell needs clipboard commands
-
-CachyOS no-DE installs already pull in xdg-desktop-portal-gtk on the tested
-default package selection, so it is not listed explicitly here.
 
 Wallpaper/theming:
   - Apps and websites are set to prefer dark variants.
