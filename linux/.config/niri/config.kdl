@@ -140,6 +140,12 @@ layer-rule {
     }
 }
 
+// Place blurred wallpaper layer in the overview backdrop.
+layer-rule {
+    match namespace="^terra-overview-wallpaper$"
+    place-within-backdrop true
+}
+
 // Rounded corners for all windows
 window-rule {
     geometry-corner-radius 10
