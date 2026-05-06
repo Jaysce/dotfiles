@@ -95,6 +95,8 @@ window-rule {
 window-rule {
     match app-id=r#"^terra\.(wlctl|bluetui|btop)$"#
     open-floating true
+    default-column-width { fixed 920; }
+    default-window-height { fixed 620; }
 }
 
 // Add blur to terminal windows.
