@@ -10,6 +10,8 @@ shell_packages=(
   stow
   fuzzel
   neovim
+  zoxide
+  git-delta
 )
 
 terminal_packages=(
@@ -227,7 +229,7 @@ Installed:
   - niri, ly
   - xdg-desktop-portal, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome
   - quickshell, jq, btop, stow, fuzzel
-  - neovim
+  - neovim, zoxide, git-delta
   - alacritty
   - wl-clipboard
   - ttf-firacode-nerd
