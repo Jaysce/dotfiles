@@ -57,6 +57,12 @@ clipboard_packages=(
   wl-clipboard
 )
 
+screenshot_packages=(
+  grim
+  satty
+  slurp
+)
+
 font_packages=(
   ttf-firacode-nerd
   ttf-jetbrains-mono-nerd
@@ -112,6 +118,7 @@ packages=(
   "${dev_packages[@]}"
   "${app_packages[@]}"
   "${clipboard_packages[@]}"
+  "${screenshot_packages[@]}"
   "${font_packages[@]}"
   "${wallpaper_packages[@]}"
   "${power_packages[@]}"

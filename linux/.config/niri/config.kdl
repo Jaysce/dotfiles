@@ -104,6 +104,14 @@ window-rule {
     default-window-height { fixed 620; }
 }
 
+// Open screenshot annotation as a floating window.
+window-rule {
+    match app-id="satty"
+    open-floating true
+    default-column-width { fixed 1100; }
+    default-window-height { fixed 760; }
+}
+
 // Add blur to terminal windows.
 window-rule {
     match app-id=r#"^(Alacritty|terra\..*)$"#
@@ -270,10 +278,11 @@ binds {
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-    // TODO
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Alt+Shift+3 hotkey-overlay-title="Save Screenshot" { spawn "/home/sasindu/.config/quickshell/bin/terra-screenshot" "screen-save"; }
+    Alt+Ctrl+Shift+3 hotkey-overlay-title="Copy Screenshot" { spawn "/home/sasindu/.config/quickshell/bin/terra-screenshot" "screen-copy"; }
+    Alt+Shift+4 hotkey-overlay-title="Save Screenshot Area" { spawn "/home/sasindu/.config/quickshell/bin/terra-screenshot" "area-save"; }
+    Alt+Ctrl+Shift+4 hotkey-overlay-title="Copy Screenshot Area" { spawn "/home/sasindu/.config/quickshell/bin/terra-screenshot" "area-copy"; }
+    Alt+Shift+5 hotkey-overlay-title="Annotate Screenshot Area" { spawn "/home/sasindu/.config/quickshell/bin/terra-screenshot" "area-edit"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
