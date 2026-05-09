@@ -9,6 +9,7 @@ shell_packages=(
   btop
   stow
   fuzzel
+  libnotify
 )
 
 cli_packages=(
@@ -86,6 +87,7 @@ wallpaper_packages=(
 )
 
 power_packages=(
+  power-profiles-daemon
   upower
 )
 
@@ -251,8 +253,8 @@ echo "Enabling ly display manager on tty2..."
 sudo systemctl enable ly@tty2.service
 sudo systemctl disable getty@tty2.service
 
-echo "Enabling NetworkManager and Bluetooth services..."
-sudo systemctl enable --now NetworkManager.service bluetooth.service
+echo "Enabling NetworkManager, Bluetooth, and power profile services..."
+sudo systemctl enable --now NetworkManager.service bluetooth.service power-profiles-daemon.service
 
 if systemctl --user enable --now pipewire.service wireplumber.service >/dev/null 2>&1; then
   echo "Enabled PipeWire user services."
