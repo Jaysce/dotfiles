@@ -42,6 +42,7 @@ dev_packages=(
   lazygit
   nodejs
   npm
+  openai-codex
   shellcheck
   the_silver_searcher
   tig
@@ -52,6 +53,15 @@ app_packages=(
   mpv
   obsidian
   spotify-launcher
+)
+
+gaming_packages=(
+  cachyos-gaming-meta
+  gamescope
+  goverlay
+  lib32-mangohud
+  mangohud
+  steam
 )
 
 clipboard_packages=(
@@ -119,6 +129,7 @@ packages=(
   "${editor_packages[@]}"
   "${dev_packages[@]}"
   "${app_packages[@]}"
+  "${gaming_packages[@]}"
   "${clipboard_packages[@]}"
   "${screenshot_packages[@]}"
   "${font_packages[@]}"
