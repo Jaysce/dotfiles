@@ -83,6 +83,7 @@ session_packages=(
   niri
   ly
   swayidle
+  xwayland-satellite
 )
 
 portal_packages=(

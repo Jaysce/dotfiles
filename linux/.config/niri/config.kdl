@@ -167,6 +167,20 @@ window-rule {
     clip-to-geometry true
 }
 
+// Treat Steam/Proton game windows as real fullscreen surfaces.
+window-rule {
+    match app-id=r#"steam_app_\d+"#
+    match app-id=r#".*\.exe$"#
+    open-floating false
+    open-fullscreen true
+    geometry-corner-radius 0
+    clip-to-geometry false
+
+    border {
+        off
+    }
+}
+
 // Keybinds
 binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
