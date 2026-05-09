@@ -29,6 +29,7 @@ font_packages=(
 session_packages=(
   niri
   ly
+  swayidle
 )
 
 portal_packages=(
@@ -226,7 +227,7 @@ cat <<'EOF'
 Bootstrap complete.
 
 Installed:
-  - niri, ly
+  - niri, ly, swayidle
   - xdg-desktop-portal, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome
   - quickshell, jq, btop, stow, fuzzel
   - neovim, zoxide, git-delta
@@ -240,6 +241,10 @@ Installed:
   - networkmanager
   - wlctl-bin from AUR when paru/yay is available
   - bluez, bluez-utils, bluetui
+
+Locking:
+  - Super+Alt+L locks the niri session with Terra Shell.
+  - The session locks before system sleep, including lid-close suspend.
 
 Shell config:
   - Shell is cloned at ~/Developer/terra-shell.

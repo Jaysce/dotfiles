@@ -1,4 +1,5 @@
 spawn-at-startup "quickshell" "--no-duplicate"
+spawn-at-startup "sh" "-c" "pgrep -x swayidle >/dev/null || exec swayidle -w before-sleep /home/sasindu/.config/quickshell/bin/terra-lock lock /home/sasindu/.config/quickshell/bin/terra-lock"
 
 // Input device configuration.
 input {
@@ -163,8 +164,8 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; } // TODO: ghostty
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "pkill -x fuzzel || fuzzel"; } // TODO: quickshell launcher
-    Mod+Alt+Space hotkey-overlay-title="Open Terra Menu" { spawn "/home/sasindu/.config/quickshell/bin/terra-toggle-launcher"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; } // TODO
+    Alt+Space hotkey-overlay-title="Open Terra Menu" { spawn "/home/sasindu/.config/quickshell/bin/terra-toggle-launcher"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "/home/sasindu/.config/quickshell/bin/terra-lock"; }
 
     // TODO
     // Example volume keys mappings for PipeWire & WirePlumber.
