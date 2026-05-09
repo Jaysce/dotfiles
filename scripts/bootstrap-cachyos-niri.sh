@@ -29,6 +29,7 @@ terminal_packages=(
 editor_packages=(
   neovim
   opencode
+  zed
 )
 
 dev_packages=(
@@ -43,6 +44,13 @@ dev_packages=(
   shellcheck
   the_silver_searcher
   tig
+)
+
+app_packages=(
+  discord
+  mpv
+  obsidian
+  spotify-launcher
 )
 
 clipboard_packages=(
@@ -102,6 +110,7 @@ packages=(
   "${terminal_packages[@]}"
   "${editor_packages[@]}"
   "${dev_packages[@]}"
+  "${app_packages[@]}"
   "${clipboard_packages[@]}"
   "${font_packages[@]}"
   "${wallpaper_packages[@]}"
@@ -113,6 +122,7 @@ packages=(
 )
 
 aur_packages=(
+  1password
   wlctl-bin
 )
 
@@ -182,9 +192,9 @@ should_stow_path() {
   local path="$1"
 
   case "$path" in
-    README*|LICENSE*|COPYING|.gitignore|.stow-local-ignore|.bashrc|other/*|scripts/*)
-      return 1
-      ;;
+  README* | LICENSE* | COPYING | .gitignore | .stow-local-ignore | .bashrc | other/* | scripts/*)
+    return 1
+    ;;
   esac
 
   return 0
@@ -257,48 +267,9 @@ cat <<'EOF'
 
 Bootstrap complete.
 
-Installed:
-  - niri, ly, swayidle
-  - xdg-desktop-portal, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome
-  - quickshell, jq, btop, stow, fuzzel
-  - CLI utilities: hexyl, httpie, oha, tree
-  - terminal tools: alacritty, sshs, starship, tmux, zoxide
-  - editors and agents: neovim, opencode
-  - dev tools: bun, git-delta, github-cli, go-task, jdk-openjdk, lazygit,
-    nodejs/npm, shellcheck, the_silver_searcher, tig
-  - wl-clipboard
-  - ttf-firacode-nerd, ttf-jetbrains-mono-nerd
-  - awww, matugen
-  - upower
-  - brightnessctl
-  - pipewire, wireplumber
-  - networkmanager
-  - wlctl-bin from AUR when paru/yay is available
-  - bluez, bluez-utils, bluetui
-
-Locking:
-  - Super+Alt+L locks the niri session with Terra Shell.
-  - The session locks before system sleep, including lid-close suspend.
-
-Shell config:
-  - Shell is cloned at ~/Developer/terra-shell.
-  - ~/.config/quickshell is symlinked to that checkout.
-
-Networking:
-  - Wi-Fi and Ethernet are managed by NetworkManager.
-  - Wi-Fi is controlled from the bar with wlctl.
-
-Not installed yet, by design:
-  - polkit-gnome: add when we need graphical privilege prompts
-
-Wallpaper/theming:
-  - Apps and websites are set to prefer dark variants.
-  - If ~/dotfiles/wallpaper exists, it is linked into ~/Pictures/Wallpaper.
-  - If that directory contains an image, initial Material colors are generated
-    from the first image.
-  - Wallpaper switching and Material color generation are handled by the
-    Quickshell control panel after login.
-
-Next step:
-  Reboot, then choose/start the Niri session from ly.
+Next steps:
+  - Reboot.
+  - Choose/start the Niri session from ly.
+  - Open menu with Alt+Space after login to configure Wi-Fi, Bluetooth,
+    wallpaper, power actions, and other shell tools.
 EOF
