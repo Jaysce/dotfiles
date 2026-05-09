@@ -9,13 +9,40 @@ shell_packages=(
   btop
   stow
   fuzzel
-  neovim
-  zoxide
-  git-delta
+)
+
+cli_packages=(
+  hexyl
+  httpie
+  oha
+  tree
 )
 
 terminal_packages=(
   alacritty
+  sshs
+  starship
+  tmux
+  zoxide
+)
+
+editor_packages=(
+  neovim
+  opencode
+)
+
+dev_packages=(
+  bun
+  git-delta
+  github-cli
+  go-task
+  jdk-openjdk
+  lazygit
+  nodejs
+  npm
+  shellcheck
+  the_silver_searcher
+  tig
 )
 
 clipboard_packages=(
@@ -24,6 +51,7 @@ clipboard_packages=(
 
 font_packages=(
   ttf-firacode-nerd
+  ttf-jetbrains-mono-nerd
 )
 
 session_packages=(
@@ -70,7 +98,10 @@ packages=(
   "${session_packages[@]}"
   "${portal_packages[@]}"
   "${shell_packages[@]}"
+  "${cli_packages[@]}"
   "${terminal_packages[@]}"
+  "${editor_packages[@]}"
+  "${dev_packages[@]}"
   "${clipboard_packages[@]}"
   "${font_packages[@]}"
   "${wallpaper_packages[@]}"
@@ -230,10 +261,13 @@ Installed:
   - niri, ly, swayidle
   - xdg-desktop-portal, xdg-desktop-portal-gtk, xdg-desktop-portal-gnome
   - quickshell, jq, btop, stow, fuzzel
-  - neovim, zoxide, git-delta
-  - alacritty
+  - CLI utilities: hexyl, httpie, oha, tree
+  - terminal tools: alacritty, sshs, starship, tmux, zoxide
+  - editors and agents: neovim, opencode
+  - dev tools: bun, git-delta, github-cli, go-task, jdk-openjdk, lazygit,
+    nodejs/npm, shellcheck, the_silver_searcher, tig
   - wl-clipboard
-  - ttf-firacode-nerd
+  - ttf-firacode-nerd, ttf-jetbrains-mono-nerd
   - awww, matugen
   - upower
   - brightnessctl
