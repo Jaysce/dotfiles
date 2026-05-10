@@ -50,8 +50,10 @@ dev_packages=(
 
 app_packages=(
   discord
+  loupe
   mpv
   obsidian
+  papers
   spotify-launcher
 )
 
