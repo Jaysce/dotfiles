@@ -92,6 +92,11 @@ portal_packages=(
   xdg-desktop-portal-gnome
 )
 
+keyring_packages=(
+  gnome-keyring
+  seahorse
+)
+
 wallpaper_packages=(
   awww
   matugen
@@ -124,6 +129,7 @@ bluetooth_packages=(
 packages=(
   "${session_packages[@]}"
   "${portal_packages[@]}"
+  "${keyring_packages[@]}"
   "${shell_packages[@]}"
   "${cli_packages[@]}"
   "${terminal_packages[@]}"
