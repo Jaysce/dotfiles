@@ -102,6 +102,7 @@ keyring_packages=(
 wallpaper_packages=(
   awww
   matugen
+  wlsunset
 )
 
 power_packages=(
@@ -162,6 +163,8 @@ dotfiles_dir="${DOTFILES_DIR:-$HOME/dotfiles}"
 wallpaper_dir="${WALLPAPER_DIR:-$dotfiles_dir/wallpaper}"
 pictures_wallpaper_dir="$HOME/Pictures/Wallpaper"
 state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/quickshell"
+niri_state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/niri"
+night_light_config_file="$niri_state_dir/night-light.env"
 colors_file="$state_dir/material-colors.json"
 current_wallpaper_file="$state_dir/wallpaper"
 stow_backup_dir="$HOME/.local/state/dotfiles/stow-backup-$(date +%Y%m%d-%H%M%S)"
@@ -215,6 +218,21 @@ configure_wallpaper() {
     --json hex \
     --dry-run >"$colors_file"
   printf '%s\n' "$initial_wallpaper" >"$current_wallpaper_file"
+}
+
+configure_night_light() {
+  mkdir -p "$niri_state_dir"
+
+  if [[ -e $night_light_config_file ]]; then
+    return
+  fi
+
+  cat >"$night_light_config_file" <<'EOF'
+TERRA_NIGHT_LIGHT_LATITUDE=-33.8688
+TERRA_NIGHT_LIGHT_LONGITUDE=151.2093
+TERRA_NIGHT_LIGHT_DAY_TEMP=6500
+TERRA_NIGHT_LIGHT_NIGHT_TEMP=4000
+EOF
 }
 
 should_stow_path() {
@@ -286,6 +304,7 @@ install_shell
 
 stow_dotfiles
 configure_wallpaper
+configure_night_light
 "$quickshell_config_dir/bin/terra-sync-theme"
 
 echo "Setting dark color scheme preference..."

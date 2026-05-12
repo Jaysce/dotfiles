@@ -1,5 +1,6 @@
 spawn-at-startup "quickshell" "--no-duplicate"
 spawn-at-startup "sh" "-c" "pgrep -x swayidle >/dev/null || exec swayidle -w before-sleep /home/sasindu/.config/quickshell/bin/terra-lock lock /home/sasindu/.config/quickshell/bin/terra-lock"
+spawn-at-startup "/home/sasindu/.config/quickshell/bin/terra-night-light" "start"
 
 // Input device configuration.
 input {
