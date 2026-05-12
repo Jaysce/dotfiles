@@ -1,0 +1,81 @@
+#!/bin/sh
+# Small tmux entrypoint shared by zsh and fish.
+# Usage:
+#   tmx              attach to the last session, or create "main"
+#   tmx <directory>  create/switch to a session named after that directory
+
+set -u
+
+usage() {
+  cat <<'EOF'
+Usage:
+  tmx              Attach to the last tmux session, or create "main"
+  tmx <directory>  Create/switch to a tmux session for that directory
+  tmx -h|--help    Show this help
+EOF
+}
+
+sanitize_session_name() {
+  basename "$1" | tr ' .:' '___'
+}
+
+has_sessions() {
+  tmux list-sessions >/dev/null 2>&1
+}
+
+attach_or_create_main() {
+  if has_sessions; then
+    if [ -n "${TMUX:-}" ]; then
+      tmux switch-client -l 2>/dev/null || tmux switch-client -t main 2>/dev/null || {
+        tmux new-session -d -s main -c "$HOME"
+        tmux switch-client -t main
+      }
+    else
+      tmux attach-session
+    fi
+  else
+    if [ -n "${TMUX:-}" ]; then
+      tmux new-session -d -s main -c "$HOME"
+      tmux switch-client -t main
+    else
+      tmux new-session -s main -c "$HOME"
+    fi
+  fi
+}
+
+switch_to_directory() {
+  target=$1
+
+  if ! cd "$target" 2>/dev/null; then
+    printf 'tmx: not a directory: %s\n' "$target" >&2
+    exit 1
+  fi
+
+  dir=$(pwd)
+  session_name=$(sanitize_session_name "$dir")
+  [ -n "$session_name" ] || session_name=main
+
+  if [ -n "${TMUX:-}" ]; then
+    tmux new-session -A -d -s "$session_name" -c "$dir"
+    tmux switch-client -t "$session_name"
+  else
+    tmux new-session -A -s "$session_name" -c "$dir"
+  fi
+}
+
+case "${1:-}" in
+  -h|--help)
+    usage
+    exit 0
+    ;;
+  "")
+    attach_or_create_main
+    ;;
+  *)
+    if [ "$#" -ne 1 ]; then
+      usage >&2
+      exit 1
+    fi
+    switch_to_directory "$1"
+    ;;
+esac

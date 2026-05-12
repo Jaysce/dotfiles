@@ -1,0 +1,5 @@
+#!/bin/sh
+# Open the user's current shell in a tmux popup.
+
+shell=${SHELL:-/bin/sh}
+exec "$shell" -l

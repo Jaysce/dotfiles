@@ -8,6 +8,12 @@ export BAT_THEME="base16"
 export MANPAGER="nvim +Man!"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export XDG_CONFIG_HOME="$HOME/.config"
+export TMUX_CONFIG_DIR="$XDG_CONFIG_HOME/tmux"
+
+case ":$PATH:" in
+    *":$HOME/.local/bin:"*) ;;
+    *) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
 
 # OS Detection
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -46,6 +52,7 @@ alias ld='lazydocker'
 alias lg='lazygit'
 alias n='nvim'
 alias oc='opencode'
+alias t='tmx'
 alias cd="zd"
 alias ..='cd ..'
 alias ...='cd ../..'

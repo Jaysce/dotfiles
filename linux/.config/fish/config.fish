@@ -12,7 +12,11 @@ set -gx VISUAL nvim
 set -gx SUDO_EDITOR nvim
 set -gx TERM xterm-256color
 set -gx BAT_THEME base16
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx TMUX_CONFIG_DIR "$XDG_CONFIG_HOME/tmux"
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --exclude .git"
+
+fish_add_path --global --move --prepend "$HOME/.local/bin"
 
 # Aliases --------------------------------------------------------------------------------
 alias cat bat
@@ -24,6 +28,7 @@ alias ld lazydocker
 alias lg lazygit
 alias n nvim
 alias oc opencode
+alias t tmx
 alias gpo "git pull origin"
 
 # Clipboard aliases
