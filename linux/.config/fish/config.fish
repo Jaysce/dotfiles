@@ -15,6 +15,7 @@ set -gx BAT_THEME base16
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx TMUX_CONFIG_DIR "$XDG_CONFIG_HOME/tmux"
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --exclude .git"
+set -Ux ELECTRON_OZONE_PLATFORM_HINT auto # 1password key repeat bug
 
 fish_add_path --global --move --prepend "$HOME/.local/bin"
 
