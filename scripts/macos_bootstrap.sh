@@ -116,7 +116,8 @@ brew install --cask ${cask[@]}
 # --- TPM ---
 
 echo "🛠️ Installing TPM..."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+mkdir -p ~/.local/share/tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 
 # --- Dotfiles ---
 

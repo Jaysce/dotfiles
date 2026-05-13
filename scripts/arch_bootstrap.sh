@@ -78,7 +78,8 @@ yay -S --noconfirm ttf-firacode-nerd
 yay -S --noconfirm ttf-jetbrains-mono-nerd
 
 # Install TPM (Tmux Plugin Manager)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+mkdir -p ~/.local/share/tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
 
 # Enable bluetooh
 systemctl enable bluetooth.service
