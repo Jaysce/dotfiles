@@ -169,6 +169,9 @@ bindkey '^[[B' history-substring-search-down
 # Other Tools ----------------------------------------------------------------------------
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+if command -v tv &>/dev/null; then
+    eval "$(tv init zsh)"
+fi
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
