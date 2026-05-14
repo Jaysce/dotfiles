@@ -21,6 +21,7 @@ cli_packages=(
 
 terminal_packages=(
   alacritty
+  television
   sshs
   starship
   tmux
@@ -153,6 +154,7 @@ packages=(
 
 aur_packages=(
   1password
+  sesh-bin
   wlctl-bin
 )
 

@@ -58,9 +58,11 @@ brew=(
   oha
   opencode
   ripgrep
+  sesh
   shellcheck
   starship
   stow
+  television
   sshs
   the_silver_searcher
   tig
