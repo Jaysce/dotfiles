@@ -173,6 +173,31 @@ if command -v tv &>/dev/null; then
     eval "$(tv init zsh)"
 fi
 
+is_integrated_terminal() {
+    [[ -n "${VSCODE_INJECTION:-}" ]] || \
+    [[ -n "${VSCODE_PID:-}" ]] || \
+    [[ "${TERM_PROGRAM:-}" == "vscode" ]] || \
+    [[ -n "${INSIDE_EMACS:-}" ]] || \
+    [[ -n "${ZED_TERM:-}" ]] || \
+    [[ -n "${NVIM:-}" ]] || \
+    [[ -n "${NVIM_LISTEN_ADDRESS:-}" ]]
+}
+
+auto_start_tmux() {
+    [[ -n "${SKIP_AUTO_TMUX:-}" ]] && return
+    is_integrated_terminal && return
+    [[ -n "${TMUX:-}" ]] && return
+    [[ -n "${SSH_CONNECTION:-}" ]] && return
+    command -v tmux &>/dev/null || return
+    command -v tmx &>/dev/null || return
+
+    tmx --new
+}
+
+if [[ -o interactive ]]; then
+    auto_start_tmux
+fi
+
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

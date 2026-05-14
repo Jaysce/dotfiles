@@ -68,7 +68,32 @@ function cd --wraps=zd --description "Smart cd through zoxide"
     zd $argv
 end
 
+function is_integrated_terminal --description "Check if running in an IDE/editor integrated terminal"
+    set -q VSCODE_INJECTION; or \
+    set -q VSCODE_PID; or \
+    test "$TERM_PROGRAM" = vscode; or \
+    set -q INSIDE_EMACS; or \
+    set -q ZED_TERM; or \
+    set -q NVIM; or \
+    set -q NVIM_LISTEN_ADDRESS
+end
+
+function auto_start_tmux --description "Auto-start tmux and open the Sesh picker"
+    set -q SKIP_AUTO_TMUX; and return
+    is_integrated_terminal; and return
+    set -q TMUX; and return
+    set -q SSH_CONNECTION; and return
+    command -q tmux; or return
+    command -q tmx; or return
+
+    tmx --new
+end
+
 # Other Tools ----------------------------------------------------------------------------
 if command -q zoxide
     zoxide init fish | source
+end
+
+if status is-interactive
+    auto_start_tmux
 end
