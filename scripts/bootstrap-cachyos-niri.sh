@@ -26,6 +26,7 @@ terminal_packages=(
   sshs
   starship
   tmux
+  zellij
   zoxide
 )
 

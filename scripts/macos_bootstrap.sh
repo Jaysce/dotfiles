@@ -71,6 +71,7 @@ brew=(
   tmux
   tree
   wget
+  zellij
   zoxide
   zsh-autosuggestions
   zsh-completions
