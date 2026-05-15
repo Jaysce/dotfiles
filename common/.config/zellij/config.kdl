@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     locked {
-        bind "Ctrl Space" { SwitchToMode "normal"; }
+        bind "Ctrl s" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -173,7 +173,7 @@ keybinds clear-defaults=true {
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Ctrl Space" { SwitchToMode "locked"; }
+        bind "Ctrl s" { SwitchToMode "locked"; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "entersearch" {
@@ -387,3 +387,4 @@ themes {
 
 default_mode "locked"
 default_layout "compact"
+show_startup_tips false
