@@ -53,6 +53,7 @@ alias lg='lazygit'
 alias n='nvim'
 alias oc='opencode'
 alias t='tmx'
+alias wm='workmux'
 alias cd="zd"
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -171,6 +172,9 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 if command -v tv &>/dev/null; then
     eval "$(tv init zsh)"
+fi
+if command -v workmux &>/dev/null; then
+    eval "$(workmux completions zsh)"
 fi
 
 is_integrated_terminal() {

@@ -1,0 +1,16 @@
+window_prefix: wm-
+merge_strategy: rebase
+
+panes:
+  - command: nvim
+    focus: true
+  - command: <agent>
+    split: horizontal
+
+files:
+  symlink:
+    - node_modules
+
+nerdfont: true
+
+agent: codex --yolo

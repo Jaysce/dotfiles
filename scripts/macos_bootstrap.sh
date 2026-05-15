@@ -45,6 +45,7 @@ brew=(
   git-delta
   go-task
   grpcurl
+  gum
   httpie
   hexyl
   jq
@@ -63,6 +64,7 @@ brew=(
   starship
   stow
   television
+  raine/workmux/workmux
   sshs
   the_silver_searcher
   tig
