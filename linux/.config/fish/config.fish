@@ -79,15 +79,16 @@ function is_integrated_terminal --description "Check if running in an IDE/editor
     set -q NVIM_LISTEN_ADDRESS
 end
 
-function auto_start_tmux --description "Auto-start tmux and open the Sesh picker"
+function auto_start_zellij --description "Auto-start Zellij"
     set -q SKIP_AUTO_TMUX; and return
+    set -q SKIP_AUTO_ZELLIJ; and return
     is_integrated_terminal; and return
+    set -q ZELLIJ; and return
     set -q TMUX; and return
     set -q SSH_CONNECTION; and return
-    command -q tmux; or return
-    command -q tmx; or return
+    command -q zellij; or return
 
-    tmx --new
+    zellij attach --create main
 end
 
 # Other Tools ----------------------------------------------------------------------------
@@ -100,5 +101,5 @@ if command -q workmux
 end
 
 if status is-interactive
-    auto_start_tmux
+    auto_start_zellij
 end

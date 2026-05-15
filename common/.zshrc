@@ -187,19 +187,20 @@ is_integrated_terminal() {
     [[ -n "${NVIM_LISTEN_ADDRESS:-}" ]]
 }
 
-auto_start_tmux() {
+auto_start_zellij() {
     [[ -n "${SKIP_AUTO_TMUX:-}" ]] && return
+    [[ -n "${SKIP_AUTO_ZELLIJ:-}" ]] && return
     is_integrated_terminal && return
+    [[ -n "${ZELLIJ:-}" ]] && return
     [[ -n "${TMUX:-}" ]] && return
     [[ -n "${SSH_CONNECTION:-}" ]] && return
-    command -v tmux &>/dev/null || return
-    command -v tmx &>/dev/null || return
+    command -v zellij &>/dev/null || return
 
-    tmx --new
+    zellij attach --create main
 }
 
 if [[ -o interactive ]]; then
-    auto_start_tmux
+    auto_start_zellij
 fi
 
 # Bun
