@@ -1,5 +1,7 @@
 # CachyOS Defaults -----------------------------------------------------------------------
-source /usr/share/cachyos-fish-config/cachyos-config.fish
+if test -f /usr/share/cachyos-fish-config/cachyos-config.fish
+    source /usr/share/cachyos-fish-config/cachyos-config.fish
+end
 
 # Disable CachyOS fastfetch greeting
 function fish_greeting
@@ -24,6 +26,9 @@ alias cat bat
 alias ff "fzf --preview 'bat --style=numbers --color=always {}'"
 alias ffe "n (ff)"
 alias ffv "bat (ff)"
+alias ls "eza -lh --group-directories-first --icons=auto"
+alias la "ls -a"
+alias lt "eza --tree --level=2 --long --icons --git"
 alias lta "lt -a"
 alias ld lazydocker
 alias lg lazygit
