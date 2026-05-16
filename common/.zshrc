@@ -199,9 +199,9 @@ auto_start_zellij() {
     zellij attach --create main
 }
 
-if [[ -o interactive ]]; then
-    auto_start_zellij
-fi
+# if [[ -o interactive ]]; then
+#     auto_start_zellij
+# fi
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"

@@ -105,6 +105,6 @@ if command -q workmux
     workmux completions fish | source
 end
 
-if status is-interactive
-    auto_start_zellij
-end
+# if status is-interactive
+#     auto_start_zellij
+# end
