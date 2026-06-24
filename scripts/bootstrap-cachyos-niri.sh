@@ -22,7 +22,6 @@ cli_packages=(
 
 terminal_packages=(
   alacritty
-  television
   sshs
   starship
   tmux
@@ -156,7 +155,6 @@ packages=(
 
 aur_packages=(
   1password
-  sesh-bin
   wlctl-bin
 )
 
@@ -239,16 +237,6 @@ TERRA_NIGHT_LIGHT_NIGHT_TEMP=4000
 EOF
 }
 
-install_workmux() {
-  if command -v workmux >/dev/null 2>&1; then
-    echo "workmux is already installed."
-    return
-  fi
-
-  echo "Installing workmux..."
-  curl -fsSL https://raw.githubusercontent.com/raine/workmux/main/scripts/install.sh | bash
-}
-
 should_stow_path() {
   local path="$1"
 
@@ -300,7 +288,6 @@ sudo pacman -Syu --needed "${packages[@]}"
 
 echo "Installing AUR packages..."
 paru -S --needed --noconfirm "${aur_packages[@]}"
-install_workmux
 
 echo "Enabling ly display manager on tty2..."
 sudo systemctl enable ly@tty2.service

@@ -34,8 +34,6 @@ alias ld lazydocker
 alias lg lazygit
 alias n nvim
 alias oc opencode
-alias t tmx
-alias wm workmux
 alias gpo "git pull origin"
 
 # Clipboard aliases
@@ -99,10 +97,6 @@ end
 # Other Tools ----------------------------------------------------------------------------
 if command -q zoxide
     zoxide init fish | source
-end
-
-if command -q workmux
-    workmux completions fish | source
 end
 
 # if status is-interactive

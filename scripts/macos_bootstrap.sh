@@ -59,12 +59,9 @@ brew=(
   oha
   opencode
   ripgrep
-  sesh
   shellcheck
   starship
   stow
-  television
-  raine/workmux/workmux
   sshs
   the_silver_searcher
   tig
