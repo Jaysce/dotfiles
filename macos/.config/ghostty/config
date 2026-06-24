@@ -15,7 +15,7 @@ window-padding-x = 18
 window-padding-y = 18
 window-padding-balance = true
 macos-titlebar-proxy-icon = hidden
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
 
 adjust-cell-height = 14
 adjust-cursor-height = 14
