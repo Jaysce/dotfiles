@@ -140,11 +140,11 @@ git clone https://github.com/Jaysce/nvim.git ~/.config/nvim
 
 # --- Agents ---
 
-echo "🤖 Cloning agents repo and installing skills..."
+echo "🤖 Cloning agents repo and installing agent configuration..."
 if [ ! -d ~/agents/.git ]; then
   git clone https://github.com/Jaysce/agents.git ~/agents
 fi
-bunx skills add ~/agents -g -a codex -y
+~/agents/scripts/install-agents.sh all
 bun add -g defuddle
 
 # --- System / App Preferences ---
