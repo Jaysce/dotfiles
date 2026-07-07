@@ -46,6 +46,7 @@ brew=(
   go-task
   grpcurl
   gum
+  herdr
   httpie
   hexyl
   jq
