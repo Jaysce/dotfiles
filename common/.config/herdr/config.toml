@@ -3,3 +3,7 @@ onboarding = false
 [theme]
 name = "rose-pine"
 auto_switch = false
+
+[keys]
+navigate_workspace_up = "k"
+navigate_workspace_down = "j"
