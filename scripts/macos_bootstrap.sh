@@ -80,6 +80,7 @@ brew=(
 cask=(
   1password
   cleanshot
+  codex
   discord
   font-fira-code-nerd-font
   font-jetbrains-mono-nerd-font
