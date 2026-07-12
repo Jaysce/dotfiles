@@ -164,8 +164,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ''
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey -e
+bindkey -M emacs '^[[A' history-substring-search-up
+bindkey -M emacs '^[[B' history-substring-search-down
+bindkey -M emacs '^[OA' history-substring-search-up
+bindkey -M emacs '^[OB' history-substring-search-down
 
 # Other Tools ----------------------------------------------------------------------------
 eval "$(starship init zsh)"
