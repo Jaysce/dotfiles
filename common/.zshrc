@@ -174,32 +174,6 @@ if command -v tv &>/dev/null; then
     eval "$(tv init zsh)"
 fi
 
-is_integrated_terminal() {
-    [[ -n "${VSCODE_INJECTION:-}" ]] || \
-    [[ -n "${VSCODE_PID:-}" ]] || \
-    [[ "${TERM_PROGRAM:-}" == "vscode" ]] || \
-    [[ -n "${INSIDE_EMACS:-}" ]] || \
-    [[ -n "${ZED_TERM:-}" ]] || \
-    [[ -n "${NVIM:-}" ]] || \
-    [[ -n "${NVIM_LISTEN_ADDRESS:-}" ]]
-}
-
-auto_start_zellij() {
-    [[ -n "${SKIP_AUTO_TMUX:-}" ]] && return
-    [[ -n "${SKIP_AUTO_ZELLIJ:-}" ]] && return
-    is_integrated_terminal && return
-    [[ -n "${ZELLIJ:-}" ]] && return
-    [[ -n "${TMUX:-}" ]] && return
-    [[ -n "${SSH_CONNECTION:-}" ]] && return
-    command -v zellij &>/dev/null || return
-
-    zellij attach --create main
-}
-
-# if [[ -o interactive ]]; then
-#     auto_start_zellij
-# fi
-
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
