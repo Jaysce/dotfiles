@@ -28,6 +28,7 @@ set commentary
 set highlightedyank
 set sneak " https://plugins.jetbrains.com/plugin/15348-ideavim-sneak
 set nerdtree
+set VimEverywhere " Include docked tool windows in window navigation
 set which-key " https://github.com/brandonkramer/which-key-lazy
 
 " Which Key Lazy discovers leader mappings automatically. These descriptions
@@ -91,6 +92,7 @@ let g:WhichKeyDesc_git_commit = "<leader>gs Commit / Status"
 
 " Quit/session
 let g:WhichKeyDesc_quit = "<leader>q +quit/session"
+let g:WhichKeyDesc_quit_hide = "<leader>qh Hide All Windows"
 let g:WhichKeyDesc_quit_all = "<leader>qq Quit All"
 
 " IntelliJ refactorings that do not conflict with LazyVim
@@ -284,6 +286,7 @@ nmap <leader>gl <Action>(Vcs.Show.Log)
 nmap <leader>gs <Action>(ActivateCommitToolWindow)
 
 " Quit/session
+nmap <leader>qh <Action>(HideAllWindows)
 nmap <leader>qq <Action>(Exit)
 
 " IntelliJ refactorings
