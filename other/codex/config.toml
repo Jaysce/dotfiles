@@ -1,14 +1,14 @@
 # General
-model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
-plan_mode_reasoning_effort = "xhigh"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "ultra"
+plan_mode_reasoning_effort = "ultra"
 model_reasoning_summary = "auto"
 personality = "pragmatic"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
-web_search = "cached"
+web_search = "live"
 check_for_update_on_startup = true
-service_tier = "fast"
+service_tier = "priority"
 
 [history]
 persistence = "save-all"
@@ -22,11 +22,9 @@ exclude_slash_tmp = false
 
 [features]
 fast_mode = true
+multi_agent = true
 
 # MCPs
 [mcp_servers.otter]
 command = "otter"
 args = ["mcp", "serve"]
-
-
-
