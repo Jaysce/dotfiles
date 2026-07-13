@@ -24,234 +24,315 @@ set hlsearch
 "" Plugin Settings
 "" ========================================================
 set surround
-set highlightedyank 
-set sneak " https://plugins.jetbrains.com/plugin/15348-ideavim-sneak 
+set commentary
+set highlightedyank
+set sneak " https://plugins.jetbrains.com/plugin/15348-ideavim-sneak
 set nerdtree
-set which-key " https://plugins.jetbrains.com/plugin/15976-which-key
+set which-key " https://github.com/brandonkramer/which-key-lazy
 
-" Which-key settings
-let g:WhichKey_FontSize = 16
-let g:WhichKey_CommandColor = "#41ead4"
-let g:WhichKey_PrefixColor = "#f335b2"
-let g:WhichKey_SortOrder = "by_key_prefix_first"
+" Which Key Lazy discovers leader mappings automatically. These descriptions
+" mirror LazyVim's labels while the mappings use IntelliJ-native equivalents.
 
-let g:WhichKeyDesc_leader = "<leader> Leader key"
+" Root mappings
+let g:WhichKeyDesc_find_files = "<leader><Space> Find Files (Project)"
+let g:WhichKeyDesc_buffers = "<leader>, Buffers"
+let g:WhichKeyDesc_grep = "<leader>/ Grep (Project)"
+let g:WhichKeyDesc_commands = "<leader>: Commands"
+let g:WhichKeyDesc_keymaps = "<leader>? Keymaps"
+let g:WhichKeyDesc_alternate_buffer = "<leader>` Switch to Other Buffer"
+let g:WhichKeyDesc_scratch_new = "<leader>. New Scratch Buffer"
+let g:WhichKeyDesc_scratch_select = "<leader>S Select Scratch Buffer"
+let g:WhichKeyDesc_explorer = "<leader>e Explorer"
+let g:WhichKeyDesc_explorer_current = "<leader>E Explorer (Current File)"
 
-let g:WhichKeyDesc_leader = "<leader>e Open file explorer"
+" Harpoon
+let g:WhichKeyDesc_harpoon_add = "<leader>a Add File to Harpoon"
+let g:WhichKeyDesc_harpoon_menu = "<leader>h Toggle Harpoon Menu"
+let g:WhichKeyDesc_harpoon_one = "<leader>1 Harpoon File 1"
+let g:WhichKeyDesc_harpoon_two = "<leader>2 Harpoon File 2"
+let g:WhichKeyDesc_harpoon_three = "<leader>3 Harpoon File 3"
+let g:WhichKeyDesc_harpoon_four = "<leader>4 Harpoon File 4"
 
-let g:WhichKeyDesc_copy = "<leader>c Copy path / reference"
-let g:WhichKeyDesc_copy_absolute = "<leader>ca Absolute path"
-let g:WhichKeyDesc_copy_name = "<leader>cn File name"
-let g:WhichKeyDesc_copy_root = "<leader>cr From content root"
+" Buffers
+let g:WhichKeyDesc_buffer = "<leader>b +buffer"
+let g:WhichKeyDesc_buffer_other = "<leader>bb Switch to Other Buffer"
+let g:WhichKeyDesc_buffer_delete = "<leader>bd Delete Buffer"
+let g:WhichKeyDesc_buffer_delete_others = "<leader>bo Delete Other Buffers"
 
-let g:WhichKeyDesc_window = "<leader>w Window splits"
-let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
-let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
-let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
-let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
-let g:WhichKeyDesc_split_down = "<leader>- Split down"
-let g:WhichKeyDesc_split_right = "<leader>| Split right"
-
-let g:WhichKeyDesc_display = "<leader>d Display options"
-let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
-let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
-let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
-
-let g:WhichKeyDesc_action= "<leader>a Actions"
-let g:WhichKeyDesc_action_context_menu = "<leader>aa Open context menu"
-let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
-let g:WhichKeyDesc_restart_ide = "<leader>ar Restart IDE"
-
-let g:WhichKeyDesc_file_quickLook = "<leader><leader> Show file in explorer"
-
-let g:WhichKeyDesc_file_nav = "<leader>f File navigation"
-let g:WhichKeyDesc_file_nav_goto_file = "<leader>ff Go to file"
-let g:WhichKeyDesc_file_nav_goto_content = "<leader>fc Search for file content"
-let g:WhichKeyDesc_file_nav_show_recent_files = "<leader>fr Show recent files"
-let g:WhichKeyDesc_file_nav_show_recent_locations = "<leader>fl Show recent locations"
-let g:WhichKeyDesc_file_nav_new_file = "<leader>fn New file"
-let g:WhichKeyDesc_file_nav_recent_projects = "<leader>fp Open recent projects"
-
-let g:WhichKeyDesc_refactoring = "<leader>r Refactoring menu"
-let g:WhichKeyDesc_refactoring_rename = "<leader>rn Rename element"
-let g:WhichKeyDesc_refactoring_method = "<leader>rm Extract method"
-let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce variable"
-let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce field"
-let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change signature"
-let g:WhichKeyDesc_refactoring_all = "<leader>rr Open refactorings list"
-
-let g:WhichKeyDesc_goto = "<leader>g Go to X"
-let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
-let g:WhichKeyDesc_goto_type_declaration = "<leader>gy Go to Type Definition"
-let g:WhichKeyDesc_goto_implementation = "<leader>gi Go to Implementation"
-let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
-let g:WhichKeyDesc_goto_test = "<leader>gt Go to Test"
-let g:WhichKeyDesc_goto_forward = "<leader>gf Go Forward"
-let g:WhichKeyDesc_goto_git_blame = "<leader>gb Git blame"
-let g:WhichKeyDesc_goto_references = "gr Find all references"
-
-let g:WhichKeyDesc_code = "<leader>c Code actions"
-let g:WhichKeyDesc_code_rename = "<leader>cr Rename"
+" Code
+let g:WhichKeyDesc_code = "<leader>c +code"
+let g:WhichKeyDesc_code_action = "<leader>ca Code Action"
+let g:WhichKeyDesc_code_diagnostics = "<leader>cd Line Diagnostics"
 let g:WhichKeyDesc_code_format = "<leader>cf Format"
+let g:WhichKeyDesc_code_organize_imports = "<leader>co Organize Imports"
+let g:WhichKeyDesc_code_rename = "<leader>cr Rename"
+let g:WhichKeyDesc_code_rename_file = "<leader>cR Rename File"
+let g:WhichKeyDesc_code_references = "<leader>cS References"
 
-let g:WhichKeyDesc_search = "<leader>s Search"
-let g:WhichKeyDesc_search_structure = "<leader>ss Toggle structure"
-let g:WhichKeyDesc_search_global = "<leader>sg Search in project"
+" File/find
+let g:WhichKeyDesc_file = "<leader>f +file/find"
+let g:WhichKeyDesc_file_buffers = "<leader>fb Buffers"
+let g:WhichKeyDesc_file_explorer = "<leader>fe Explorer"
+let g:WhichKeyDesc_file_explorer_current = "<leader>fE Explorer (Current File)"
+let g:WhichKeyDesc_file_find = "<leader>ff Find Files (Project)"
+let g:WhichKeyDesc_file_new = "<leader>fn New File"
+let g:WhichKeyDesc_file_projects = "<leader>fp Projects"
+let g:WhichKeyDesc_file_recent = "<leader>fr Recent"
+let g:WhichKeyDesc_file_terminal = "<leader>ft Terminal"
 
-let g:WhichKeyDesc_zen = "<leader>z Zen mode"
-let g:WhichKeyDesc_zen_toggle = "<leader>zz Toggle centered layout"
+" Git
+let g:WhichKeyDesc_git = "<leader>g +git"
+let g:WhichKeyDesc_git_blame = "<leader>gb Git Blame Line"
+let g:WhichKeyDesc_git_diff = "<leader>gd Git Diff"
+let g:WhichKeyDesc_git_file_history = "<leader>gf Git Current File History"
+let g:WhichKeyDesc_git_status = "<leader>gg Version Control"
+let g:WhichKeyDesc_git_log = "<leader>gl Git Log"
+let g:WhichKeyDesc_git_commit = "<leader>gs Commit / Status"
 
-let g:WhichKeyDesc_terminal = "<leader>t Toggle terminal"
+" Quit/session
+let g:WhichKeyDesc_quit = "<leader>q +quit/session"
+let g:WhichKeyDesc_quit_all = "<leader>qq Quit All"
 
-let g:WhichKeyDesc_quit = "<leader>q Quit/Close"
-let g:WhichKeyDesc_quit_all = "<leader>qa Close all"
-let g:WhichKeyDesc_quit_others = "<leader>qo Close others"
-let g:WhichKeyDesc_quit_hide = "<leader>qh Hide all windows"
+" IntelliJ refactorings that do not conflict with LazyVim
+let g:WhichKeyDesc_refactor = "<leader>r +refactor"
+let g:WhichKeyDesc_refactor_method = "<leader>rm Extract Method"
+let g:WhichKeyDesc_refactor_variable = "<leader>rv Introduce Variable"
+let g:WhichKeyDesc_refactor_field = "<leader>rf Introduce Field"
+let g:WhichKeyDesc_refactor_signature = "<leader>rs Change Signature"
+let g:WhichKeyDesc_refactor_all = "<leader>rr Refactor This"
 
-let g:WhichKeyDesc_tab_switcher = "<leader>, Tab switcher"
+" Search
+let g:WhichKeyDesc_search = "<leader>s +search"
+let g:WhichKeyDesc_search_registers = '<leader>s" Registers'
+let g:WhichKeyDesc_search_history = "<leader>s/ Search History"
+let g:WhichKeyDesc_search_buffer = "<leader>sb Buffer Lines"
+let g:WhichKeyDesc_search_commands = "<leader>sC Commands"
+let g:WhichKeyDesc_search_grep = "<leader>sg Grep (Project)"
+let g:WhichKeyDesc_search_jumps = "<leader>sj Jumps"
+let g:WhichKeyDesc_search_keymaps = "<leader>sk Keymaps"
+let g:WhichKeyDesc_search_marks = "<leader>sm Marks"
+let g:WhichKeyDesc_search_replace = "<leader>sr Search and Replace"
+let g:WhichKeyDesc_search_symbols = "<leader>ss LSP Symbols"
+let g:WhichKeyDesc_search_workspace_symbols = "<leader>sS LSP Workspace Symbols"
+let g:WhichKeyDesc_search_word = "<leader>sw Word (Project)"
 
-let g:WhichKeyDesc_harpoon = "<leader>h Set harpoon"
-let g:WhichKeyDesc_harpoon_set_one = "<leader>h1 Set harpoon 1"
-let g:WhichKeyDesc_harpoon_set_two = "<leader>h2 Set harpoon 2"
-let g:WhichKeyDesc_harpoon_set_three = "<leader>h3 Set harpoon 3"
-let g:WhichKeyDesc_harpoon_set_four = "<leader>h4 Set harpoon 4"
-let g:WhichKeyDesc_harpoon_set_five = "<leader>h5 Set harpoon 5"
-let g:WhichKeyDesc_harpoon_one = "<leader>1 Harpoon 1"
-let g:WhichKeyDesc_harpoon_two = "<leader>2 Harpoon 2"
-let g:WhichKeyDesc_harpoon_three = "<leader>3 Harpoon 3"
-let g:WhichKeyDesc_harpoon_four = "<leader>4 Harpoon 4"
-let g:WhichKeyDesc_harpoon_five = "<leader>5 Harpoon 5"
+" Tabs
+let g:WhichKeyDesc_tab = "<leader><Tab> +tabs"
+let g:WhichKeyDesc_tab_previous = "<leader><Tab>[ Previous Tab"
+let g:WhichKeyDesc_tab_next = "<leader><Tab>] Next Tab"
 
+" UI
+let g:WhichKeyDesc_ui = "<leader>u +ui"
+let g:WhichKeyDesc_ui_colorscheme = "<leader>uC Colorschemes"
+let g:WhichKeyDesc_ui_distraction_free = "<leader>uD Toggle Distraction-Free Mode"
+let g:WhichKeyDesc_ui_relative_numbers = "<leader>uL Toggle Relative Numbers"
+let g:WhichKeyDesc_ui_zoom = "<leader>uZ Toggle Zoom Mode"
+let g:WhichKeyDesc_ui_inlay_hints = "<leader>uh Toggle Inlay Hints"
+let g:WhichKeyDesc_ui_line_numbers = "<leader>ul Toggle Line Numbers"
+let g:WhichKeyDesc_ui_notifications = "<leader>un Dismiss All Notifications"
+let g:WhichKeyDesc_ui_redraw = "<leader>ur Redraw / Clear Search Highlight"
+let g:WhichKeyDesc_ui_wrap = "<leader>uw Toggle Wrap"
+let g:WhichKeyDesc_ui_zen = "<leader>uz Toggle Zen Mode"
 
-" Harpoon settings
-map <leader>1 <Action>(GotoHarpoon1)
-map <leader>2 <Action>(GotoHarpoon2)
-map <leader>3 <Action>(GotoHarpoon3)
-map <leader>4 <Action>(GotoHarpoon4)
-map <leader>5 <Action>(GotoHarpoon5)
-map <leader>h1 <Action>(SetHarpoon1)
-map <leader>h2 <Action>(SetHarpoon2)
-map <leader>h3 <Action>(SetHarpoon3)
-map <leader>h4 <Action>(SetHarpoon4)
-map <leader>h5 <Action>(SetHarpoon5)
-map <leader>hh <Action>(ShowHarpoon)
+" Windows
+let g:WhichKeyDesc_window = "<leader>w +windows"
+let g:WhichKeyDesc_window_zoom = "<leader>wm Toggle Zoom Mode"
+let g:WhichKeyDesc_window_split_below = "<leader>- Split Window Below"
+let g:WhichKeyDesc_window_split_right = "<leader>| Split Window Right"
+
+" Diagnostics
+let g:WhichKeyDesc_diagnostics = "<leader>x +diagnostics"
+let g:WhichKeyDesc_diagnostics_all = "<leader>xx Diagnostics"
+
+" Yank path (matches lua/config/keymaps.lua)
+let g:WhichKeyDesc_yank = "<leader>y +yank path"
+let g:WhichKeyDesc_yank_absolute = "<leader>ya Absolute Path"
+let g:WhichKeyDesc_yank_relative = "<leader>yr Relative Path"
+let g:WhichKeyDesc_yank_filename = "<leader>yf Filename"
 
 "" Key mappings
 "" ========================================================
 
-" Pane navigation
+" Save from normal, insert, and visual modes
+nmap <C-s> <Action>(SaveAll)
+imap <C-s> <Action>(SaveAll)
+vmap <C-s> <Action>(SaveAll)
+
+" Move by display line unless a count is provided
+nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+vnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
+vnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+vnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+nnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
+vnoremap <expr> <Up> v:count == 0 ? 'gk' : 'k'
+
+" Pane navigation and resizing
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
+nmap <C-Up> <Action>(StretchSplitToTop)
+nmap <C-Down> <Action>(StretchSplitToBottom)
+nmap <C-Left> <Action>(StretchSplitToLeft)
+nmap <C-Right> <Action>(StretchSplitToRight)
 
-" Jump between methods
-nnoremap [[ <Action>(MethodUp)
-nnoremap ]] <Action>(MethodDown)
+" Buffer navigation
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+
+" LSP-style navigation
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoDeclaration)
+nmap gI <Action>(GotoImplementation)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gr <Action>(FindUsages)
+nmap K <Action>(QuickJavaDoc)
+nmap gK <Action>(ParameterInfo)
+imap <C-k> <Action>(ParameterInfo)
+nmap [[ <Action>(GotoPrevElementUnderCaretUsage)
+nmap ]] <Action>(GotoNextElementUnderCaretUsage)
 
 " Easy visual indentation
 vnoremap < <gv
 vnoremap > >gv
 
-map <S-l> <Action>(NextTab)
-map <S-h> <Action>(PreviousTab)
+" Move lines
+nmap <A-j> <Action>(MoveLineDown)
+nmap <A-k> <Action>(MoveLineUp)
+imap <A-j> <Action>(MoveLineDown)
+imap <A-k> <Action>(MoveLineUp)
+vmap <A-j> <Action>(MoveLineDown)
+vmap <A-k> <Action>(MoveLineUp)
+
+" Navigate diagnostics and quickfix items
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+nmap ]e <Action>(GotoNextError)
+nmap [w <Action>(GotoPreviousError)
+nmap ]w <Action>(GotoNextError)
+nmap [q <Action>(GotoPreviousError)
+nmap ]q <Action>(GotoNextError)
+
+" Center search results and open folds
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 "" Leader commands
 "" ========================================================
 
-map <leader>q <Action>(HideAllWindows)
+" Root mappings
+nmap <leader><Space> <Action>(GotoFile)
+nmap <leader>, <Action>(Switcher)
+nmap <leader>/ <Action>(FindInPath)
+nmap <leader>: <Action>(GotoAction)
+nmap <leader>? :map<CR>
+nnoremap <leader>` <C-^>
+nmap <leader>. <Action>(NewScratchBuffer)
+nmap <leader>S <Action>(Scratch.ShowFilesPopup)
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>E <Action>(SelectInProjectView)
 
-" Copy Path
-map <leader>ca <Action>(CopyAbsolutePath)
-map <leader>cn <Action>(CopyFileName)
-map <leader>cr <Action>(CopyContentRootPath)
+" Harpoon (requires HarpoonIJ)
+nmap <leader>a <Action>(AddToHarpoon)
+nmap <leader>h <Action>(ShowHarpoon)
+nmap <leader>1 <Action>(GotoHarpoon1)
+nmap <leader>2 <Action>(GotoHarpoon2)
+nmap <leader>3 <Action>(GotoHarpoon3)
+nmap <leader>4 <Action>(GotoHarpoon4)
+nmap <C-S-P> <Action>(PreviousHarpoonItem)
+nmap <C-S-N> <Action>(NextHarpoonItem)
 
-" Open NERDTree (use q to exit)
-map <leader>e :NERDTreeToggle<CR>
+" Buffers
+nnoremap <leader>bb <C-^>
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
 
-" Window splits
-map <leader>wv <Action>(SplitVertically)
-map <leader>ws <Action>(SplitHorizontally)
-map <leader>wu <Action>(Unsplit)
-map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+" Code
+nmap <leader>ca <Action>(ShowIntentionActions)
+vmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>cd <Action>(ShowErrorDescription)
+nmap <leader>cf <Action>(ReformatCode)
+vmap <leader>cf <Action>(ReformatCode)
+nmap <leader>co <Action>(OptimizeImports)
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cR <Action>(RenameFile)
+nmap <leader>cS <Action>(FindUsages)
 
-" Display options
-map <leader>dd <action>(ToggleDistractionFreeMode)
-map <leader>dz <action>(ToggleZenMode)
-map <leader>df <action>(ToggleFullScreen)
+" File/find
+nmap <leader>fb <Action>(Switcher)
+nmap <leader>fe :NERDTreeToggle<CR>
+nmap <leader>fE <Action>(SelectInProjectView)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fn <Action>(NewElement)
+nmap <leader>fp <Action>(ManageRecentProjects)
+nmap <leader>fr <Action>(RecentFiles)
+nmap <leader>ft <Action>(ActivateTerminalToolWindow)
+nmap <C-/> <Action>(ActivateTerminalToolWindow)
+nmap <C-_> <Action>(ActivateTerminalToolWindow)
 
-" Actions
-map <leader>aa <action>(ShowIntentionActions)
-map <leader>as <action>(SearchEverywhere)
-map <leader>ar <action>(RestartIde)
-map <S-k> <Action>(ShowHoverInfo)
-
-" File navigation
-map <leader>ff <action>(GotoFile)
-map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
-map <leader><leader> <Action>(SelectInProjectView)
-map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
-map <leader>fn <action>(NewElement)
-map <leader>fp <action>(ManageRecentProjects)
-
-" Refactoring
-map <leader>rn <Action>(RenameElement)
-map <leader>rm <Action>(ExtractMethod)
-map <leader>rv <Action>(IntroduceVariable)
-map <leader>rf <Action>(IntroduceField)
-map <leader>rs <Action>(ChangeSignature)
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-
-" Go to code
-nmap <leader>gd <Action>(GotoDeclaration)
-nmap <leader>gy <Action>(GotoTypeDeclaration)
-nmap <leader>gi <Action>(GotoImplementation)
-nmap <leader>gu <Action>(ShowUsages)
-nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Forward)
+" Git
 nmap <leader>gb <Action>(Annotate)
-nmap gr <Action>(FindUsages)
+nmap <leader>gd <Action>(Vcs.ShowDiffWithLocal)
+nmap <leader>gf <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>gg <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gl <Action>(Vcs.Show.Log)
+nmap <leader>gs <Action>(ActivateCommitToolWindow)
 
-" Code actions
-map <leader>cr <Action>(RenameElement)
-map <leader>cf <Action>(ReformatCode)
+" Quit/session
+nmap <leader>qq <Action>(Exit)
+
+" IntelliJ refactorings
+nmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rv <Action>(IntroduceVariable)
+nmap <leader>rf <Action>(IntroduceField)
+nmap <leader>rs <Action>(ChangeSignature)
+nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
 
 " Search
-map <leader>ss <Action>(FileStructurePopup)
-map <leader>sg <Action>(FindInPath)
+nmap <leader>s" :registers<CR>
+nmap <leader>s/ <Action>(ShowSearchHistory)
+nmap <leader>sb <Action>(Find)
+nmap <leader>sC <Action>(GotoAction)
+nmap <leader>sg <Action>(FindInPath)
+nmap <leader>sj :jumps<CR>
+nmap <leader>sk :map<CR>
+nmap <leader>sm :marks<CR>
+nmap <leader>sr <Action>(ReplaceInPath)
+nmap <leader>ss <Action>(FileStructurePopup)
+nmap <leader>sS <Action>(GotoSymbol)
+nmap <leader>sw <Action>(FindInPath)
+vmap <leader>sw <Action>(FindInPath)
 
-" Zen mode
-map <leader>zz <Action>(TogglePresentationMode)
+" Tabs
+nmap <leader><Tab>[ <Action>(PreviousTab)
+nmap <leader><Tab>] <Action>(NextTab)
 
-" Terminal
-map <leader>t <Action>(ActivateTerminalToolWindow)
+" UI
+nmap <leader>uC <Action>(QuickChangeScheme)
+nmap <leader>uD <Action>(ToggleDistractionFreeMode)
+nmap <leader>uL :set relativenumber!<CR>
+nmap <leader>uZ <Action>(MaximizeEditorInSplit)
+nmap <leader>uh <Action>(ToggleInlayHintsGloballyAction)
+nmap <leader>ul <Action>(EditorToggleShowLineNumbers)
+nmap <leader>un <Action>(CloseAllNotifications)
+nmap <leader>ur :nohlsearch<CR>
+nmap <leader>uw <Action>(EditorToggleUseSoftWraps)
+nmap <leader>uz <Action>(ToggleZenMode)
 
-" Tab management
-map <leader>qa <Action>(CloseAllEditors)
-map <leader>qo <Action>(CloseAllEditorsButActive)
-map <leader>qh <Action>(HideAllWindows)
-map <leader>, <Action>(Switcher)
+" Windows
+nmap <leader>- <Action>(SplitHorizontally)
+nmap <leader>\| <Action>(SplitVertically)
+nmap <leader>wm <Action>(MaximizeEditorInSplit)
 
-" Window splits (additional Zed-style)
-map <leader>- <Action>(SplitHorizontally)
-map <leader>\| <Action>(SplitVertically)
+" Diagnostics
+nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
 
-" Move lines (like Zed alt-j/alt-k)
-nmap <A-k> <Action>(MoveLineUp)
-nmap <A-j> <Action>(MoveLineDown)
-vmap <A-k> <Action>(MoveLineUp)
-vmap <A-j> <Action>(MoveLineDown)
-
-" Navigate diagnostics (like Zed's ]q and [q)
-nmap ]q <Action>(GotoNextError)
-nmap [q <Action>(GotoPreviousError)
-
-" Enhanced scrolling with auto-centering (like Zed)
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-
-" Search with auto-centering and visual selection (like Zed)
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" Yank path
+nmap <leader>ya <Action>(CopyAbsolutePath)
+nmap <leader>yr <Action>(CopyContentRootPath)
+nmap <leader>yf <Action>(CopyFileName)
