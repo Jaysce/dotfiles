@@ -139,10 +139,14 @@ git clone https://github.com/Jaysce/nvim.git ~/.config/nvim
 # --- Agents ---
 
 echo "🤖 Cloning agents repo and installing agent configuration..."
-if [ ! -d ~/agents/.git ]; then
-  git clone https://github.com/Jaysce/agents.git ~/agents
+agents_dir="$HOME/agents"
+if [ -d "$agents_dir/.git" ]; then
+  git -C "$agents_dir" pull --ff-only
+else
+  git clone https://github.com/Jaysce/agents.git "$agents_dir"
 fi
-~/agents/scripts/install-agents.sh all
+"$agents_dir/scripts/install-agents.sh" all
+"$agents_dir/scripts/install-skills.sh" all --obsidian-only
 bun add -g defuddle
 
 # --- System / App Preferences ---
