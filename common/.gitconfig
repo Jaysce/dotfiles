@@ -67,7 +67,7 @@
     navigate = true
     light = false
     line-numbers = true
-    side-by-side = true
+    side-by-side = false
     map-styles = bold purple => syntax "#330f29", bold cyan => syntax "#271344"
 
 [merge]
