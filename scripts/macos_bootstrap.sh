@@ -49,6 +49,7 @@ brew=(
   herdr
   httpie
   hexyl
+  hunk
   jq
   lazydocker
   lazygit
