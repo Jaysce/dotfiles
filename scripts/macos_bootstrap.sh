@@ -25,6 +25,7 @@ fi
 brew=(
   git
   ack
+  ast-grep
   bat
   bazelisk
   bun
