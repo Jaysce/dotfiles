@@ -8,3 +8,5 @@ auto_switch = false
 prefix = "ctrl+b"
 navigate_workspace_up = "k"
 navigate_workspace_down = "j"
+edit_scrollback = ""
+new_worktree = ""
