@@ -17,8 +17,8 @@ window-padding-balance = true
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = hidden
 
-adjust-cell-height = 14
-adjust-cursor-height = 14
+adjust-cell-height = 16
+adjust-cursor-height = 16
 
 font-size = 15
 font-family = FiraCode Nerd Font

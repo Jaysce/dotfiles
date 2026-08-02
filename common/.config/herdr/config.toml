@@ -10,3 +10,9 @@ navigate_workspace_up = "k"
 navigate_workspace_down = "j"
 edit_scrollback = ""
 new_worktree = ""
+
+[ui.sidebar.agents]
+row_gap = 1
+
+[ui.sidebar.spaces]
+row_gap = 1
