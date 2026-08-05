@@ -17,14 +17,14 @@ window-padding-balance = true
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = hidden
 
-adjust-cell-height = 16
-adjust-cursor-height = 16
+adjust-cell-height = 12
+adjust-cursor-height = 12
 
 font-size = 15
-font-family = FiraCode Nerd Font
-font-family-bold = FiraCode Nerd Font
-font-family-italic = FiraCode Nerd Font
-font-family-bold-italic = FiraCode Nerd Font
+font-family = JetBrainsMono Nerd Font
+font-family-bold = JetBrainsMono Nerd Font
+font-family-italic = JetBrainsMono Nerd Font
+font-family-bold-italic = JetBrainsMono Nerd Font
 window-new-tab-position = end
 
 quick-terminal-position = center
