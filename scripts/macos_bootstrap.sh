@@ -10,20 +10,52 @@
 #                                                             |_|
 
 # bash <(curl -sSL https://raw.githubusercontent.com/Jaysce/dotfiles/master/scripts/macos_bootstrap.sh)
-sudo -v
-cd ~
 
-# --- Homebrew ---
+load_homebrew() {
+  if command -v brew >/dev/null 2>&1; then
+    return 0
+  fi
 
-if test ! $(which brew); then
+  local brew_bin
+  for brew_bin in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    if [[ -x "$brew_bin" ]]; then
+      eval "$("$brew_bin" shellenv)"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+install_homebrew() {
+  if load_homebrew; then
+    return
+  fi
+
   echo "🍺 Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/$user/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+
+  if ! load_homebrew; then
+    echo "❌ Homebrew installation completed, but brew was not found." >&2
+    exit 1
+  fi
+
+  local brew_bin brew_shellenv
+  brew_bin="$(command -v brew)"
+  brew_shellenv="eval \"\$($brew_bin shellenv)\""
+  touch "$HOME/.zprofile"
+  if ! grep -Fqx "$brew_shellenv" "$HOME/.zprofile"; then
+    printf '%s\n' "$brew_shellenv" >>"$HOME/.zprofile"
+  fi
+  eval "$("$brew_bin" shellenv)"
+}
+
+base_brew=(
+  git
+  gh
+)
 
 brew=(
-  git
   ack
   ast-grep
   bat
@@ -41,7 +73,6 @@ brew=(
   fd
   fzf
   gcc
-  gh
   git-delta
   go-task
   grpcurl
@@ -75,8 +106,11 @@ brew=(
   zulu
 )
 
-cask=(
+base_cask=(
   1password
+)
+
+cask=(
   cleanshot
   codex
   discord
@@ -100,56 +134,119 @@ mas=(
   904280696  # Things
 )
 
-echo "☁️ Updating homebrew..."
-brew update
-brew tap anomalyco/tap
+# --- Base Bootstrap ---
 
-echo "📦 Installing packages..."
-brew install ${brew[@]}
-mas install ${mas[@]}
-sudo xcodebuild -license accept
-brew install --cask ${cask[@]}
+run_base_setup() {
+  sudo -v
+  install_homebrew
 
-# --- Dotfiles ---
+  echo "☁️ Updating Homebrew..."
+  brew update
 
-echo "☁️ Cloning dotfiles and symlinking..."
-cd ~
-git clone https://github.com/Jaysce/dotfiles.git
-mkdir -p ~/.config/starship
-cd dotfiles
-stow common macos
-cd ~
+  echo "📦 Installing bootstrap tools..."
+  brew install "${base_brew[@]}"
+  brew install --cask "${base_cask[@]}"
 
-# --- Neovim ---
-echo "☁️ Cloning nvim and symlinking..."
-git clone https://github.com/Jaysce/nvim.git ~/.config/nvim
+  echo "✅ Base setup is complete."
+}
 
-# --- Agents ---
+run_remaining_setup() {
+  if ! load_homebrew; then
+    echo "❌ Homebrew is not installed. Run the base setup first." >&2
+    exit 1
+  fi
+  if ! command -v gh >/dev/null 2>&1; then
+    echo "❌ GitHub CLI is not installed. Run the base setup first." >&2
+    exit 1
+  fi
+  if ! gh auth status --hostname github.com >/dev/null 2>&1; then
+    echo "❌ GitHub CLI is not authenticated. Complete the base setup instructions first." >&2
+    exit 1
+  fi
+  if [[ "$(gh config get git_protocol --host github.com 2>/dev/null)" != "ssh" ]]; then
+    echo "❌ GitHub CLI is not configured to use SSH." >&2
+    echo "   Run: gh config set git_protocol ssh --host github.com" >&2
+    exit 1
+  fi
 
-echo "🤖 Cloning agents repo and installing agent configuration..."
-agents_dir="$HOME/agents"
-if [ -d "$agents_dir/.git" ]; then
-  git -C "$agents_dir" pull --ff-only
-else
-  git clone https://github.com/Jaysce/agents.git "$agents_dir"
-fi
-"$agents_dir/scripts/install-agents.sh" all
-"$agents_dir/scripts/install-skills.sh" all --obsidian-only
+  echo "🔑 Verifying SSH access to private GitHub repositories..."
+  if ! git ls-remote git@github.com:Jaysce/nvim.git HEAD >/dev/null; then
+    echo "❌ GitHub could not authenticate your SSH key." >&2
+    echo "   Check the 1Password SSH agent and GitHub key registration, then try again." >&2
+    exit 1
+  fi
 
-# --- System / App Preferences ---
+  sudo -v
 
-echo "⚙️ Setting System Preferences..."
-defaults write com.knollsoft.Rectangle gapSize -float 10
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 0.6
-defaults write com.apple.Dock showhidden -bool TRUE
-killall Dock
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-defaults write -g NSWindowShouldDragOnGesture -bool true
+  # --- Remaining Packages ---
 
-# --- Cleanup ---
+  echo "📦 Installing remaining packages..."
+  brew tap anomalyco/tap
+  brew install "${brew[@]}"
+  mas install "${mas[@]}"
+  sudo xcodebuild -license accept
+  brew install --cask "${cask[@]}"
 
-brew cleanup
-brew cleanup -s
+  # --- Dotfiles ---
 
-echo "🎉 Done!"
+  echo "☁️ Cloning dotfiles and symlinking..."
+  cd "$HOME" || exit
+  gh repo clone Jaysce/dotfiles
+  mkdir -p ~/.config/starship
+  cd dotfiles || exit
+  stow common macos
+  cd "$HOME" || exit
+
+  # --- Neovim ---
+
+  echo "☁️ Cloning nvim and symlinking..."
+  gh repo clone Jaysce/nvim ~/.config/nvim
+
+  # --- Agents ---
+
+  echo "🤖 Cloning agents repo and installing agent configuration..."
+  agents_dir="$HOME/agents"
+  if [ -d "$agents_dir/.git" ]; then
+    git -C "$agents_dir" pull --ff-only
+  else
+    gh repo clone Jaysce/agents "$agents_dir"
+  fi
+  "$agents_dir/scripts/install-agents.sh" all
+  "$agents_dir/scripts/install-skills.sh" all --obsidian-only
+
+  # --- System / App Preferences ---
+
+  echo "⚙️ Setting System Preferences..."
+  defaults write com.knollsoft.Rectangle gapSize -float 10
+  defaults write com.apple.dock autohide-delay -float 0
+  defaults write com.apple.dock autohide-time-modifier -float 0.6
+  defaults write com.apple.Dock showhidden -bool TRUE
+  killall Dock
+  defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+  defaults write -g NSWindowShouldDragOnGesture -bool true
+
+  # --- Cleanup ---
+
+  brew cleanup
+  brew cleanup -s
+
+  echo "🎉 Done!"
+}
+
+echo "Choose a setup phase:"
+echo "  1) Base setup (Homebrew, Git, GitHub CLI, and 1Password)"
+echo "  2) Remaining setup (apps, dotfiles, Neovim, agents, and preferences)"
+read -r -p "Enter 1 or 2: " setup_phase
+
+case "$setup_phase" in
+  1)
+    run_base_setup
+    ;;
+  2)
+    run_remaining_setup
+    ;;
+  *)
+    echo "❌ Choose 1 (base) or 2 (remaining)." >&2
+    exit 1
+    ;;
+esac
