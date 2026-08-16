@@ -49,17 +49,14 @@ brew=(
   herdr
   httpie
   hexyl
-  hunk
   jq
   lazydocker
   lazygit
-  llvm
   mas
   mole
   neovim
   node
   oha
-  opencode
   ripgrep
   shellcheck
   starship
@@ -93,11 +90,8 @@ cask=(
   obsidian
   raycast
   rectangle
-  replacicon
   spaceman
   spotify
-  visual-studio-code
-  zed
 )
 
 mas=(
