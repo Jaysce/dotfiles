@@ -181,7 +181,6 @@ run_remaining_setup() {
   # --- Remaining Packages ---
 
   echo "📦 Installing remaining packages..."
-  brew tap anomalyco/tap
   brew install "${brew[@]}"
   mas install "${mas[@]}"
   sudo xcodebuild -license accept
@@ -192,7 +191,6 @@ run_remaining_setup() {
   echo "☁️ Cloning dotfiles and symlinking..."
   cd "$HOME" || exit
   gh repo clone Jaysce/dotfiles
-  mkdir -p ~/.config/starship
   cd dotfiles || exit
   stow common macos
   cd "$HOME" || exit
@@ -239,14 +237,14 @@ echo "  2) Remaining setup (apps, dotfiles, Neovim, agents, and preferences)"
 read -r -p "Enter 1 or 2: " setup_phase
 
 case "$setup_phase" in
-  1)
-    run_base_setup
-    ;;
-  2)
-    run_remaining_setup
-    ;;
-  *)
-    echo "❌ Choose 1 (base) or 2 (remaining)." >&2
-    exit 1
-    ;;
+1)
+  run_base_setup
+  ;;
+2)
+  run_remaining_setup
+  ;;
+*)
+  echo "❌ Choose 1 (base) or 2 (remaining)." >&2
+  exit 1
+  ;;
 esac
