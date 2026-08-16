@@ -116,12 +116,6 @@ mas install ${mas[@]}
 sudo xcodebuild -license accept
 brew install --cask ${cask[@]}
 
-# --- TPM ---
-
-echo "🛠️ Installing TPM..."
-mkdir -p ~/.local/share/tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
-
 # --- Dotfiles ---
 
 echo "☁️ Cloning dotfiles and symlinking..."
