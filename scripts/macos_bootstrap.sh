@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -Eeuo pipefail
+
 #                         ____   _____    _____      _
 #                        / __ \ / ____|  / ____|    | |
 #   _ __ ___   __ _  ___| |  | | (___   | (___   ___| |_ _   _ _ __
@@ -48,6 +50,49 @@ install_homebrew() {
     printf '%s\n' "$brew_shellenv" >>"$HOME/.zprofile"
   fi
   eval "$("$brew_bin" shellenv)"
+}
+
+is_expected_github_remote() {
+  local repository="$1"
+  local remote="$2"
+
+  case "$remote" in
+    "git@github.com:${repository}" | "git@github.com:${repository}.git" | \
+      "ssh://git@github.com/${repository}" | "ssh://git@github.com/${repository}.git" | \
+      "https://github.com/${repository}" | "https://github.com/${repository}.git")
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+clone_or_pull() {
+  local repository="$1"
+  local destination="$2"
+
+  if [[ -e "$destination" || -L "$destination" ]]; then
+    if [[ ! -d "$destination/.git" ]]; then
+      echo "❌ $destination already exists but is not a Git repository." >&2
+      exit 1
+    fi
+
+    local origin
+    origin="$(git -C "$destination" remote get-url origin)"
+    if ! is_expected_github_remote "$repository" "$origin"; then
+      echo "❌ $destination belongs to $origin, not GitHub repository $repository." >&2
+      exit 1
+    fi
+
+    echo "🔄 Updating $repository..."
+    git -C "$destination" pull --ff-only
+    return
+  fi
+
+  echo "☁️ Cloning $repository..."
+  mkdir -p "$(dirname "$destination")"
+  gh repo clone "$repository" "$destination"
 }
 
 base_brew=(
@@ -188,29 +233,20 @@ run_remaining_setup() {
 
   # --- Dotfiles ---
 
-  echo "☁️ Cloning dotfiles and symlinking..."
-  cd "$HOME" || exit
-  gh repo clone Jaysce/dotfiles
-  cd dotfiles || exit
-  stow common macos
-  cd "$HOME" || exit
+  echo "🔗 Symlinking dotfiles..."
+  clone_or_pull Jaysce/dotfiles "$HOME/dotfiles"
+  stow --dir="$HOME/dotfiles" --target="$HOME" common macos
 
   # --- Neovim ---
 
-  echo "☁️ Cloning nvim and symlinking..."
-  gh repo clone Jaysce/nvim ~/.config/nvim
+  clone_or_pull Jaysce/nvim "$HOME/.config/nvim"
 
   # --- Agents ---
 
-  echo "🤖 Cloning agents repo and installing agent configuration..."
+  echo "🤖 Installing agent configuration..."
   agents_dir="$HOME/agents"
-  if [ -d "$agents_dir/.git" ]; then
-    git -C "$agents_dir" pull --ff-only
-  else
-    gh repo clone Jaysce/agents "$agents_dir"
-  fi
-  "$agents_dir/scripts/install-agents.sh" all
-  "$agents_dir/scripts/install-skills.sh" all --obsidian-only
+  clone_or_pull Jaysce/agents "$agents_dir"
+  "$agents_dir/scripts/install.sh" all
 
   # --- System / App Preferences ---
 
@@ -219,7 +255,7 @@ run_remaining_setup() {
   defaults write com.apple.dock autohide-delay -float 0
   defaults write com.apple.dock autohide-time-modifier -float 0.6
   defaults write com.apple.Dock showhidden -bool TRUE
-  killall Dock
+  killall Dock || true
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
   defaults write -g NSWindowShouldDragOnGesture -bool true
 
