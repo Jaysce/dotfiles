@@ -28,7 +28,6 @@ brew=(
   ast-grep
   bat
   bazelisk
-  bun
   buf
   ccls
   cmake
@@ -109,7 +108,6 @@ mas=(
 
 echo "☁️ Updating homebrew..."
 brew update
-brew tap oven-sh/bun
 brew tap anomalyco/tap
 
 echo "📦 Installing packages..."
@@ -149,7 +147,6 @@ else
 fi
 "$agents_dir/scripts/install-agents.sh" all
 "$agents_dir/scripts/install-skills.sh" all --obsidian-only
-bun add -g defuddle
 
 # --- System / App Preferences ---
 
