@@ -155,7 +155,6 @@ cask=(
   ghostty
   iina
   intellij-idea
-  jordanbaird-ice
   mimestream
   obsidian
   raycast
