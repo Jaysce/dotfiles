@@ -147,6 +147,7 @@ base_cask=(
 )
 
 cask=(
+  chatgpt
   cleanshot
   codex
   discord
