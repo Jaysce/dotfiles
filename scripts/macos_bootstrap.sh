@@ -218,7 +218,18 @@ run_remaining_setup() {
   echo "📦 Installing remaining packages..."
   brew install "${brew[@]}"
   mas install "${mas[@]}"
-  sudo xcodebuild -license accept
+
+  xcode_developer_dir="/Applications/Xcode.app/Contents/Developer"
+  if [[ ! -d "$xcode_developer_dir" ]]; then
+    echo "❌ Xcode is not available at $xcode_developer_dir." >&2
+    echo "   Wait for the App Store installation to finish, then rerun the remaining setup." >&2
+    exit 1
+  fi
+
+  echo "🛠️ Configuring Xcode..."
+  sudo xcode-select --switch "$xcode_developer_dir"
+  sudo xcodebuild -runFirstLaunch
+
   brew install --cask "${cask[@]}"
 
   # --- Dotfiles ---
