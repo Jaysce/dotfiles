@@ -40,6 +40,7 @@ else
 fi
 
 # Aliases --------------------------------------------------------------------------------
+alias cf='caffeinate -d'
 alias cat='bat'
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias ffe="n \$(ff)"
