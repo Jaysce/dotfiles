@@ -149,6 +149,8 @@ base_cask=(
 cask=(
   chatgpt
   cleanshot
+  claude
+  claude-code
   codex
   discord
   font-fira-code-nerd-font
