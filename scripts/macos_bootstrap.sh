@@ -237,7 +237,8 @@ run_remaining_setup() {
 
   echo "🔗 Symlinking dotfiles..."
   clone_or_pull Jaysce/dotfiles "$HOME/dotfiles"
-  stow --dir="$HOME/dotfiles" --target="$HOME" common macos
+  # Link individual files so apps keep runtime state outside the repository.
+  stow --no-folding --dir="$HOME/dotfiles" --target="$HOME" common macos
 
   # --- Neovim ---
 
