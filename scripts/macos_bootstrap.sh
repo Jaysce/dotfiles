@@ -134,6 +134,7 @@ brew=(
   tmux
   tree
   wget
+  xcode-build-server
   zoxide
   zsh-autosuggestions
   zsh-completions
