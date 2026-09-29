@@ -152,6 +152,7 @@ cask=(
   cleanshot
   claude
   claude-code
+  cursor
   codex
   discord
   font-fira-code-nerd-font
