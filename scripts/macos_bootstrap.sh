@@ -153,6 +153,7 @@ cask=(
   claude
   claude-code
   cursor
+  cursor-cli
   codex
   discord
   font-fira-code-nerd-font
