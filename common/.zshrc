@@ -57,6 +57,7 @@ alias n='nvim'
 alias oc='opencode'
 alias cx='codex --yolo'
 alias cc='claude --dangerously-skip-permissions'
+alias c='cursor-agent --yolo'
 alias cd="zd"
 alias ..='cd ..'
 alias ...='cd ../..'
