@@ -97,6 +97,7 @@ brew=(
   bat
   bazelisk
   buf
+  bun
   ccls
   cmake
   colima
@@ -254,7 +255,8 @@ run_remaining_setup() {
   echo "🤖 Installing agent configuration..."
   agents_dir="$HOME/agents"
   clone_or_pull Jaysce/agents "$agents_dir"
-  "$agents_dir/scripts/install.sh" all
+  bun install --cwd "$agents_dir" --frozen-lockfile
+  bun run --cwd "$agents_dir" link
 
   # --- System / App Preferences ---
 
