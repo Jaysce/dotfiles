@@ -125,6 +125,7 @@ brew=(
   neovim
   node
   oha
+  pi-coding-agent
   ripgrep
   shellcheck
   starship
