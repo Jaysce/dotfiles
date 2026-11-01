@@ -1,0 +1,2 @@
+-- Rex does not watch this file. Apply changes with `rex config reload`.
+-- Lua API: https://www.superlogical.com/rex/docs/reference/lua
