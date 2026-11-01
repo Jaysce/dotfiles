@@ -136,6 +136,7 @@ brew=(
   tmux
   tree
   wget
+  worktrunk
   xcbeautify
   xcode-build-server
   xcp
