@@ -1,6 +1,7 @@
 -- Rex does not watch this file. Apply changes with `rex config reload`.
 -- Lua API: https://www.superlogical.com/rex/docs/reference/lua
 
+rex.bind("cmd+enter", "client.visibility.toggle")
 rex.bind("cmd+p", "client.palette.toggle")
 rex.bind("cmd+d", "pane.split.auto")
 rex.bind("alt+h", "pane.focus.left")

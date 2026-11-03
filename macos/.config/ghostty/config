@@ -43,4 +43,3 @@ keybind = opt+shift+k=resize_split:up,20
 keybind = opt+shift+j=resize_split:down,20
 keybind = opt+shift+h=resize_split:left,20
 keybind = opt+shift+l=resize_split:right,20
-keybind = global:super+enter=new_window
