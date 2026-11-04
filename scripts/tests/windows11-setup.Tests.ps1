@@ -85,6 +85,8 @@ Test-Case 'elevated batch is valid PowerShell and stays within command length li
 }
 
 Test-Case 'power plan is created once with a stable GUID and rerun is unchanged' {
+    $template = 'e9a42b02-d5df-448d-aa00-03f14749eb61'
+    $script:planGuid = $null
     $script:planExists = $false
     $script:planActive = $false
     $script:planCreates = 0
@@ -92,14 +94,25 @@ Test-Case 'power plan is created once with a stable GUID and rerun is unchanged'
     function powercfg.exe {
         $global:LASTEXITCODE = 0
         switch ($args[0]) {
-            '/list' { if ($script:planExists) { 'e9a42b02-d5df-448d-aa00-03f14749eb61 (Localized name)' } }
+            '/list' { if ($script:planExists) { "Power Scheme GUID: $script:planGuid  (Ultimate Performance)" } }
             '/duplicatescheme' {
-                Assert ($args[1] -eq $args[2]) 'Power plan must have a deterministic destination GUID.'
+                Assert ($args[1] -eq $template) 'Power plan must be copied from the Ultimate Performance template.'
+                if ($args[2] -eq $template) {
+                    $global:LASTEXITCODE = 1
+                    Write-Error 'The scheme could not be duplicated because a power scheme with the specified GUID already exists.'
+                    return
+                }
+                Assert ($args[2]) 'Power plan must have a deterministic destination GUID.'
+                $script:planGuid = $args[2]
                 $script:planExists = $true
                 $script:planCreates++
             }
-            '/getactivescheme' { if ($script:planActive) { 'e9a42b02-d5df-448d-aa00-03f14749eb61' } }
-            '/setactive' { $script:planActive = $true; $script:planActivations++ }
+            '/getactivescheme' { if ($script:planActive) { "Power Scheme GUID: $script:planGuid  (Ultimate Performance)" } }
+            '/setactive' {
+                Assert ($args[1] -eq $script:planGuid) 'The copied plan must be activated.'
+                $script:planActive = $true
+                $script:planActivations++
+            }
             default { throw 'Unexpected powercfg operation.' }
         }
     }
@@ -112,7 +125,10 @@ Test-Case 'power plan is created once with a stable GUID and rerun is unchanged'
 Test-Case 'unsupported power plan produces a warning and is not activated' {
     function powercfg.exe {
         if ($args[0] -eq '/list') { $global:LASTEXITCODE = 0 }
-        elseif ($args[0] -eq '/duplicatescheme') { $global:LASTEXITCODE = 1 }
+        elseif ($args[0] -eq '/duplicatescheme') {
+            $global:LASTEXITCODE = 1
+            Write-Error 'Unable to perform operation.'
+        }
         else { throw 'Unsupported plan must not be activated.' }
     }
     Enable-UltimatePerformance -WarningVariable warnings -WarningAction SilentlyContinue

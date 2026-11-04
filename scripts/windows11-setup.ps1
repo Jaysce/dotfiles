@@ -113,11 +113,15 @@ function Start-AdminContext {
 }
 
 function Enable-UltimatePerformance {
-    $guid = 'e9a42b02-d5df-448d-aa00-03f14749eb61'
+    # Windows PowerShell turns redirected native stderr into a terminating error under Stop.
+    $ErrorActionPreference = 'Continue'
+    $template = 'e9a42b02-d5df-448d-aa00-03f14749eb61'
+    # The hidden template already owns its GUID, so the copy needs its own fixed GUID.
+    $guid = 'f71bfd0c-ecc1-4c2e-8dac-82e8a8f2e88a'
     $plans = & powercfg.exe /list
     if ($LASTEXITCODE -ne 0) { throw 'Cannot list power plans.' }
     if (-not ($plans -match $guid)) {
-        $output = & powercfg.exe /duplicatescheme $guid $guid 2>&1
+        $output = & powercfg.exe /duplicatescheme $template $guid 2>&1
         if ($LASTEXITCODE -ne 0) {
             Write-Warning "Ultimate Performance is unavailable on this hardware: $output"
             return
